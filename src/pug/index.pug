@@ -1,0 +1,210 @@
+extends _layout
+
+block title
+	title Index
+	- var _name = "index"
+	- var currentPage = "index"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header
+			#barba-wrapper
+				.barba-container(data-namespace="index")
+					.wrapper-frame
+						.block
+							.row
+								.columns
+									.promo-slider.margin-out
+										.promo-slider-wrap
+											.promo-slider-inner.js-promoslider
+												.promo-slider-item(data-href='/projects-inner.html')
+													.promo-slider-item-inner.padding-out
+														.cont-inner
+															.cont-left
+																.text Helsinger, Denmark
+																.title.h1.white Danish
+																	br 
+																	|Maritime
+																	br
+																	|museum
+														.promo-slider-item-img
+															.img-wrap.js-image.bg(data-src='img/promoslider/slide1/1.jpg')
+												.promo-slider-item(data-href='/projects-inner.html')
+													.promo-slider-item-inner.padding-out
+														.cont-inner
+															.cont-left
+																.text Minsk, Belarus
+																.title.h1.white RRB
+																	br 
+																	|bank
+														.promo-slider-item-img
+															.img-wrap.js-image.bg(data-src='img/promoslider/slide1/1.jpg')
+												.promo-slider-item(data-href='/projects-inner.html')
+													.promo-slider-item-inner.padding-out
+														.cont-inner
+															.cont-left
+																.text Minsk, Belarus
+																.title.h1.white RRB2
+																	br 
+																	|bank
+														.promo-slider-item-img
+															.img-wrap.js-image.bg(data-src='img/promoslider/slide1/1.jpg')
+												.promo-slider-item(data-href='/projects-inner.html')
+													.promo-slider-item-inner.padding-out
+														.cont-inner
+															.cont-left
+																.text Helsinger, Denmark3
+																.title.h1.white Danish
+																	br 
+																	|Maritime
+																	br
+																	|museum
+														.promo-slider-item-img
+															.img-wrap.js-image.bg(data-src='img/promoslider/slide1/1.jpg')
+										a(href="#").btn.js-promo-link
+											span Show project
+										.dots-wrap
+						.block.margin.anim-cont
+							.row
+								+content('About company','Since 2001, GLASSBEL is a leading glass processing company focusing on architectural and interior glass markets','Company','/production.html','img/index/index1.jpg','Company')
+						.block.anim-cont.projects-outer
+							.row
+								.columns.margin-out
+									.projects-wrap
+										.projects-bgwrap
+											.projects-bgwrap-inner.js-project-bg
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/index/index2.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/index/index3.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/index/index2.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+												.projects-bgitem
+													.projects-bgitem-inner.js-image.bg(data-src="img/next/l1.jpg")
+										.projects-content
+											.row
+												.title.h3.white 10 000+ 
+													br
+													|projects
+												.text.primary.white In 29 countries around the world our glass decorates buildings of the most famous companies
+												.projects-slider
+													.projects-slider-inner.js-project-slider
+														mixin tabsItem(text)
+															a(href="/projects-inner.html").tabs-item
+																.tabs-item-container
+																	.tabs-item-line
+																	.tabs-item-inner.text.white
+																		.tabs-item-block(data-text=text) #{text}
+														
+														+tabsItem('Opera House')
+														
+														+tabsItem('Norman Fostere')
+														
+														+tabsItem('Z-towers')
+														
+														+tabsItem('Skywalks')
+														
+														+tabsItem('Norman Foster Office')
+														
+														+tabsItem('Tate Modern')
+														
+														+tabsItem('Skywalks')
+														
+														+tabsItem('Swan')
+														
+														+tabsItem('Tate Modern')
+														
+														+tabsItem('Opera House')
+													.dots-wrap
+											.row
+												.columns
+													.comp-wrap.margin-out
+														.comp-wrap-inner
+															//все логотипы дублируются во стором контейнере
+															.comp-wrap-element
+																mixin comp(img)
+																	.comp-item
+																		.comp-item-inner
+																			img.js-image(data-src="img/companys/"+img+".png", alt="")
+																+comp('1')
+																+comp('2')
+																+comp('3')
+																+comp('4')
+																+comp('5')
+																+comp('6')
+																+comp('7')
+															.comp-wrap-element
+																+comp('1')
+																+comp('2')
+																+comp('3')
+																+comp('4')
+																+comp('5')
+																+comp('6')
+																+comp('7')
+						.block.margin.anim-cont
+							.row
+								+content('Production','All flat glass processing methods. JUMBO size and over','Company','/production.html','img/index/index2.jpg','Production')
+						.block.margin.anim-cont
+							.row
+								+content('Service','24/7 Operations. Customer Service Company','Company','/servicews.html','img/index/index3.jpg','Service')
+						.block.margin.anim-cont
+							.row
+								+content('Packing & logistics','By sea, by air, by land. Customized packing and logistics solutions','Company','/servicews.html','img/index/index4.jpg','Logistics')
+					.block.margin.team.anim-cont
+						.row
+							.title.h3 Meet the team
+							.text.primary Highly experienced specialists in flat glass innovations and process
+						.row
+							.columns
+								.team-wrap
+									.team-inner
+										.slider-nav
+										.team-slider.js-team-slider
+											mixin team(img,name,who)
+												.team-item
+													.team-item-inner
+														.team-item-img
+															.team-item-img-inner.js-image.bg(data-src="img/team/"+img+".jpg", alt="")
+														.team-item-text
+															.team-item-nam.text #{name}
+															.team-item-who.text #{who}
+											+team('1','Dmitri Sobolevski','CEO')
+											+team('2','Valdas Virbalas','Director')
+											+team('3','Loreta Latakiene','Executive Director')
+											+team('4','Tomas Lenkimas','Head of R&D dept')
+											+team('4','Tomas Lenkimas','Head of R&D dept')
+											+team('1','Dmitri Sobolevski','CEO')
+											+team('2','Valdas Virbalas','Director')
+											+team('3','Loreta Latakiene','Executive Director')
+					//- .block.margin.anim-cont
+					//- 	.row
+					//- 		.columns
+					//- 			.quality-wrap
+					//- 				.quality-title
+					//- 					.title.h3 quality control
+					//- 				.quality-text
+					//- 					.text.primary Sertifyed by more than 20 professional agen
+					//- 				+partner('1')
+					//- 				+partner('2')
+					//- 				+partner('3')
+					//- 				+partner('4')
+					//- 				+partner('5')
+					//- 				+partner('3')
+	
+					//- +nextl('About company','l1','/about.html')
+
+					include includes/_footer

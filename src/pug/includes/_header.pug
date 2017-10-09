@@ -1,0 +1,79 @@
+mixin navi(name, link)
+    li.navi__item(class={active: name === currentPage})
+        a(href=link).js-nav #{name}
+.header
+    .row.align-stretch
+        .columns
+            a(class="logo" href="/").js-nav
+        .columns
+            .row.align-right.align-middle
+                .menu-burger.js-menu
+                    .menu-burger-inner
+                        i
+                        i
+    .mob-menu
+        .mob-menu-inner
+             .mob-menu-content
+                 .mob-menu-content-inner
+                    .mob-menu-search
+                        .search-form
+                            form
+                                .field-row
+                                    .field.field-slide
+                                        input(type="text" class="search-input js-input" data-placeholder="Search" value="",required="required")
+                                        button(class="search-submit" type="button")
+                                            i
+                                                svg(class="icon icon-search")
+                                                    use(xlink:href="#search" xmlns:xlink="http://www.w3.org/1999/xlink")
+                                        button(type="reset" class="search-reset")
+                                            i
+                                                svg(class="icon icon-close")
+                                                    use(xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink")
+                    .mob-menu-nav
+                        .nav-item(onclick='')
+                            a(href="/").nav-link.js-nav
+                                .title.h2 Home
+                        .nav-item(onclick='')
+                            a(href="/company.html").nav-link.js-nav
+                                .title.h2 Compan
+                            .nav-item-sublinks
+                                a(href="#").nav-sublink.js-nav About us 
+                                a(href="/production.html").nav-sublink.js-nav Production
+                                a(href="/rd.html").nav-sublink.js-nav R&D
+                                a(href="/accreditations.html").nav-sublink.js-nav Accreditations
+                        .nav-item(onclick='')
+                            a(href="/projects.html").nav-link.js-nav
+                                .title.h2 Projects
+                            .nav-item-sublinks
+                                a(href="#").nav-sublink.js-nav Brand products 
+                                a(href="#").nav-sublink.js-nav Laminated glass
+                                a(href="#").nav-sublink.js-nav Insulated glass 
+                                a(href="#").nav-sublink.js-nav Bonding
+                        .nav-item(onclick='')
+                            a(href="/products.html").nav-link.js-nav
+                                .title.h2 Products
+                            .nav-item-sublinks
+                                a(href="#").nav-sublink.js-nav Brand products 
+                                a(href="#").nav-sublink.js-nav Laminated glass
+                                a(href="#").nav-sublink.js-nav Insulated glass 
+                                a(href="#").nav-sublink.js-nav Bonding
+                    .mob-menu-footer
+                        .mob-menu-footer-nav
+                            a(href="/services.html").nav-sublink.js-nav Service 
+                            a(href="/news.html").nav-sublink.js-nav News
+                            a(href="/contacts.html").nav-sublink.js-nav Contacts
+.prod-nav.block.js-prod-head
+    .prod-nav-inner.brand
+        .row
+            .columns
+                a(href="/production-inner-test2.html").prod-nav-link
+                    .prod-nav-link-icon
+                        .icon
+                            +icon('slidearr')
+                    .prod-nav-link-text next
+            .columns
+                a(href="/production-inner-test.html").prod-nav-link
+                    .prod-nav-link-icon
+                        .icon
+                            +icon('slidearr')
+                    .prod-nav-link-text prev

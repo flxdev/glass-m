@@ -1,0 +1,2548 @@
+*, *:after, *:before
+	box-sizing: border-box
+a 
+	text-decoration: none
+img
+	display: block
+
+html
+	height: 100%
+	font-size: 16px
+body
+	height: 100%
+	font-family: "Roboto"
+	color: #000
+	width: 100%
+	&.menu-open
+		position: fixed
+		
+.root
+.root__wrapper
+.root__frame
+.wrapper-frame
+
+.header
+	position: fixed
+	width: 100%
+	background-color: color(white)
+	top: 0
+	left: 0
+	z-index: 50
+	width: 100%
+	.row
+		height: 50px
+.root__frame
+	+rem(padding-top,50px)
+#barba-wrapper
+	position: relative
+	+tr(all .5s)
+// 	position: relative
+// 	z-index: 1
+// 	pointer-events: none 
+// 	&>div
+// 		pointer-events: all
+// 		background-color: color(white)
+.barba-container
+	&.moveDown
+		transform: translateY(100px)
+		+tr(transform 1s ease-in-out)
+	&.moveUp
+		backface-visibility: hidden
+		* 
+			pointer-events: none
+.logo
+	display: block
+	max-width: 316px
+	width: 100%
+	height: 100%
+	background-image: url(../img/icons/logo.jpg)
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: left center
+	+r(1140)
+		+rem(max-width,260px)
+	&.active 
+		pointer-events: none
+.navigation 
+	height: 100%
+
+.title
+	text-transform: uppercase;
+	line-height: 0.857;
+	font-family: $t
+	color: color(brand)
+	+tr(color .3s)
+	font-weight: 900
+	&.h1 
+		line-height: 0.73;
+		font-size: 14vw
+		+rem(letter-spacing,-3.5px)
+	&.h2 
+		font-size: 12vw
+		+rem(letter-spacing,-1.5px)
+		+rm(600)
+			font-size: 11vw
+
+	&.h3 
+		font-size: 10vw
+		font-weight: 700
+a.title
+	&:hover
+		color: color(brandh)
+.text 
+	+rem(font-size,16px)
+	line-height: 1.444;
+	color: color(textblk)
+	&.primary
+		+rem(font-size,18px)
+		color: rgb(0, 0, 0);
+		line-height: 1.429;
+		color: color(black)
+		&.white
+			color: color(white)
+		a 
+			color: color(brand)
+			&:hover
+				color: color(brand)
+	&.gray 
+		color: color(textgray)
+.white
+	color: color(white)
+.menu-burger
+	height: 100%
+	+vertical
+	position: relative
+	z-index: 110
+	display: inline-block
+	
+	cursor: pointer
+	&:active
+		i,.menu-burger-inner:before,.menu-burger-inner:after
+			background-color: color(brand)
+	&.active
+		i
+			transform: scaleX(0)
+			&:last-child
+				transition-delay: .15s
+		.menu-burger-inner
+			&:before
+				transition-delay: .45s
+				transform: rotate(45deg) scaleX(1)
+			&:after
+				transition-delay: .55s
+				transform: rotate(-45deg) scaleX(1)
+	&:not(.active)
+		.menu-burger-inner
+			&:after
+				transition-delay: .15s
+		i
+			transition-delay: .45s
+			&:last-child
+				transition-delay: .55s
+	&-inner
+		+rem(width,44px)
+		display: inline-block
+		vertical-align: middle
+		position: relative
+
+		z-index: 0
+		&:before,&:after
+			content: ''
+			display: inline-block
+			+rem(width,38px)
+			height: 3px
+			position: absolute
+			background-color: color(black)
+			transition: transform .3s ease-in-out, color .3s
+			backface-visibility: hidden
+		&:before
+			+rem(top,5px)
+			+rem(left,8px)
+			transform-origin: left center
+			transform: rotate(45deg) scaleX(0)
+		&:after
+			+rem(top,5px)
+			+rem(right,8px)
+			transform-origin: right center
+			transform: rotate(-45deg) scaleX(0)
+		i
+			display: block
+			+rem(width,44px)
+			height: 4px
+			background-color: color(black)
+			+rem(margin,8px 0)
+			transition: color .3s , transform .3s ease-in-out
+			&:first-child
+				transform-origin: left center
+			&:last-child
+				transform-origin: right center
+.header,.block
+	&>.row
+		+padlr(10px)
+		+rm(600)
+			+padlr(25px)
+
+.block 
+	overflow: hidden
+
+.btn 
+	display: inline-block
+	vertical-align: top
+	font-size: 0
+	outline: none
+	overflow: hidden
+	background: color(white)
+	line-height: 1
+	border-radius: 2px;
+	+nosel
+	&.reverse
+		background: color(brand)
+		span
+			color: color(white)
+			&:before
+				background: color(gray)
+		&:active
+			span
+				color: color(brand)
+
+	span
+		display: inline-block
+		text-align: center
+		+rem(font-size,15px)
+		font-family: $r
+		position: relative
+		z-index: 0
+		+rem(padding,14px 22px)
+		color: color(brand)
+		+tr(color .2s)
+		&:before
+			display: inline-block
+			content: ''
+			+coverdiv
+			z-index: -1
+			background-color: color(brand)
+			+tr(transform .2s ease-in-out)
+			transform: translateY(100%)
+	&:active
+		span 
+			color: color(white)
+			transition-delay: .1s
+			&:before
+				transform: none
+.link-arr
+	display: inline-block
+	vertical-align: top
+	outline: none
+	line-height: 1
+	font-size: 0
+	white-space: nowrap
+	+nosel
+	&-text,&-icon
+		display: inline-block
+		vertical-align: middle
+		.text,svg
+			color: color(brand)
+			+tr(color .1s)
+	&-text
+		+rem(padding-right,35px)
+	&-icon 
+		+rem(width,27px)
+		+rem(padding-top,1px)
+		+tr(transform .1s cubic-bezier(0, 0, 0.1, 0.96))
+		svg
+			width: 100%
+			+rem(max-height,30px)
+	&:active
+		&:not(.down)
+			.text,svg
+				color: color(black)
+			.link-arr-icon
+				transform: translateX(5px)
+	&.down
+		.link-arr-text
+			padding-right: 0
+			+rem(padding-left,19px)
+		svg 
+			color: #7f7f7f
+		.link-arr-icon
+			+rem(width,21px)
+			padding-top: 0
+			+rem(padding-bottom,3px)
+			.down-arr
+				transition: transform .1s
+		&:active
+			.text,svg
+				color: color(black)
+				.down-arr
+					transform: translateY(3px)
+	&.white
+		.text,svg
+			color: color(white)
+		&:active
+			.text,svg
+				color: color(white)
+	&.right 
+		.link-arr-icon
+			.icon
+				transform: scale(-1,1)	
+		.link-arr-text
+			+rem(padding-left,25px)
+			padding-right: 0	
+
+.mob-menu
+	position: fixed
+	top: 0
+	right: 0
+	width: 100%
+	height: 100vh
+	background-color: transparent
+	text-align: right
+	z-index: 50
+	transition: opacity .5s .1s, visibility .5s .1s, background-color .5s .1s
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+		background-color: rgba(14, 59, 133, 0.902)
+		transition-delay: 0s!important
+		.mob-menu-inner
+			.mob-menu-content
+				opacity: 1
+				transition-delay: .1s
+			&:before
+				transform: none
+				opacity: 1
+		.mob-menu-nav,.mob-menu-search,.mob-menu-footer
+			opacity: 1
+			transform: none
+		.mob-menu-search
+			transition-delay: .1s
+		.mob-menu-nav
+			transition-delay: .25s
+		.mob-menu-footer
+			transition-delay: .4s
+	&-search
+		position: absolute
+		left: 0
+		+rem(top,-5px)
+		transition: transform .5s ease-in-out, opacity .5s
+		opacity: 0
+		transform: translateY(70px)
+
+	&-inner
+		width: 100%
+		display: inline-block
+		height: 100%
+		// overflow-x: hidden
+		transition-delay: 0s
+		position: relative
+		z-index: 0
+		text-align: left
+		+padlr(10px)
+		+rm(600)
+			+padlr(25px)
+		
+		&:before
+			content: ''
+			display: inline-block
+			+coverdiv
+			z-index: -1
+			background-color: color(white)
+			transition: transform .5s ease-in-out, opacity .5s
+			transform: translateY(100%)
+			opacity: 0
+	&-nav 
+		+rem(padding-top,40px)
+		+rem(padding-bottom,40px)
+	&-content
+		height: 100%
+		text-align: center
+		+rem(padding-top,16px)
+		+tr(opacity .3s)
+		transition-delay: 0s
+		opacity: 0
+		overflow-y: auto
+		&-inner
+			display: inline-block
+			+vertical
+			text-align: left
+			width: 100%;
+			position: relative
+			+rem(padding-top,50px)
+			+rem(padding-bottom,100px)
+			.mob-menu-nav
+				display: inline-block
+				vertical-align: middle
+				transition: transform .5s ease-in-out, opacity .5s
+				opacity: 0
+				transform: translateY(70px)
+
+	&-footer
+		transition: transform .5s ease-in-out, opacity .5s
+		opacity: 0
+		transform: translateY(70px)
+		.nav-sublink
+			font-size: 7vw
+			+rem(padding-right,29px)
+			+rem(letter-spacing,.3px)
+			opacity: 1
+			transform: none
+			width: 50%
+			
+			+rm(600)
+				font-size: 5vw
+
+.nav
+	&-item
+		&-sublinks
+			+rem(max-width,521.6px)
+			backface-visibility: hidden
+			transition-duration: .4s
+		&:active
+			.title
+				color: color(brandh)
+	&-link
+		display: block
+		+nosel
+		.title
+			line-height: 0.835;
+			+rem(letter-spacing,.2px)
+
+		&.active
+			pointer-events: none
+			.title
+				color: #dcdcdd !important
+	&-sublink
+		+rem(font-size,18px)
+		line-height: 1.667;
+		color: color(black)
+		display: inline-block
+		width: 50%
+		+rem(padding-right,20px)
+		+rem(margin-top,4px)
+		+rem(margin-bottom,7px)
+		&:active
+			color: color(brand)
+		&.active 
+			color: color(brand)	
+			pointer-events: none
+.mob-menu-search
+	+rem(width, 250px)
+	display: inline-block
+	vertical-align: top
+	text-align: left
+	button
+		background: 0 0
+	.search-form
+		// +rem(margin-bottom, 13px)
+		.not-empty
+			.field-row
+				+rem(padding-left, 30px)
+		.field-row
+			position: relative
+			// +rem(padding-left, 45px)
+			transition: padding 0.3s ease
+			.field
+				+rem(width, 128px)
+				display: inline-block
+				transition: width 0.3s ease
+				position: relative
+				.search-input
+					width: 100%
+					+rem(height, 50px)
+					font-family: $r
+					+rem(font-size, 18px)
+					+rem(padding, 0 45px 0 0)
+					background-color: transparent
+					text-overflow: ellipsis
+					overflow: hidden
+					cursor: pointer
+					&::before
+						content: ""
+					&::placeholder
+						color: #9e9898
+						transition: all 0.1s ease
+					&:focus
+						cursor: text
+						&::placeholder
+							color: color(brand)
+						& + .search-submit
+							i
+								svg
+									width: 100%
+									height: 100%
+									fill: color(brand)
+					&:not(:valid)
+						&~ .search-submit
+							pointer-events: none
+				&.open
+					width: 100%
+					.search-input
+						+rem(padding-right, 58px)
+						&::placeholder
+							// color: $search
+						& + .search-submit
+							i
+								svg
+									color: #9e9898 !important
+					.search-submit
+						&:active
+							i
+								svg
+									color: color(brand) !important
+				.placeholder
+					position: absolute
+					color: #9e9898					
+					transition: all 0.3s ease
+					z-index: -1
+					top: 0
+					left: 0
+					font-family: $r
+					+rem(line-height,50px)
+					+rem(height,50px)
+					+rem(font-size, 18px)
+				&:active
+					.placeholder
+						color: color(brand)
+			.search-submit, .search-reset
+				position: absolute
+			.search-submit
+				+rem(width, 40px)
+				height: 100%
+				top: 0
+				right: 0
+				text-align: right
+				+rem(padding-right,5px)
+				&[type="submit"]
+					background-color: transparent
+				i
+					+rem(width, 20px)
+					+rem(height, 20px)
+					display: inline-block
+					+rem(margin-bottom,8px)
+					svg
+						width: 100%
+						height: 100%
+						color: #9e9898
+						transition: color 0.3s ease
+			.search-reset
+				+rem(width, 45px)
+				height: 100%
+				top: 0
+				+rem(left, -45px)
+				opacity: 0
+				visibility: hidden
+				transition: opacity 0.3s ease, visibility 0.3s ease
+				i
+					+rem(width, 15px)
+					+rem(height, 15px)
+					display: inline-block
+					svg
+						width: 100%
+						height: 100%
+						fill: #9e9898
+						transition: fill 0.3s ease
+				&:active
+					i
+						svg
+							fill: color(brand)
+
+				&.show
+					opacity: 1
+					visibility: visible
+.soc 
+	&-wrapper
+		font-size: 0
+		+rem(margin,30px 0)
+		&-inner
+			white-space: nowrap
+			&:active
+				.soc-item
+					&:not(:active)
+						opacity: .7
+	&-item
+		display: inline-block
+		vertical-align: middle
+		+rem(width,31px)
+		+rem(height,31px)
+		+contain
+		+tr(opacity .25s)
+		&:not(:last-child)
+			+rem(margin-right,32px)
+		&.fb
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAMAAABEH1h2AAAAkFBMVEVHcEw8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZY8WZb///88WZaBlLvm6vKkss7x8/i1wNfFzuCLnMFIY5xedqj6+vx6jrdyh7OYp8fS2eehr8z2OpSWAAAAH3RSTlMAYoFCzfwkyPL++QTUVQkPTQPk3Fp7OJQoo5PhN6KrKAW+zwAAAcdJREFUeAGl19lyozoQxvEPGRACh8VgTJyFjg9enDPL+7/djEqVysRRWwL9rnLzT6naULTAqOrti9xkRNlGvmzrCjOkQib0RSJFCi9NJxVZKNk17jhqidVGjn/wHNNd8TN45V6Rg9qX7MTW5GHNzHCVkZdsBYuHnDzlD5Y6IW/Jt36V0wz5zfnTjGbJvsyvXNNM6xKfdjTb7rNeKWJczqfDOE7T4RfdUP1HXbBH/zGNH+hW3MCIiPGmOy6nyNRFy9TX97t5W0DriHEc7+bUQZPEmBy51PVAjKvp3s8XYgwABDH+N/mRWAKAdMz9TCwJVIkjfyNWUqGm5TnV2IbkWzyG5I/2yR20yeTTQTsys9uQxfiNPd8g88t/kk0G8suZCfjmV7LJfQ9/YQ5vHd1/2smEJ/33b7JqIUN+dxn62AQ+tIGvTOALC7k8lwDE8lwASNXSXKX4Sy7NJbRuad4xHyk+t3ykEC3LIxhN7JHzH2j0an6uen458cj3/Grkkccl/jEELWaha2HoUhq6Eocs5Mbgdx0YwCh37svIrgSvd12FetxVRE/EeooKODRFJBXZSBO7pSK+vYTGIsUMVS1eY3MFjl8FewX+A4Dmc6XWOJChAAAAAElFTkSuQmCC);
+		&.you
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAMAAABEH1h2AAAApVBMVEVHcEzkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKibkKib////+8vLzm5n72tn61NPsaGX85ub//v785OT4xsT3w8LoSkb86urxjoz5zs3++Pj0p6Xyl5XqWFX97e3rX1zmOjb3vbzQmXokAAAAH3RSTlMAQvAJ04H5y/0DVZRaSE0PN/Qm5CPcYsV7o+FmoiqrTGTGIgAAAdFJREFUeNq1l2lzgjAQQBGBBHXAE7yXiIwU72P6/39aW7VWFsKRnb6PO/Mg2Vy7mgTXGc/ZoAfQG7D52HG1GgxNxiEFZ+awmmt3fA4cMnC/Y5fL3gikjLySD3QZFMK6BXKzzaEE3m7K7L4BFTD6+XZDh0rojTy7ZUFFrFaOzaEyPOM3LKiB1UBZ06EWeip/TQNqYryvXxtq036bOK+v89f+sw1QgNlP3QMlvOfPR2r66PH7DijSuetMVWc/9gKUWXzrJiCiU7IOYyGOwYOjEHG4Tk4RYMycsZ8DGauc0btoy2w3Un2zRTp3NQeF9oGcPSAcbYwiHwV6gvWxNkGRMHhxxfNYY32SydzuLVWXJK3vsrkboIhIZfqSmovA+kDroQheqNvhLfVY72lQogNEfwMCTLkehYFUt8oGH62DgsHrhalLy9nU8WnRwiWHYFO2cNltgyjcNsRNSzwy1AObvS6k/hkQLO+yuqw+D2Eci+d1tRHiGoeH5HTLvayGHBTh91LPV9V94jNBfKRoTyTpgTbsVymqVB7QihNSacSapMJsSCsLaUUprSQmFuT0doDejNBbIYw9m8rl6axKJ+fnT8H37P9rQnELbC5/W+ClKW2BvwCFfW2a7K4CggAAAABJRU5ErkJggg==);
+		&.in 
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAMAAABEH1h2AAAApVBMVEVHcEwMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrMMdrP///+Gu9nx9/vS5vHh7vakzONnqtAggbq62OoPeLQ0jMDI4O6ax+Cv0uZ+ttdTnsro8vjX6PJFl8X3+/1co8zc7PRvrtKKvdq/PfuWAAAAHnRSTlMAgflC0wNiy/0l8FWUTQ839Ank3MV7o+EGWzNanqtzKWn4AAAB2ElEQVR4AaXX63KiMBjG8QcVEqhgPYB2nD5sreJB66Ht7v1f2hJ3u9YoG0J+nzLM/DuZ+iHviwpJnGZi8Eg+DkSWxgkshJ6QvCKFF6IWfzriXaOpb46DISsNA8Mf6An+l+ihWr8raSC7fVQIO6yhE+KudsRaojbueGixptbDnVqyNnnTt1u00NLuH0a0EoX4pt+hpU4fF11a6+KfNu3JHv7yO2xA+PgjYCMBzvwhNT+Ph3lBk6EP5emmzkuzFU2mUAQ1x1w50USgFFJ3yJU9jUIAHnVzVb8XNPLu3Z3FrKw/aCaARPLG6vRRsAaZIKaDGCl1q/WipC6/V4c1i7flZrnd81aKjDd+5KVXkjN1WCze87NlQV0GYcp3+ZcddQIDQ/7dmpoBIov8FzWPoDE/nlbFPFeW1Jnz85VXn+r0SU3LfPkNla06HqiJzP+63eXbC6/JsfmHm1fnFMhc8gypS54idsljJLJ5LhNANM8FAK957gEIm+chSiNq3l5KM5Ibddhevr3yykh7Jiw9aY+UnaHv/EQqvnB6oNGTjccDh+HEYTQSE/fBzH0sdB9K3Udi94HcdR1wXUYcVyHFD8asNA58mEyCqjUwmDgtoRaS2Hv+WoGfvcoV+Df8XmI1IbHkUAAAAABJRU5ErkJggg==);
+		&.tw 
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAMAAABEH1h2AAAAnFBMVEVHcExzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOFzyOH////5/f6Ez+X+//99zOTK6/TS7vbC5/K95fHx+vym3Ox4yuLr9/u14u/a8feO0+fl9frf8/mv4O6Y1+md2evegkSYAAAAHnRSTlMAQvDkzWL5/cgDCZRV1E0Pf/QmNyN7o9vdW1oqgauVcTk7AAACIklEQVR4AaXX636iMBAF8CmgQa3QVrSX0hMQ8H5B+/7vtuzqbkmYrEL+348Mw89khgzCYDrz3Wfg2fVn0yCkFqInX0Ah/KeI7jL48MHyPwa3w71XCLAEXns3fmDi4b+8CZkNRwI3iNGQDF7GuMP4hVgPDu7iPBDjsY879R+ZtMDdRCP/0EcLfa3+FwetOEr/hmO0NK5/vxFaG9VeHO2JCV0NxujAG9BFD530rg9/Qyevl8e/o6MP+s1HRz5VPnHLZlcmyXaRonJAzWcVj6HZLKE4rOQfyTo9lTlqYq72tVTyaSJ/bDOt+lBAk0uZb/DPvp5eL0/4IUIKoCuklMcDrlKpKFAX0BS6pazMF9nfV6lRyqpMaQbd+dqp/IzKSdaUUM24r17Kq1WxXC9lzb7x5V3osnQlDQqoXHKgy/f5XPKWUD0TGnbSaA0NE0/n0iSFqk9Oi8cfoXHIRdNC8nbQvPF/1++Se4Ekg8anGZoO+zLh+66Z0RSMUjJWGXRTCsBIt7JhfkZDQKEAIyvmXN80IjQedenpKOsWhsMuNsQLvm36YRVx2bVa/OobnIg5qM/FcaU1Lc/A8dlrItsp8SRPwXs3XVKHU1VCMk+2+8X35sYlZXlF0sCzuqBpImzGA9vhpMNo5A2tBrPIfiy0H0rtR2L7gdx+HbBaRixWIW0Rc2HkNhcxPV79gGkN5MNNUezpS6gXR9RCGMRf3mUF9r5i4wr8Cyf/ZBVuw2W/AAAAAElFTkSuQmCC);
+.footer
+	background-color: #1e232a
+	+padlr(10px)
+	+rm(600)
+		+padlr(25px)
+	.row 
+		display: block
+		+rem(padding-top,30px)
+		+rem(padding-bottom,50px)
+		+padlr(30px)
+		.columns
+			display: block
+			width: 100%
+			&>.text
+				+rem(font-size,12px)
+				.copy
+					+rem(font-size,24px)
+					display: inline-block
+					vertical-align: top
+					+rem(padding-right,20px)
+				.copytext
+					display: inline-block
+					vertical-align: top
+					+rem(padding-top,10px)
+
+	.block-contact
+		+rem(padding-top,5px)		
+	.text
+		color: color(footertext)
+		&.gray 
+			opacity: .3
+		a
+			transition: color .3s, opacity .3s
+			&[href^="tel:"]
+				color: color(footertext)
+				&:active
+					color: color(white)
+			&[href^="mailto:"],&[href^="skype:"]
+				color: color(white)
+				&:active
+					color: #d8d8d8 
+.col 
+	display: flex 
+	flex-flow: column nowrap
+	justify-content: space-between
+	height: 100%
+.footer-nav 
+	+rem(margin-bottom,30px)
+	font-size: 0
+	li 
+		+rm(600)
+			width: 50%
+			display: inline-block
+			vertical-align: top
+			a
+				+rem(font-size,24px)
+	&-link 
+		display: block
+		+rem(padding,9.5px 0)
+		+tr(color .3s)
+
+		&:active,&.active
+			color: color(white)
+		&.active
+			pointer-events: none
+.block-contact
+	.text
+		line-height: 1.444;
+		&.gray 
+			+rem(margin-bottom,10px)
+			+rem(max-width,250px)
+.margin-out
+	display: block
+	width: auto !important
+	+rem(margin,0 -10px)
+	+rm(600)
+		+rem(margin,0 -25px)
+.padding-out
+	+padlr(30px)
+.dots-wrap
+	font-size: 0
+	li 
+		display: inline-block
+		vertical-align: middle
+		+rem(width,12px)
+		+rem(height,12px)
+		+rem(padding,3px)
+		+tr(opacity .3s)
+		opacity: .5
+		&:not(:first-child)
+			+rem(margin-left,6px)
+		&.slick-active
+			opacity: 1
+		button 
+			display: inline-block
+			width: 100%
+			height: 100%
+			font-size: 0
+			background-color: color(white)
+			border-radius: 50%
+
+
+.promo-slider
+	position: relative
+	width: 100%
+	padding-bottom: 120%
+	.btn
+		position: absolute
+		+rem(left,30px)
+		+rem(bottom,34px)
+		z-index: 3
+	.dots-wrap
+		position: absolute
+		+rem(right,10px)
+		z-index: 3
+		+rem(bottom,25px)
+	.slick-slider .slick-list, .slick-slider .slick-track
+		transform: none !important
+	&-wrap
+		+coverdiv
+	&-inner
+		width: 100%
+		height: 100%
+		position: relative
+		+tr(opacity .3s)
+		transition-delay: .4s
+		will-change: transform, opacity
+		.slick-arrow
+			position: absolute
+			width: 50%
+			height: 100%
+			top: 0
+			bottom: 0
+			opacity: 0
+			z-index: 2
+			&.slick-prev
+				left: 0
+				cursor: url(/img/slidearrw2.svg), auto
+				display: none
+			&.slick-next
+				right: 0
+				cursor: url(/img/slidearrw2.svg), auto
+				width: 100%
+		.slick-list,.slick-track
+			width: 100%
+			height: 100%
+		&:not(.slick-initialized)
+			opacity: 0
+			transition-delay: 0
+		// &.slick-initialized
+		.promo-slider-item
+			&.slick-current
+				transition-delay: .3s!important
+				.cont-left
+					opacity: 1
+					transform: translate3d(0,0,0)
+					transition-delay: .8s
+	&-item
+		height: 100%
+		pointer-events: none
+		width: 100%
+		+nosel
+		&:not(.slick-current)
+			transition-delay: .5s!important
+		&-inner
+			width: 100%
+			// +rem(min-height,410px)
+			position: relative
+			height: 100%
+			z-index: 1
+			+rem(padding-top,40px)
+			*
+				backface-visibility: hidden
+			.cont-inner
+				height: 100%
+				position: relative
+				z-index: 0
+				width: 100%
+				.title
+					position: relative
+					&:before
+						content: ''
+						display: inline-block
+						position: absolute
+						left: 0
+						right: 0
+						bottom: 0
+						+rem(height,50px)
+		&-img
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			top: 0
+			.img-wrap
+				display: block
+				width: 100%
+				height: 100%
+				+cover
+				background-position: bottom center
+.cont 
+	&-inner
+		display: flex 
+		flex-flow: row nowrap
+		justify-content: space-between
+		height: 100%
+		align-items: flex-start
+	&-left
+		transition: opacity 1s, transform 1s
+		transform: translate3d(0,50%,0)
+		opacity: 0	
+		.text  
+			color: rgba(255, 255, 255, 0.502);
+			line-height: 1.444;
+			+rem(padding-left,5px)
+			+rem(margin-bottom,10px)
+
+
+.margin
+	+rem(margin,30px 0)
+	+rm(600)
+		+rem(margin,45px 0)
+.row 
+	&.gray 
+		.columns
+			&>div,&>a
+				background-color: color(gray)
+.text-top
+	.block-text
+		+rem(padding-top,20px)
+		.col
+			justify-content: flex-start
+			.title
+				+rem(margin-bottom,35px)
+.block
+	position: relative
+	z-index: 0
+	&.gray
+		background-color: color(gray)
+	&-text
+		+rem(padding-top,80px)
+		+rem(padding-bottom,40px)
+		+padlr(80px)
+		height: 100%
+		+r(1200)
+			+padlr(30px)
+		.link-arr
+			+rem(margin-top,50px)
+		.title
+			+rem(margin-bottom,50px)
+		ul 
+
+			display: block
+			
+			li 
+				display: block
+				position: relative
+				+rem(font-size,18px)
+				line-height: 1.444;
+				+rem(margin,13px 0)
+				+rem(padding-left,43px)
+				&:before
+					content: ''
+					display: inline-block
+					background-color: color(brand)
+					+rem(width,9px)
+					+rem(height,9px)
+					position: absolute
+					+rem(left,2px)
+					+rem(top,7px)
+	&-wrap 
+		width: 100%
+		border-bottom: 1px solid #e5e5e5
+		+rem(padding-bottom,25px)
+		display: block
+		
+		img 
+			display: block
+			max-width: 100%
+			+rem(margin, 20px auto)
+			&:not(.fade-in)
+				height: 0
+				padding-bottom: 56.25%
+		.text.primary
+			+rem(margin-bottom,20px)
+.quality
+	&-title
+		width: 31%
+		+rem(padding-left,20px)
+		+rem(padding-bottom,20px)
+	&-text
+		width: 29%
+		+rem(padding-bottom,20px)
+	&-item 
+		+padlr(19px)
+		width: 20%
+		+rem(padding-bottom,20px)
+		transition: transform .45s, opacity .5s
+		transform: translateY(100px)
+		opacity: 0
+		&-outer
+			border: 1px solid #c9c9c9
+			border-radius: 4px
+			overflow: hidden
+			padding-bottom: 100%
+			width: 100%
+			position: relative
+
+		&-inner
+			+coverdiv
+			+vertical 
+			+padlr(35px)
+			img 
+				display: inline-block
+				vertical-align: middle
+				max-width: 100%
+				+rem(max-height,100px)
+	&-wrap 
+		display: flex
+		flex-flow: row wrap 
+		align-items: center
+		+padlr(28px)
+		+rem(padding-left,60px)
+		+r(1200)
+			+padlr(0px)
+			+rem(margin-right,-19px)
+			// +rem(padding-left,10px)	
+.anim-cont.active
+	.quality-item
+		transform: none
+		opacity: 1
+		&:nth-child(3)
+			transition-delay: .1s
+		&:nth-child(4)
+			transition-delay: .2s
+		&:nth-child(5)
+			transition-delay: .3s
+		&:nth-child(6)
+			transition-delay: .4s
+		&:nth-child(7)
+			transition-delay: .5s
+		&:nth-child(8)
+			transition-delay: .6s
+		&:nth-child(9)
+			transition-delay: .7s
+		&:nth-child(10)
+			transition-delay: .8s
+		&:nth-child(11)
+			transition-delay: .9s
+		&:nth-child(12)
+			transition-delay: 1s
+		&:nth-child(13)
+			transition-delay: 1.1s
+		&:nth-child(14)
+			transition-delay: 1.2s
+		&:nth-child(15)
+			transition-delay: 1.3s
+		&:nth-child(16)
+			transition-delay: 1.4s
+		&:nth-child(17)
+			transition-delay: 1.5s
+		&:nth-child(18)
+			transition-delay: 1.6s
+		&:nth-child(19)
+			transition-delay: 1.7s
+		&:nth-child(20)
+			transition-delay: 1.8s
+.next 
+	display: block
+	position: relative
+	overflow: hidden
+	+rem(height,320px)
+	&:hover
+		.block-bg-inner
+			transform: scale(1.05)
+			&:before
+				opacity: .6
+		.block-link-arrow-arrow
+			transform: translateX(20px)
+.block-bg
+	+coverdiv
+	z-index: -1
+
+	&-inner
+		position: relative
+		width: 100%
+		height: 100%
+		+tr(transform .45s linear)
+		&:before
+			content: ''
+			+coverdiv
+			height: 200%
+			background-color: rgb(30, 35, 42);
+			opacity: 0.8;
+			+tr(opacity .4s ease-in-out)
+			z-index: 1
+	&-img
+		filter: grayscale(100%)
+		width: 100%
+		height: 200%
+		margin-top: -10%
+		+cover
+.block-link
+	height: 100%
+	.row
+		height: 100%
+		.columns
+			padding-left: 0
+			.text 
+				color: #acadae
+	&-arrow
+		font-size: 0
+		&>div
+			display: inline-block
+			vertical-align: middle
+			svg 
+				color: color(white)
+		&-text 
+			width: calc(100% - 4rem)
+		&-arrow 
+			+rem(width,43px)
+			+tr(transform .3s cubic-bezier(0, 0, 0.1, 0.96))
+			svg
+				width: 100%
+
+
+.slider-nav
+	font-size: 0
+	.slick-arrow
+		display: inline-block
+		vertical-align: top
+		+rem(width,35px)
+		+rem(height,25px)
+		background: 0 0
+		.icon 
+			width: 100%
+			height: 100%
+			text-align: left
+		svg 
+			height: 100%
+			width: auto	
+			.starrs0
+				+tr(fill .3s)
+		&.slick-next
+			.icon
+				transform: scale(-1,1)
+		&.slick-disabled
+			.starrs0
+				fill: #b9c5d8
+				
+				
+.team 
+	.title
+		+rem(max-width,400px)
+	.text.primary 
+	&-wrap
+		+rem(padding-top,60px)
+	&-inner 
+		position: relative
+	&-slider
+		margin-right: -50%
+	&.active
+
+	&-slide
+		font-size: 0
+		
+	&-item 
+		+rem(margin,0 8px)
+		height: auto !important
+		&-inner 
+			// display: flex
+			// // width: 100%
+			// flex-flow: column nowrap
+			// justify-content: flex-end
+		&-img 
+			overflow: hidden
+			// +rem(max-height,340px)
+			position: relative
+			height: 0
+			padding-bottom: 140%
+			background-color: #f5f5f5
+			&-inner
+				+coverdiv
+				+cover 
+				background-position: bottom center
+				contain: paint
+		&-text 
+			+rem(height,100px)
+			+rem(padding-top,40px)
+			+rem(padding-left,30px)
+		&-nam
+		&-who 
+			position: relative
+			color: #878a8e
+			+rem(margin-top,4px)
+
+			&:before
+				position: absolute
+				content: ''
+				+rem(top,12px)
+				+rem(left,-23px)
+				+rem(width,17px)
+				display: inline-block
+				height: 1px
+				background-color: #878a8e
+				transform-origin: left center
+				// transform: scaleX(0)
+			// +rem
+
+
+.comp
+	&-wrap 
+		background-color: color(brand)
+		&-inner
+			font-size: 0
+			overflow: hidden
+			white-space: nowrap
+		&-element
+			display: inline-block
+			will-change: transform
+			animation: logos 60s linear infinite;
+			
+	&-item
+		+rem(height,90px)
+		display: inline-block
+		vertical-align: middle
+		+rem(width,150px)
+		&-inner 
+			width: 100%
+			height: 100%
+			+vertical
+			+padlr(25px)
+			img 
+				+rem(max-height,40px)
+				display: inline-block
+				vertical-align: middle
+				max-width: 100%
+				
+@keyframes logos
+	0%
+		transform: translateX(0)
+	to
+		transform: translateX(-100%)
+.projects
+	&-wrap
+		position: relative
+		+rem(padding-top,30px)
+		+tr(background-color .3s)
+	&-outer
+		+rem(margin-top,-30px)
+		+rm(600)
+			+rem(margin-top,-45px)
+	&-slider
+		position: relative
+		+rem(padding-bottom,50px)
+		+rem(margin-top,40px)
+		width: 100%
+		display: block
+		
+		.dots-wrap
+			position: absolute
+			+rem(right,10px)
+			+rem(bottom,20px)
+		&-inner 
+			+rem(max-width,200px)
+			width: 100%
+	&-bgwrap
+		+coverdiv
+		z-index: -1
+		background-color: color(brand)
+		overflow: hidden
+		*
+			height: 100%
+		&:before
+			content: ''
+			+coverdiv
+			z-index: 2
+			opacity: .5
+			background-image: linear-gradient( 90deg, rgb(0,0,0) 0%, rgb(0,0,0) 100%);
+		&-inner
+			width: 100%
+			height: 100%
+			position: relative
+
+
+
+	&-bgitem
+		&-inner 
+			width: 100%
+			height: 100%
+			+cover
+	&-content
+		+padlr(10px)
+		+rm(600)
+			+padlr(25px)	
+		.title
+			+rem(margin-bottom,20px)
+		.text.primary
+			+rem(max-width,360px)
+			+rem(min-height,170px)
+.tabs
+	&-item 
+		display: block
+		text-align: left
+		cursor: pointer
+		position: relative
+		&.slick-active
+			.tabs-item-block
+				transform: translateY(-50%)	
+			.tabs-item-line
+				left: 0
+				right: 0
+				width: 100%
+		&:not(.slick-active)
+			.tabs-item-line
+				transition-duration: .4s !important
+		&-container
+			position: relative
+			overflow: hidden
+			&:before
+				content: ''
+				display: inline-block
+				height: 1px
+				background-color: color(white)
+				opacity: .2
+				position: absolute
+				left: 0
+				right: 0
+				top: 0
+				+tr(opacity .4s)
+		&-inner
+			position: relative
+			overflow: hidden
+			+rem(height,32px)
+			font-weight: 400
+			+rem(margin-top,7px)
+			font-family: $r
+		&-block 
+			color: color(white)
+			+rem(line-height,35px)
+			transition: color .4s, transform .4s
+			will-change: transform
+			&:after
+				display: block
+				content: attr(data-text)
+				color: color(white)
+		&-line
+			height: 1px
+			+tr(width 5s linear)
+			background-color: color(white)
+			// width: 0
+			backface-visibility: hidden
+			will-change: width
+			position: absolute
+			top: 0
+			width: 0;
+			left: auto;
+			right: 0;
+
+
+.anim-cont
+	transition: opacity .3s ease-in,transform .6s ease-out;
+	&:not(.active)
+		opacity: 0
+		transform: translateY(50px);
+.js-image
+	+tr(opacity .3s)
+	opacity: 0
+	&.fade-in 
+		opacity: 1
+
+.bread
+	&-cont
+		+rem(margin-bottom,22px)
+	&-item
+		+rem(font-size,18px)
+		color: color(white)
+		+tr(opacity .3s)
+		opacity: .5
+		line-height: 1.444;
+		&:hover
+			+notouch
+				opacity: 1
+				&:after
+					opacity: .5
+		&:active
+			 opacity: 1
+			 &:after
+				opacity: .5
+		&:after
+			content: '/'
+			display: inline-block
+			+padlr(10px)
+			+tr(opacity .3s)
+.page-head
+	width: 100%
+	position: relative
+	overflow: hidden
+	&-block 
+		z-index: 2
+	.block-bg-inner
+		&:before
+			display: none
+	&.head-big
+		.page-head-inner
+			+rem(padding-top,252px)
+		.page-head-gradient
+			height: 160%
+	&.page-head-gray
+		overflow: visible
+		.page-head-inner
+			// position: relative
+			
+		.block-bg
+			background-color: color(gray)
+		.bread-item
+			color: color(brand)
+			&:after
+				color: color(brand)
+			// &:hover
+			// 	color: color(black)
+			// 	&:after
+			// 		color: color(brand)
+		.columns
+			padding: 0
+	&-inner
+		position: relative
+		z-index: 0
+		+padlr(40px)
+		+rem(padding-bottom,60px)
+		+rem(padding-top,75px)
+	&-gradient
+		display: block
+		+coverdiv
+		height: 170%
+		z-index: 1
+		top: -10%
+		background-image: linear-gradient( 0deg, rgba(23,62,126,0.90196) 0%, rgba(23,62,126,0.2) 100%);
+	&-content
+		position: relative
+		z-index: 2
+		
+.prod 
+	&-elem 
+		+rm(1201)
+			+rem(padding-left,40px)
+		+rem(padding-top,60px)
+		+rem(padding-bottom,55px)
+		overflow: hidden
+		&:not(:last-child)
+			border-bottom: 1px solid #cccccc
+		&:not(.hovered)
+			.carousel_layout-container
+				+rem(padding-left,70px)
+				.carousel_navi
+					transform: translateX(100%) rotate(-300deg)
+					opacity: 0
+					transition-delay: .5s
+				.carousel_layout-item
+					&:nth-child(2)
+						.carousel_layout-bg
+							transform: translateX(4%)
+					&:nth-child(3)
+						.carousel_layout-bg
+							transform: translateX(6%)
+		.title
+			+rem(margin-bottom,30px)
+			+rem(margin-top,20px)
+		.text 
+			+rem(max-width,270px)
+		.link-arr
+			+rem(margin-top,40px)
+			+r(1450)
+				+rem(margin-bottom,50px)
+		.columns
+			.col 
+				justify-content: space-around
+			&:nth-child(2)
+				padding-right: 0!important
+				// +rem(padding-left,90px)
+			&:nth-child(1)
+				+rem(padding-right,50px)
+				+rem(padding-bottom,20px)
+	&-image 
+		position: relative
+		height: 0
+		padding-bottom: 68%
+		+rem(margin-left,-15px)
+		display: block
+		overflow: hidden
+		
+		&-inner
+			+coverdiv
+			height: auto
+			margin-top: -5%
+		&-outer
+			display: block
+	&-eleminner
+		&.news 
+			.prod-eleminner-content
+				padding-top: 0
+			.prod-eleminner-content-inner
+				max-width: 100%
+				+rem(padding-right,80px)
+				+r(1300)
+					+rem(padding-right,50px)	
+		.columns
+			&:nth-child(2)
+				padding-right: 0!important
+		&-images
+			img
+				display: block
+				max-width: 100%
+
+				&:not(:last-child)
+					+rem(margin-bottom,45px)
+		&-content
+			+rem(padding-bottom,50px)
+			+rem(padding-top,30px)
+			+rem(padding-left,40px)
+			+rem(padding-right,30px)
+			// backface-visibility: hidden
+			// transform: translateX(0)
+			display: block
+			
+			+r(1300)
+				padding-left: 0	
+			&-inner
+				+rem(max-width,392px)
+				+rem(margin-bottom,60px)
+
+.content 
+	p 
+		+rem(font-size,18px)
+		line-height: 1.444;
+		color: color(textblk)
+		+rem(margin,13px 0)
+	.primary
+		+rem(padding-bottom,10px)
+		// border-bottom: 1px solid color(grayl)
+		// +rem(padding-right,45px)
+		+rem(margin-bottom,40px)
+	hr 
+		display: block
+		height: 1px
+		border: 1px solid
+		border-color: color(grayl)
+		border-bottom-color: transparent
+		+rem(margin,30px 0 42px)
+	.text.gray 
+		+rem(margin,30px 0 )
+	.link-arr.down
+		+rem(margin-bottom,15px)
+	.type-wrap
+		+rem(margin-bottom,25px)
+		.type-item
+			+rem(width,42px)
+			+rem(height,42px)
+	ul 
+
+		display: block
+		
+		li 
+			display: block
+			position: relative
+			+rem(font-size,18px)
+			line-height: 1.444;
+			+rem(margin,13px 0)
+			+rem(padding-left,43px)
+			&:before
+				content: ''
+				display: inline-block
+				background-color: color(brand)
+				+rem(width,9px)
+				+rem(height,9px)
+				position: absolute
+				+rem(left,2px)
+				+rem(top,7px)
+
+.carousel_layout-container
+	display: block;
+	position: relative;
+	z-index: 1;
+	+rem(margin-left,-105px)
+	+rem(padding-left,100px)
+	+tr(padding-left .35s ease-in)
+	will-change: padding-left
+	.carousel_layout
+		// width: 955px;
+		// height: 675px;
+		+rem(height, 450px);
+		margin: 0 auto;
+		position: relative;
+		width: 100%
+		perspective: 1200px;
+		display: block
+		+r(1370)
+			+rem(height, 420px);
+		+r(1100)
+			+rem(height, 350px);
+		.carousel_layout-item
+			position: absolute;
+			top: 0;
+			left: 0;
+			// width: 1180px;
+			width: 100%
+			height: 100%;
+			overflow: hidden;
+			perspective-origin: 0 0;
+			will-change: transform
+			&:first-of-type
+				z-index: 3;
+			&:nth-of-type(2)
+				z-index: 2
+			&:nth-of-type(3)
+				z-index: 1
+			.carousel_layout-bg
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				+tr(transform .35s ease-in)
+				img
+					position: absolute;
+					display: block;
+					// top: -10%;
+					width: 100%;
+					user-select: none;
+	.carousel_navi
+		position: absolute;
+		top: 38%;
+		+rem(left,-40px)
+		z-index: 10;
+		+rem(padding,50px 40px 50px 40px)
+		transition: transform .4s, opacity .25s
+		cursor: pointer
+		transition-delay: 0s
+		+nosel
+		&:hover
+			.icon
+				transform: rotate(10deg);
+				transition: transform .3s;	
+		&.spin
+			.carousel_layout-next
+				transform: rotate(360deg);
+				transition: transform .4s;
+		.carousel_layout-next
+			+rem(width, 25px);
+			+rem(height, 25px);
+			.icon
+				display: block;
+				width: 100%;
+				height: 100%;
+				svg
+					+rem(width, 25px);
+					+rem(height, 25px);
+			&:hover
+				cursor: pointer;
+
+.prod-nav
+	position: fixed
+	left: 0
+	+rem(top,80px)
+	z-index: 8
+	width: 100%
+	visibility: hidden
+
+	&.active 
+		.prod-nav-inner 
+			transform: none
+	&-inner 
+		+tr(transform .35s ease-in-out)
+		transform: translateY(-120%)
+		visibility: visible
+		will-change: transform
+	.columns
+		&:nth-child(1)
+			text-align: left
+			.prod-nav-link-text
+				+rem(padding-left, 70px)
+			.prod-nav-link
+				&:hover 
+					.prod-nav-link-icon
+						transform: translateX(20px)
+		&:nth-child(2)
+			text-align: right
+			.icon
+				transform: scale(-1,1)
+			.prod-nav-link
+				justify-content: flex-end
+				&:hover 
+					.prod-nav-link-icon
+						transform: translateX(-10px)
+				.prod-nav-link-text
+					order: 1
+					+rem(padding-right, 70px)
+				.prod-nav-link-icon
+					order: 2
+
+	&-link
+		display: inline-block
+		font-size: 0
+		color: color(white)
+		display: flex
+		flex-flow: row nowrap
+		align-items: center
+		+rem(height,60px)
+		.icon 
+			+rem(width,12px)
+			+rem(height,21px)
+
+			svg 
+				width: 100%
+				height: 100%
+		&-text 
+			+rem(font-size,12px)
+			text-transform: uppercase;
+			line-height: 1.667;
+			white-space: nowrap
+		&-icon
+			+tr(transform .3s cubic-bezier(0, 0, 0.1, 0.96))	
+
+
+.brand 
+	background-color: color(brand)
+// .projects
+// 	// +padlr(0px)
+// 	.columns,.columns:first-child,.columns:last-child
+// 		+padlr(5px)
+// 		+rem(padding-top,4.5px)
+// 		+rem(padding-bottom,4.5px)
+// 		&.large-4
+// 			.project-item-arrow
+// 				display: none
+// 			.text.primary
+// 				+rem(font-size,18px)
+// 			.project-item-bg-inner
+// 				&:before
+// 					// background: color(brand)
+// 					transition-delay: .3s
+// 			.project-item-content-text
+// 				.text
+// 					+cut(5)
+// 				+r(1300)
+// 					.text 
+// 						+rem(font-size,14px)
+// 	&-inner
+// 		+rem(margin,20px -5px 55px)
+// 	&-row 
+// 		&.row-blue
+// 			.project-item
+// 				padding-bottom: 44.5%
+// 				+r(1300)
+// 					padding-bottom: 50%
+// 				+r(1040)
+// 					padding-bottom: 55%
+// 				&:hover
+// 					.project-item-bg-inner
+// 						&:after
+// 							opacity: 0
+// 			.project-item-arrow
+// 				display: none
+// 			.project-item-bg-inner
+// 				&:before
+// 					background: color(brand)
+// 			.project-item-content-text .text
+// 				+cut(6)
+// 			.project-item-content-head
+// 				.text.primary
+// 					+r(1200)
+// 						+rem(font-size,23px)
+// 			.project-item-content-text
+// 				+r(1300)
+// 					padding-right: 0
+// 				// +r(1500)
+// 				// 	+rem(font-size,)
+				
+.project
+	&-item
+		display: block
+		// height: 0
+		position: relative
+		padding-bottom: 67%
+		z-index: 0
+		.text 
+			color: color(white) !important
+		&:hover
+			.project-item-content-head
+				bottom: 100%
+				transform: translateY(100%)
+				transition-delay: .3s
+			.project-item-content-text
+				opacity: 1
+				transform: none
+				transition-delay: .4s
+			.project-item-arrow
+				opacity: 1
+				transition-delay: .4s
+				.icon 
+					transform: none
+					opacity: 1
+					transition-delay: .4s
+			.project-item-bg-inner
+				transform: scale(1.098)
+				&:after
+					opacity: 0
+				&:before
+					opacity: 1
+			.project-item-bg-image
+				
+				zoom: 110%
+				transition-delay: .2s
+			.project-item-bg-inner
+
+
+					// transition-delay: .2s
+		&-bg 
+			+coverdiv
+			z-index: -1
+			overflow: hidden
+			background-color: color(gray)
+			font-size: 0
+			contain: paint
+			img
+				width: auto
+				height: 100%
+				display: block
+				margin: 0 auto
+				z-index: -1
+				backface-visibility: hidden
+				-webkit-font-smoothing: subpixel-antialiased;
+			&-inner
+				width: 100%
+				height: 100%
+				position: relative
+
+				+tr(transform 1s)
+				&:after
+					content: ''
+					+coverdiv
+					z-index: 1
+					+tr(opacity .5s)
+					opacity: 1
+					background-image: linear-gradient( 0deg, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.2) 15%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 100%);
+				&:before
+					content: ''
+					display: block
+					+coverdiv
+					width: 100%
+					+tr(opacity .5s)
+					opacity: 0
+					height: 100%
+					background-image: linear-gradient( 0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.5) 61%, rgba(0,0,0,0.45) 100%);
+		&-arrow
+			+rem(max-width,27px)
+			color: color(white)
+			margin-left: auto
+			transform: translateY(-13px)
+			+tr(opacity .2s)
+			transition-delay: 0s
+			opacity: 0
+			+r(1300)
+				transform: none
+			.icon,svg
+				width: 100%
+			svg 
+				+rem(height,28px)
+			.icon 
+				transition: transform .2s, opacity .2s
+				transition-timing-function: cubic-bezier(0, 0, 0.1, 0.96)
+				transform: translateX(-40px)
+				opacity: 0
+				transition-delay: .4s
+		&-content
+			+coverdiv
+			z-index: 0
+			+rem(padding,44px 39px 30px)
+			overflow: hidden
+			+r(1300)
+				+rem(padding,30px 31px 22px)	
+			&-inner
+				position: relative
+				width: 100%
+				height: 100%
+
+			&-head
+				position: absolute
+				bottom: 0
+				left: 0
+				transition: transform .5s, bottom .5s
+				transition-timing-function: cubic-bezier(0, 0, 0.1, 0.96);
+				.text
+					&:not(.primary)
+						opacity: .3
+						+rem(margin-bottom,3px)
+			&-text 
+				position: absolute
+				bottom: 0
+				left: 0
+				transition: transform .45s, opacity .45s
+				transform: translateY(50px)
+				opacity: 0
+				+rem(padding-right,35px)
+				+rem(padding-bottom,2px)
+				.text 
+					opacity: .7
+					+cut(3)
+.divider
+	display: block !important
+	width: 100% !important
+	border: none
+	height: 0
+	margin: 0
+	+rem(margin-bottom,12px)
+
+.js-select-trigger.active,.js-select-item.active,.js-select-custom.active,.input-wrapper.in-focus
+	.dropdown-target
+		transform: translateY(0)
+		opacity: 1
+		visibility: visible
+.dropdown-target
+	// +gpu
+	position: absolute
+	z-index: 25
+	// max-height: 0
+	+rem(left,-30px)
+	+rem(min-width,290px)
+	+rem(padding-top,10px)
+	opacity: 0
+	transform: translateY(-5%)
+	transition: opacity .25s, transform .25s, visibility .25s
+	visibility: hidden
+	+clr
+	.dropdown-inner
+		width: 100%
+		+rem(padding,20px 30px)
+		background: color(white)
+		box-shadow: 0px 20px 38px 0px rgba(0, 0, 0, 0.2);
+
+
+
+.sort-select
+	position: relative
+	display: block
+	z-index: 25
+	
+	&:hover,&.active
+		.sort-select-title
+			.text:not(.gray)
+				border-color: color(brandh)
+	&-title
+		display: inline-block
+		cursor: pointer
+		position: relative
+		z-index: 7
+		.text 
+			&.gray
+				+rem(margin-bottom,10px)
+			&:not(.gray)
+				color: color(brand)
+
+	&-item
+		&:hover
+			a 
+				background-color: color(gray)
+		&.active
+			a 
+				background-color: color(gray)
+				.text
+					color: color(brandh)
+		a
+			color: color(textblk)
+			position: relative
+			transition: background-color .3s,color .3s
+			display: block
+			+rem(margin,0 -30px)
+			+rem(padding,10px 30px)
+			&:hover
+				color: color(brandh)
+			.text 
+				+tr(color .3s)
+		
+.filter
+	&-wrapper
+	&-selects
+		font-size: 0
+		text-align: right
+		+rem(padding-right,30px)
+		.sort_wrapper
+			min-width: 30%
+			display: inline-block
+			vertical-align: middle
+			+rem(padding-right,20px)
+			text-align: left
+	&-tabs 
+		font-size: 0
+		text-align: right
+		+rem(padding-right,20px)
+		white-space: nowrap
+		+r(1300)
+			padding-right: 0
+		+r(1100)
+			text-align: left
+			+rem(padding-left,50px)
+		&-item 
+			display: inline-block
+			vertical-align: bottom
+			+padlr(13px)
+			text-align: center
+			+r(1300)
+				+padlr(8px)
+
+			&-inner
+				+tr(color .3s)
+				position: relative
+				+rem(padding-top,35px)
+				+rem(padding-bottom,15px)
+				+r(1100)
+					+rem(font-size,15px)
+				&:before
+					content: ''
+					display: inline-block
+					height: 4px
+					left: 0
+					right: 0
+					background-color: color(brand)
+					position: absolute
+					+rem(bottom,-8px)
+					transform-origin: left center
+					+tr(transform .4s ease-in)
+					transform: scaleX(0)
+			&:hover
+				.filter-tabs-item-inner	
+					&:before
+						transform: scaleX(.2)
+						transition-duration: .2s
+			&.active
+				pointer-events: none
+				.filter-tabs-item-inner
+					color: color(brand)
+					&:before
+						transform: scaleX(1)
+			
+.more-slider
+	&-head 
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		+rem(margin-bottom,40px)
+	&-slider
+		+rem(margin, 0 -5px)
+		.columns
+			+padlr(5px)
+			.slick-track
+				backface-visibility: hidden
+			.text.primary.white
+				+rem(font-size,18px)
+		.product
+			&-item 
+				padding-top: 0
+				padding-bottom: 0
+.product
+	&-item 
+		+rem(padding-top,25px)
+		+rem(padding-bottom,25px)
+		display: block
+		&.product-item-v2
+			.product-item-content
+				display: inline-flex
+				flex-flow: column nowrap
+				justify-content: space-between
+				+rem(min-height,160px)
+				.text
+					margin-top: 0
+				.descr
+					+cut(3)
+		&:hover
+			.text.primary
+				color: color(brand)
+			img
+				transform: scale(1.1)
+		&-inner
+			font-size: 0
+			&>div 
+				display: inline-block
+				vertical-align: middle
+		&-image
+			width: 39%
+			overflow: hidden
+			
+			&-outer
+				position: relative
+				padding-bottom: 67%
+			&-inner
+				+coverdiv
+				background-color: color(gray)
+				img 
+					display: block
+					height: 100%
+					transition: opacity .3s, transform .3s ease-in
+					margin: 0 auto
+		&-type
+			position: absolute
+			+rem(left,20px)
+			+rem(top,20px)
+
+		&-content
+			width: 61%
+			+rem(max-width,335px)
+			padding-left: 8%
+			.text.gray
+				white-space: nowrap
+			.text.primary
+				+tr(color .3s)
+				+rem(margin,5px 0 30px)
+				+cut(2)
+			.text.descr
+				+cut(2)
+.type-item
+	display: inline-block
+	vertical-align: top
+	+rem(width,35px)
+	+rem(height,35px)
+	+contain
+	+rem(margin-right,5px)
+	+rem(margin-bottom,5px)
+.contact
+	&-cont
+		img 
+			transform: none !important
+		.block-text
+			+rem(padding-top,45px)
+			+rem(padding-right,25px)
+	&-text 
+		font-size: 0
+		.link-arr
+			+rem(margin-top,60px)
+		.text.primary
+
+			+rem(margin-bottom,50px)
+		.block-contact
+			display: inline-block
+			vertical-align: top
+			width: 50%
+			+rem(padding-right,10px)
+			backface-visibility: hidden
+			a
+				font-weight: 600
+				transition: color .3s, opacity .3s
+				&[href^="tel:"]
+					color: color(text)
+					&:hover
+						color: color(brand)
+				&[href^="mailto:"],&[href^="skype:"]
+					color: color(brand)
+					&:hover
+						color: color(brandh)
+.map 
+	&-container
+		position: relative
+		padding-bottom: 39%
+		background-color: color(gray)
+		&-inner
+			+coverdiv
+.newscont
+	height: 100%
+	+rem(padding-top,50px)
+	+rem(padding-bottom,70px)
+	position: relative
+	+rem(padding-right,70px)
+	
+	.link-arr
+		position: absolute
+		left: 0
+		+rem(bottom,12px)
+	.text 
+		+rem(max-width,530px)
+		&.primary
+			+rem(margin-top,5px)
+			+rem(margin-bottom,30px)
+	&-inner 
+		display: block
+		height: 100%
+.half-title
+	+padlr(40px)
+	+r(1200)
+		+padlr(25px)
+	+r(1040)
+		+padlr(0)
+	.title 
+		+rem(padding-right,40px)
+	.text.primary
+		+rem(margin-top,-13px)
+		+rem(margin-bottom,25px)
+	.col
+		position: relative
+		.btn-cont
+			+rem(padding-bottom,30px)
+		.title
+			& + img
+				position: absolute
+				left: 0 
+				+rem(bottom, -50px)
+				transform: scale(.6)
+				transform-origin: bottom left 
+				max-width: 100%
+				+rm(1500)
+					transform: scale(.5)	
+
+.graywrap
+	background-color: color(gray)
+	+rem(padding-top,80px)
+	+rem(padding-bottom,50px)
+
+.partners-wrap
+	width: 100%
+	display: flex
+	flex-flow: row wrap
+	+padlr(20px)
+	+rem(margin-top,50px)
+	.quality-item
+		width: 33.33%
+	.quality-item-outer
+		padding-bottom: 70%
+		+r(1100)
+			padding-bottom: 85%	
+	.quality-item-inner
+		.text 
+			position: absolute
+			left: 50%
+			+rem(bottom,35px)
+			transform: translateX(-50%)
+			.text-inner
+				+rem(margin, 0 -20px)
+		img 
+			+rem(margin-top,-65px)
+.block-images
+	font-size: 0
+	+rem(margin, 50px 0 25px -14px)
+	&-item 
+		display: inline-block
+		vertical-align: top
+		width: 33.33%
+		+padlr(14px)
+		img
+			display: block
+			max-width: 100%
+.accredit
+	&-wrap
+		display: flex
+		flex-flow: row wrap 
+		+rem(margin,65px -20px 0)
+	&-container 
+		+padlr(80px)
+		+rem(margin-top,20px)
+		.quality-item
+			+rem(padding-bottom,40px)
+			&-outer 
+				padding-bottom: 85%
+
+.describe
+	+padlr(40px)
+	+rem(padding-top,80px)
+	+rem(padding-bottom,30px)
+	// +rem(margin-right,-10px)
+	.row 
+		// background-color: red
+		// +rem(margin-right,-40px)
+		margin-right: -2.4rem !important
+	.columns
+		&:not(:last-child)
+			+rem(padding-right,45px)
+		&:last-child
+			// +rem(padding-left,20px)
+	
+	.title 
+		+rem(max-width,580px)
+		+rem(padding-right,40px)
+		+rem(margin-bottom,40px)
+	&-cont
+		+rem(max-width,420px)
+		.text.primary
+			+rem(margin-bottom,20px)
+.feat 
+	&-wrap
+		// +padlr(40px)
+		+rem(margin, 0 -100px)
+		+r(1600)
+			+rem(margin, 0 -40px)
+		+r(1300)
+			+rem(margin, 0 -10px)
+		.columns
+			+padlr(20px)
+			&:first-child,&:last-child
+				+padlr(20px)	
+	&-item 
+		text-align: center
+		width: 100%
+		+rem(margin-bottom,60px)
+		.title 
+			display: inline-block
+		
+			+rem(max-width,430px)	
+			+rem(margin-bottom,30px)
+		.text 
+			+rem(max-width,350px)	
+			display: block
+			margin: 0 auto
+.feedback
+
+
+
+	&-inner
+		position: relative
+		z-index: 0
+		.slider-nav
+			position: absolute
+			width: 100%
+			+rem(max-width,960px)
+			left: 50%
+			transform: translateX(-50%)
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			+rem(top,250px)
+			z-index: 4
+			visibility: hidden
+			.slick-arrow
+				visibility: visible
+		&-bg
+			position: absolute
+			left: 0
+			right: 0
+			+rem(top,-100px)
+			+rem(height,200px)
+			z-index: 1
+			overflow: hidden
+			.slick-list
+				position: relative
+				&:before
+					content: ''
+					+coverdiv
+					z-index: 1
+					background-image: linear-gradient( 0deg, rgba(23,62,126,0.90196) 0%, rgba(23,62,126,0.2) 100%);
+
+			* 
+				height: 100%
+			&-item 
+				transition-delay: .3s !important
+				&.slick-active
+					transition-delay: 0s !important
+					&>div
+						transform: none
+						opacity: 1
+						transition-delay: 0s !important
+				&-inner 
+					transition: transform .7s,opacity .7s !important
+					+cover
+					transition-delay: .5s !important
+					transform: scale(1.1)
+					opacity: 0
+					height: 300%
+					margin-top: -8%
+		&-slider 
+			position: relative
+			z-index: 2
+			+rem(margin-top,100px)
+			+rem(padding-top,25px)
+			.slick-list
+				// overflow: visible
+	&-item 
+		transition-delay: .7s !important
+		&.slick-active
+			transition-delay: 0s !important
+			.text
+				opacity: 1
+			.feedback-item-img
+				transform: none
+				opacity: 1
+				transition-delay: 0s
+			.feedback-item-name
+				transform: none
+				opacity: 1
+				transition-delay: .2s
+			.feedback-item-text
+				transform: none
+				opacity: 1
+				transition-delay: .4s
+		&-inner
+			text-align: center 
+			display: block
+			+rem(max-width,700px)
+			+padlr(40px)
+			margin: 0 auto
+			+rem(padding-bottom,44px)
+		&-img 
+			display: inline-block
+			+rem(width,128px)
+			+rem(height,128px)
+			border-radius: 50%
+			+rem(margin-bottom,29px)
+			transition: transform .5s, opacity .5s
+			opacity: 0
+			transition-delay: .5s
+			img 
+				width: 100%
+				height: 100%
+				border-radius: 50%
+				overflow: hidden
+				object-fit: cover
+		.text 
+			transition: opacity .3s
+			opacity: 0
+		&-name 
+			+rem(margin-bottom,30px)
+			transition: opacity .3s ease-in,transform .6s ease-out
+			transform: translateY(50px)
+			opacity: 0	
+			transition-delay: .6s
+		&-text 
+			transition: opacity .3s ease-in,transform .6s ease-out			
+			transform: translateY(50px)
+			opacity: 0
+			transition-delay: .6s
+
+
+.review
+	+rem(margin,16px -3px 43px -3px)
+	.columns
+		+rem(padding,3px)
+		&:first-child,&:last-child
+			+rem(padding,3px)
+	&-item 
+		border: 1px solid #c9c9c9
+		display: flex 
+		height: 100%
+		+padlr(23px)
+		+rem(padding-top,35px)
+		+rem(padding-bottom,30px)
+		&-img 
+			+rem(height,125px)
+			+rem(padding-bottom,50px)
+			img
+				+rem(max-width,216px)
+		&-inner
+			position: relative
+			+rem(padding-bottom,95px)
+			&.cutted
+				.review-item-content
+					.text:not(.primary)
+						+rem(max-height,123px)
+					.review-trigger
+						display: inherit
+		&-who
+			position: absolute
+			bottom: 0
+			left: 0
+
+			right: 0
+			.gray 
+				color: #7c7c7b
+		&-content 
+			.primary 
+				+rem(margin-bottom,15px)
+			.text:not(.primary)
+				// +cut(5)
+				overflow: hidden
+				position: relative
+				
+			p 
+				&:not(:first-child)
+					+rem(margin-top,10px)
+			.review-trigger
+				position: absolute
+				right: 0
+				+rem(bottom,-2px)
+				cursor: pointer
+				background-color: #FFF
+				display: none
+				z-index: 1
+				+r(1200)
+					+rem(bottom,-5px)
+				&:hover
+					span 
+						color: color(brandh)
+				span 
+					color: color(brand)
+					+tr(color .3s)
+					position: relative
+					&:before
+						content: ''
+						display: inline-block
+						position: absolute
+						z-index: -1
+						+rem(left,-22px)
+						top: 0
+						background-color: #FFF
+						+rem(width,10px)
+						+rem(height,25px)
+
+.modal-layout
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	width: 100%
+	height: 100%
+	margin: 0
+	background-color: rgba(14, 59, 133,.9);
+	z-index: 200
+	opacity: 0
+	visibility: hidden
+	transition: opacity .2s, visibility .2s
+	+vertical
+	contain: paint 
+	overflow-y: auto
+	transition-delay: .5s
+	&.active
+		visibility: visible
+		opacity: 1
+		transition-delay: 0s
+		.modal-container
+			transform: translateY(0)
+			opacity: 1
+			transition-delay: .2s
+	.modal-container
+		display: inline-block
+		vertical-align: middle 
+		+rem(min-width,320px)
+		+rem(max-width,741px)
+		width: 100%
+		background: color(white)
+		position: relative
+		transform: translateY(5%)
+		transition: transform .2s, opacity .2s
+		opacity: 0
+		// overflow: hidden
+		transition-delay: 0.3s
+		+rem(padding,50px 60px)
+		+rem(margin,25px 0)
+		.review-item-inner
+			text-align: left
+	.small-link
+		cursor: pointer
+		position: absolute
+		+rem(right,0px)
+		+rem(top,0px)
+		display: inline-block
+		+rem(width,70px)
+		+rem(height,70px)
+		+vertical
+		&:after
+			content: ''
+			+rem(width,22px)
+			+rem(height,22px)
+			+contain
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAoCAMAAABU4iNhAAAAIVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAt9G3DAAAACnRSTlMAAZcDpYhQkdpguYhB+AAAAJ1JREFUeNqF1DkOxDAMBEFShw/9/8FrLWx0RLQiclTRBIyIPMLekbFhW1PgXC3/cK0pcG3ax3remaXLc4PR46UtK9g+CFUIVQhVCFUIVQhVCFUIVQhVCFUINQjtQKEXUChQqEF6pCyDUIWXUQofQikcKjCEZuOXxSCrQgKBFSXVkEwoiVB2oWxCmYUyGe0DWFFuMrCg302+gQW9H/gDB90NjUrkGHEAAAAASUVORK5CYII=);
+			display: inline-block
+			vertical-align: middle
+.search
+	&-wrapper 
+		display: block
+		+rem(max-width,680px)
+		+rem(margin-left,80px)
+		+rem(margin-bottom,40px)
+	&-inp 
+		position: relative
+		&-inp 
+			width: 100%
+			border: 1px solid color(brand)
+			display: block
+			width: 100%
+			+rem(font-size,18px)
+			color: rgb(0, 0, 0);
+			+padlr(30px)
+			+rem(padding-top,25px)
+			+rem(padding-bottom,25px)
+			font-family: "Roboto"
+		&-button
+			background: color(white)
+			position: absolute
+			right: 1px
+			top: 1px
+			bottom: 1px
+			+rem(width,80px)
+			&:hover
+				svg
+					color: color(brand)
+
+			i
+				display: inline-block
+				width: 100%
+				height: 100%
+				+vertical 
+				svg 
+					display: inline-block
+					vertical-align: middle
+					+rem(width,22px)
+					+rem(height,22px)
+	&-result
+		+rem(margin-top,100px)
+		&>.text.primary
+			&+ a
+				+rem(margin-top,40px)
+		&-item
+			display: block
+			border-bottom: 1px solid #cecece
+			+rem(padding-top,40px)
+			+rem(padding-bottom,40px)
+			font-size: 0
+			&-num,&-content
+				display: inline-block
+				vertical-align: top
+			&-num 
+				+rem(width,40px)
+				+rem(padding-top,10px)
+			&-content
+				width: calc(100% - 2.5rem)
+				b 
+					color: color(brand)
+				.primary
+					+rem(margin-bottom,5px)
+	&-pagi 
+		font-size: 0
+		+rem(margin-top,60px)
+		+rem(margin-left,-3px)
+		&-item 
+			display: inline-block
+			vertical-align: middle
+			+rem(width,45px)
+			+rem(height,45px)
+			border: 1px solid #cecece
+			+rem(margin, 0 3px)
+			+vertical
+			+tr(border-color .3s)
+			&.disabled
+				background-color: color(gray)
+				pointer-events: none
+				.search-pagi-item-inner
+					opacity: .5
+			&.active 
+				border-color: color(brand)
+				pointer-events: none
+				.search-pagi-item-inner
+					color: #000
+			&:hover
+				&:not(.dot)
+					border-color: color(brand)
+			&-inner 
+				display: inline-block
+				vertical-align: middle
+				color: #7c7c7b
+				+rem(font-size,16px)
+				svg 
+					color: color(brand)
+					+rem(width,15px)
+					+rem(height,15px)
+
+			&.nav-right
+				.search-pagi-item-inner
+					transform: scale(-1,1)
+			&.nav-right,&.nav-left
+				.search-pagi-item-inner
+					font-size: 0
+				&:hover 
+					border-color: color(brand)

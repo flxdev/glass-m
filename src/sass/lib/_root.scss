@@ -1,0 +1,21 @@
+$colors: (
+  white:  #fff,
+  brand: #0e3b85,
+  black: #000000,
+  textblk: #303234,
+  brandh: #0a2d66,
+  menuh: #173e7e,
+  footertext: #a9aaab,
+  gray: #f4f4f4,
+  grayl: #e5e5e5,
+  textgray: #c7c7c7,
+);
+:root {
+  // each item in color map
+  @each $name, $color in $colors {
+    --color-#{$name}: $color;
+  }
+}
+@function color($color-name) {
+  @return var(--color-#{$color-name});
+}
