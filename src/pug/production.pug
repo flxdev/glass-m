@@ -1,0 +1,80 @@
+extends _layout
+
+block title
+	title Production
+	- var _name = "Production"
+	- var currentPage = "Production"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Production")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner(style='background-image: url(img/head/h1.jpg)')
+											//- .block-bg-inner.js-image.bg(data-src="img/head/h1.jpg")
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+													a(href="#").bread-item Company
+												.title.h2.white Production
+						//.inner-list
+						.block.margin.anim-cont.inner-list
+							.row
+								+content('EDGE TREATMENT: POLISHING','3300 mm x 7200 mm 129,9" x 283,5','Company','/production-inner.html','img/prodinner/1.jpg','Show more')
+							.row
+								+content('HEAT SOAK TEST','3300 mm x 7200 mm 129,9" x 283,5','Company','/production-inner.html','img/prodinner/2.jpg','Show more')
+						//- 			.prod-elem(onclick='')
+						//- 				.row
+						//- 					.columns.large-6
+						//- 						.col
+						//- 							+content('EDGE TREATMENT: POLISHING','3300 mm x 7200 mm 129,9" x 283,5"','Show more','/production-inner.html')
+						//- 					.columns.large-6
+						//- 						.col
+						//- 							//- .prod-image-outer
+						//- 							//- 	.prod-image
+						//- 							//- 		.prod-image-inner(style='background-color: url(img/production/p5.jpg)')
+						//- 							//- 		.prod-image-inner.js-image.bg(data-src='img/production/p4.jpg')
+						//- 							.prod-image-outer
+						//- 								.carousel_layout-container
+						//- 									a(href="/production-inner.html").carousel_layout
+						//- 										.carousel_layout-item.active
+						//- 											.carousel_layout-bg
+						//- 												img(src='img/production/p4.jpg', alt='').js-parallax
+						//- 										.carousel_layout-item
+						//- 											.carousel_layout-bg
+						//- 												img(src='img/production/p4.jpg', alt='').js-parallax
+						//- 										.carousel_layout-item
+						//- 											.carousel_layout-bg
+						//- 												img(src='img/production/p4.jpg', alt='').js-parallax
+						//- 										//- .carousel_layout-item
+						//- 										//- 	.carousel_layout-bg.js-parallax(data-speed='10', data-direction='1')
+						//- 										//- 		img(src='img/production/p4.jpg', alt='')
+						//- 									.carousel_navi
+						//- 										.carousel_layout-next
+						//- 											.icon
+						//- 												+icon('circarr')
+						//- 			.prod-elem(onclick='')
+						//- 				.row
+						//- 					.columns.large-6
+						//- 						.col
+						//- 							+content('HEAT SOAK TEST','3300 mm x 7200 mm 129,9" x 283,5"','Show more','/production-inner.html')
+						//- 					.columns.large-6
+						//- 						.col
+						//- 							.prod-image-outer
+						//- 								a(href="/production-inner.html").prod-image
+						//- 									//- .prod-image-inner(style='background-color: url(img/production/p5.jpg)')
+						//- 									img.prod-image-inner.js-parallax(src='img/production/p5.jpg')
+
+					include includes/_footer
+
+					

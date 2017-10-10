@@ -1,0 +1,149 @@
+extends _layout
+
+block title
+	title Projects
+	- var _name = "Projects"
+	- var currentPage = "Projects"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Projects")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									// второй тип шапки, структура немного другая
+									.page-head.page-head-gray
+										.block-bg
+										.page-head-inner
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+												.row
+													.title.h2 Projects
+													.filter-wrapper
+														//select component
+														.filter-selects
+															.sort_wrapper
+																.sort-select.js-select-item
+																	.sort-select-title
+																		.text.gray By type
+																		.text.js-trgt-text All projects
+																	.dropdown-target
+																		.dropdown-inner
+																			.dropdown-content
+																				.sort-select-item.active
+																					a(href="#",data-text="All projects")
+																						span.text All projects
+																				.sort-select-item
+																					a(href="#",data-text="Commercial")
+																						span.text Commercial
+																				.sort-select-item
+																					a(href="#",data-text="Culture and education")
+																						span.text Culture and education 
+																				.sort-select-item
+																					a(href="#",data-text="Residental and hotels")
+																						span.text Residental and hotels  
+																				.sort-select-item
+																					a(href="#",data-text="Sports facil ities")
+																						span.text Sports facil ities
+																				.sort-select-item
+																					a(href="#",data-text="Transport and infrastructure")
+																						span.text Transport and infrastructure
+															.sort_wrapper
+																.sort-select.js-select-item
+																	.sort-select-title
+																		.text.gray By specification
+																		.text.js-trgt-text All projects
+																	.dropdown-target
+																		.dropdown-inner
+																			.dropdown-content
+																				.sort-select-item.active
+																					a(href="#",data-text="All projects")
+																						span.text All projects
+																				.sort-select-item
+																					a(href="#",data-text="Commercial")
+																						span.text Commercial
+																				.sort-select-item
+																					a(href="#",data-text="Culture and education")
+																						span.text Culture and education 
+																				.sort-select-item
+																					a(href="#",data-text="Residental and hotels")
+																						span.text Residental and hotels  
+																				.sort-select-item
+																					a(href="#",data-text="Sports facil ities")
+																						span.text Sports facil ities
+																				.sort-select-item
+																					a(href="#",data-text="Transport and infrastructure")
+																						span.text Transport and infrastructure
+						.block
+							.row
+								.columns
+									.projects
+										.projects-inner
+											.row.projects-row
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','1')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','2')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','3')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','4')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','5')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','7')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','8')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','9')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','10')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','11')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','12')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','13')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','14')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','15')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','16')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','17')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+												.columns.small-12.medium-6
+													+project('Norman Foster Office, London, UK','6')
+
+						+nextl('Products', 'l2','/products.html')
+					include includes/_footer
+
+					

@@ -1,0 +1,41 @@
+extends _layout
+
+block title
+	title 404
+	- var _name = "404"
+	- var currentPage = "404"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Content")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h9.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+												.title.h2.white 404
+						.block.margin.anim-cont
+							.row
+								.columns
+									.half-title
+										.title.h3 Page not found
+										.text.primary We're sorry, but this page cannot be found. It may have moved, or may not exist. You can return 
+											a(href="/") home 
+											|or try the links in the 
+											a(href="#", onclick='$(".js-menu").trigger("click")') menu
+										+next('Go to homepage')
+					include includes/_footer
+
+					

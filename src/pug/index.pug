@@ -172,7 +172,6 @@ block content
 							.columns
 								.team-wrap
 									.team-inner
-										.slider-nav
 										.team-slider.js-team-slider
 											mixin team(img,name,who)
 												.team-item
@@ -190,21 +189,21 @@ block content
 											+team('1','Dmitri Sobolevski','CEO')
 											+team('2','Valdas Virbalas','Director')
 											+team('3','Loreta Latakiene','Executive Director')
-					//- .block.margin.anim-cont
-					//- 	.row
-					//- 		.columns
-					//- 			.quality-wrap
-					//- 				.quality-title
-					//- 					.title.h3 quality control
-					//- 				.quality-text
-					//- 					.text.primary Sertifyed by more than 20 professional agen
-					//- 				+partner('1')
-					//- 				+partner('2')
-					//- 				+partner('3')
-					//- 				+partner('4')
-					//- 				+partner('5')
-					//- 				+partner('3')
+					.block.margin.anim-cont.quality
+						.row
+							.columns
+								.quality-title
+									.title.h3 quality control
+								.quality-text
+									.text.primary Sertifyed by more than 20 professional agen
+								.team-slider.js-team-slider
+									+partner('1')
+									+partner('2')
+									+partner('3')
+									+partner('4')
+									+partner('5')
+									+partner('3')
 	
-					//- +nextl('About company','l1','/about.html')
+					+nextl('About company','l1','/about.html')
 
 					include includes/_footer

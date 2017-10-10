@@ -1,0 +1,98 @@
+extends _layout
+
+block title
+	title searching
+	- var _name = "searching"
+	- var currentPage = "searching"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Content")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner(style='background-image: url(img/head/h9.jpg)')
+										.page-head-inner
+											.page-head-gradient.js-parallax(data-speed="25")
+											.page-head-content.js-parallax(data-direction="-1")
+												.bread-cont
+													a(href="/").bread-item Home
+												.title.h2.white searching results
+						.block.margin
+							.row
+								.columns
+									.search-wrapper
+										.search-head
+											form.search-inp
+												input(type="text").search-inp-inp
+												button(type='submit').search-inp-button
+													i
+														svg(class="icon icon-search")
+															use(xlink:href="#search" xmlns:xlink="http://www.w3.org/1999/xlink")
+										.search-result
+											.text.primary Please, check your request
+											+next('Go to homepage')
+										.search-result
+											mixin result
+												a(href="#").search-result-item
+													.search-result-item-inner
+														.search-result-item-num
+															.text.gray 1.
+														.search-result-item-content
+															.text.primary Please, 
+																b check 
+																|your request
+															.text.gray  Lorem 
+																b ipsum 
+																|dolor sit amet, consectetur adipisicing elit. Ut maxime iste, vero hic quae. Est omnis quod similique. Repellat molestiae nemo ex, porro sint at praesentium! Enim sapiente iure, hic.
+											+result
+											+result
+											+result
+											+result
+											+result
+										.search-pagi
+											a(href="#").search-pagi-item.nav-left.disabled
+												.search-pagi-item-inner
+													svg(class="icon icon-search")
+														use(xlink:href="#slidearr" xmlns:xlink="http://www.w3.org/1999/xlink")
+											a(href="#").search-pagi-item.active
+												.search-pagi-item-inner
+													| 1
+											a(href="#").search-pagi-item
+												.search-pagi-item-inner
+													| 2
+											a(href="#").search-pagi-item
+												.search-pagi-item-inner
+													| 3
+											a(href="#").search-pagi-item
+												.search-pagi-item-inner
+													| 4
+											.search-pagi-item.dot
+												.search-pagi-item-inner
+													| ...
+											a(href="#").search-pagi-item
+												.search-pagi-item-inner
+													| 50
+											a(href="#").search-pagi-item.nav-right
+												.search-pagi-item-inner
+													svg(class="icon icon-search")
+														use(xlink:href="#slidearr" xmlns:xlink="http://www.w3.org/1999/xlink")
+
+
+
+
+
+
+
+
+					include includes/_footer
+
+					

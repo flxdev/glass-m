@@ -1,0 +1,85 @@
+extends _layout
+
+block title
+	title accreditations
+	- var _name = "accreditations"
+	- var currentPage = "accreditations"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Content")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h8.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+													a(href="#").bread-item Company
+												.title.h2.white accreditations
+						.block.margin.anim-cont
+							.row
+								.columns
+									.half-title
+										.row
+											.title.h3 ISO INTERNATIONAL STANDARDS
+											.text.primary Our our quality management system complies with the requirements of iso 9001:2008. Our environmental management system h complies with the requirements of iso 14001:2004.
+											.block-images
+												.block-images-item
+													img.js-image(data-src="img/partners/2.png", alt="")
+												.block-images-item
+													img.js-image(data-src="img/partners/2.png", alt="")
+						.block.margin.anim-cont
+							.row.gray
+								.columns
+									.half-title
+										.row
+											.title.h3 Lean model
+											.text.primary Lean model has been introduced in glassbel company – a systematic approach to cut costs and improve efficiency by eliminating waste and non-value added activities through employee development and continuous improvement in all products and services. "Lean" is not about working harder. It is about working smarter.
+						.block.margin.anim-cont
+							.row
+								.accredit-container
+									.title.h3 ACCREDITED BY SUPPLIERS
+									.accredit-wrap
+										+partner('9')
+										+partner('10')
+										+partner('11')
+										+partner('12')
+										+partner('13')
+										+partner('14')
+										+partner('15')
+										+partner('16')
+										+partner('17')
+						.block.margin.anim-cont
+							.row
+								.accredit-container
+									.title.h3 COOPERATING WITH LEADers
+									.accredit-wrap
+										+partner('18')
+										+partner('19')
+										+partner('20')
+										+partner('21')
+										+partner('13')
+										+partner('14')
+										+partner('15')
+										+partner('16')
+										+partner('17')
+										+partner('13')
+										+partner('14')
+										+partner('15')
+										+partner('16')
+										+partner('17')
+						+nextl('Products', 'l2','/products.html')
+					include includes/_footer
+
+					

@@ -1,0 +1,86 @@
+extends _layout
+
+block title
+	title products-inner
+	- var _name = "products-inner"
+	- var currentPage = "products-inner"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Production-inner")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									// модификатор head-big
+									.page-head.head-big
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h4.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+													a(href="/products.html").bread-item Products 
+												.title.h2.white Glass-BULLETPROOF
+						.block.margin
+							.row
+								.prod-eleminner
+									.prod-eleminner-content.content
+										.prod-eleminner-content-inner
+											.type-wrap
+												.type-item(style='background-image:url(img/icons/icon-bullet-w.png);')
+											.text.primary BULLETPROOF glass has a numerous range of applications, including shopfronts, military vehicles, hospitals, government and bank institutions
+											hr
+											.text.gray Specifications
+											p Sizes of 3210x7500
+											p Thickness depends on glass bullet resistance
+											hr
+											.text.gray Download
+											+down('Broschure','21mb')
+											+down('Examples of projects','3.72mb')
+										.prod-eleminner-images.margin-out
+											img(src="img/prodinner/1.jpg", alt="")
+											img(src="img/prodinner/2.jpg", alt="")
+											img(src="img/prodinner/3.jpg", alt="")
+										+nextb('Back to Projects','/projects.html')
+						.block.margin
+							.row
+								.more-slider
+									.more-slider-head
+										.title.h3 References
+										.slider-nav
+									// модификатор w3 для 3х слайдов
+									.more-slider-slider.projects-row.js-moreslider.margin-out.w3
+										.columns
+											+project('Norman Foster Office, London, UK','8')
+										.columns
+											+project('Skywalks, Riyadh, Saudi Arabia','9')
+										.columns
+											+project('Tate Modern, London, UK','10')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','11')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','12')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','13')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','14')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','15')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','16')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','17')
+										.columns
+											+project('RRB Bank, Minsk, Belarus','17')
+
+
+					include includes/_footer
+
+					

@@ -1,0 +1,113 @@
+extends _layout
+
+block title
+	title Production
+	- var _name = "Production"
+	- var currentPage = "Production"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Production-inner",data-next-link='/production-inner-test2.html',data-prev-link='/production-inner-test.html',data-cur-text='Glass cutting')
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									// модификатор head-big
+									.page-head.head-big
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h9.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+													a(href="/projects.html").bread-item Projects 
+												.title.h2.white DANISH MARITIME MUSEUM
+						.block.margin
+							.row
+								.prod-eleminner
+									.prod-eleminner-content.content.js-stick
+										.prod-eleminner-content-inner
+											.text.primary Danish Maritime Museum features double glazed insulated glass units with super neutral HSSN70/37 coating from Guardian and laminated inner pane. Extra large sizes of units up to 1.9m*5.0m. All glass panes are heat treated, silicone sealed, and used for structurally glazed system.
+											hr
+											.text.gray Features
+											p Location: Helsinger, Denmark
+											p Volume: 1119 sqm.
+											p Architect: BIG
+											p Awards: Project of the year;
+											hr
+											.text.gray Project description
+											p The basis of Danish Maritime Museum construction in Helsinger became old dock, which was formerly used for maintenance and repair of vessels.
+											p Dock serves as a courtyard of the museum, and construction of metal and glass complements it. Outside dock is fenced with glass parapet in order not to lose the impression of depth. Moreover, there are shop windows and three two-level bridges, the lower part of which is glazed.
+											p The design concept of Museum was to transform it to a courtyard by bringing more daylight and air to this project. The impressive dimensions of insulated glass units result in a perfect and clear panoramic view.
+											p Glassbel solution allowed realizing a unique architectural design concept of the Maritime Museum. The project is a reflection of the history and modernity dialogue that shows the versatility of glass application.
+										.prod-eleminner-images.margin-out
+											img(src="img/prodinner/prodinner3.jpg", alt="")
+											img(src="img/prodinner/prodinner4.jpg", alt="")
+											img(src="img/prodinner/prodinner5.jpg", alt="")
+											img(src="img/prodinner/prodinner6.jpg", alt="")
+											img(src="img/prodinner/prodinner7.jpg", alt="")
+										+nextb('Back to Projects','/projects.html')
+						.block.margin
+							.row
+								.columns
+									.more-slider
+										.more-slider-head
+											.title.h3 Used products
+											.slider-nav
+										// модификатор w3 для 3х слайдов
+										.more-slider-slider.row.projects-row.js-moreslider
+											.columns.large-6
+												+product('1','Extra large size','Laminated glass with cut outs and inserts for point fixing')
+											.columns.large-6
+												+product('2','Glass-BULLETPROOF','Laminated glass with cut outs and inserts for point fixing')
+											.columns.large-6
+												+product('1','Extra large size','Laminated glass with cut outs and inserts for point fixing')
+											.columns.large-6
+												+product('1','Extra large size','Laminated glass with cut outs and inserts for point fixing')
+											.columns.large-6
+												+product('1','Extra large size','Laminated glass with cut outs and inserts for point fixing')
+											.columns.large-6
+												+product('1','Extra large size','Laminated glass with cut outs and inserts for point fixing')
+											.columns.large-6
+												+product('1','Extra large size','Laminated glass with cut outs and inserts for point fixing')
+						.block.margin
+							.row
+								.columns
+									.more-slider
+										.more-slider-head
+											.title.h3 SIMILAR PROJECTS
+											.slider-nav
+										// модификатор w3 для 3х слайдов
+										.more-slider-slider.row.projects-row.js-moreslider.w3
+											.columns
+												+project('Norman Foster Office, London, UK','8')
+											.columns
+												+project('Skywalks, Riyadh, Saudi Arabia','9')
+											.columns
+												+project('Tate Modern, London, UK','10')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','11')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','12')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','13')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','14')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','15')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','16')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','17')
+											.columns
+												+project('RRB Bank, Minsk, Belarus','17')
+
+					include includes/_footer
+
+					

@@ -1,0 +1,59 @@
+extends _layout
+
+block title
+	title testimonials
+	- var _name = "testimonials"
+	- var currentPage = "testimonials"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Content")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h9.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+													a(href="company.html").bread-item Company 
+												.title.h2.white testimonials
+						.block.anim-cont
+							.row
+								.columns
+									.review
+										.row.align-stretch
+											mixin review(img,title,text)
+												.columns.small-12.medium-6
+													.review-item
+														.review-item-inner
+															.review-item-img
+																img.js-image(data-src="img/partners/"+img+".png", alt="")
+															.review-item-content
+																.text.primary #{title}
+																.text.js-review-text #{text}
+																	span.review-trigger
+																		|  ...  
+																		span read more
+															.review-item-who
+																.text Ronan Lucid
+																.text.gray Contracts Manager at Alucraft Ltd.
+											+review('с1','Hope you are keeping well','We finished the main works on Burlington and thank you for your assistance over the course of the project.')
+											+review('с2','Great job!','They were very responsive to our needs in regards to changes on the fly during the installation process.  The glass was fabricated with great edgework and alignment, and it was packaged perfectly for us.  It was delivered right on dsf sdfasfas fdasfsdfas fasdfasl gnpokasngpojg nag dfasd fasdfas fsdfadsf safasdf asdfsd  ')
+											+review('с3','Hope you are keeping well','We finished the main works on Burlington and thank you for your assistance over the course of the project.')
+											+review('с1','Hope you are keeping wel 234 23423 4423423df ds fdsfs dfl','We finished the main works on Burlington and thank you for your assistance over the course of the project.')
+											+review('с2','Great job!','They were very responsive to our needs in regards to changes on the fly during the installation process.  The glass was fabricated with great edgework and alignment, and it was packaged perfectly for us.  It was delivered right on dsf sdfasfas fdasfsdfas fasdfasl gnpokasngpojg nag dfasd fasdfas fsdfadsf safasdf asdfsd  ')
+											+review('с3','Hope you are keeping well','We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.We finished the main works on Burlington and thank you for your assistance over the course of the project.')
+						+nextl('R&D', 'l2','/rd.html')
+					include includes/_footer
+
+					

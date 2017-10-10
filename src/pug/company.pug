@@ -1,0 +1,129 @@
+extends _layout
+
+block title
+	title Company
+	- var _name = "Company"
+	- var currentPage = "Company"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Content")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h9.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+												.title.h2.white Company
+						.block.margin
+							.row
+								.columns
+									.half-title
+										.row
+											.title.h3 About glassbel
+											.btn-cont
+												a(href="testimonials.html").btn.reverse
+													span Testimonials
+											.text.primary Since 2001, GLASSBEL is a leading glass processing company focusing on architectural and interior glass markets. The origins of our business philosophy go back to 1993, when we established and ran a facade cladding business.
+						.block
+							.row
+								.columns
+									.projects
+										.projects-inner
+											//модификатор .row-blue
+											.row.projects-row.row-blue
+												.columns.small-12.medium-6
+													+project('For facade contractors','c1')
+												.columns.small-12.medium-6
+													+project('For facade consultants and designers','c2')
+												.columns.small-12.medium-6
+													+project('For developers','c3')
+												.columns.small-12.medium-6
+													+project('For architects','c4')
+						.block.margin.anim-cont
+							.row
+								.columns
+									.feat-wrap
+										.row
+											.columns.small-12.medium-6
+
+												.feat-item
+													.title.h3 15+ 
+														br
+														|years
+													.text when we established and ran a facade cladding business
+											.columns.small-12.medium-6
+												.feat-item
+													.title.h3 10 000+
+														br
+														|projects
+													.text Glassbel delivers products to countries in different time zones and of different business cultures
+											.columns.small-12.medium-6
+												.feat-item
+													.title.h3 24/7
+														br
+														|support
+													.text listening and doing business as per local requirements and traditions
+											.columns.small-12.medium-6
+												.feat-item
+													.title.h3 29
+														br
+														|countries
+													.text when we established and ran a facade cladding business
+											.columns.small-12.medium-6
+												.feat-item
+													.title.h3 by sea, 
+														br
+														|air, land
+													.text Glassbel delivers products to countries in different time zones and of different business cultures
+											.columns.small-12.medium-6
+												.feat-item
+													.title.h3 up to
+														br
+														|3.2 x 7.5 m
+													.text listening and doing business as per local requirements and traditions
+						.block.margin.anim-cont
+							.row
+								.columns
+									.feedback
+										.feedback-inner
+											.feedback-inner-bg.js-feedbackslider-bg
+												.feedback-inner-bg-item.js-parallax(data-speed='24')
+													.feedback-inner-bg-item-inner(style='background-image: url(img/content/sl1.jpg)')
+												.feedback-inner-bg-item.js-parallax(data-speed='24')
+													.feedback-inner-bg-item-inner(style='background-image: url(img/index/index2.jpg)')
+												.feedback-inner-bg-item.js-parallax(data-speed='24')
+													.feedback-inner-bg-item-inner(style='background-image: url(img/index/index4.jpg)')
+											.feedback-inner-slider.js-feedbackslider-main
+												mixin slideitem(name,who,text)
+													.feedback-item
+														.feedback-item-inner
+															.feedback-item-img
+																img.js-image(data-src="img/content/1.jpg", alt="")
+															.feedback-item-name
+																.text #{name}
+																.text.gray #{who}
+															.feedback-item-text
+																.text #{text}
+												+slideitem('Tomas Lenkimas','Head of R&D dept','Glassbel puts someone in the mindset of being able to make comments based on interactivity, rather than just saying, ‘The mock-up looks great!’ but never thinking about how it actually works')
+												+slideitem('Tomas Lenkimas2','Head of R&D dept2','Glassbel puts someone in the mindset of being able to make comments based on inters')
+												+slideitem('Tomas Lenkimas2','Head of R&D dept3','Glassbel puts someone in the mindset of being able to make comments based on interactivity, rather than just saying, ‘The mock-up looks great!’ but never thinking about how it actually works  dsgsdfgdfgsd gdsfg dsgfsdfgdsg gdsfg dgdfs gsdfgf dsgdsgdsfgsd gfdgsdfgsd gdgfsdgfsdf gsdgfsdfg')
+											.slider-nav
+
+
+
+						+nextl('Products', 'l2','/products.html')
+					include includes/_footer
+
+					

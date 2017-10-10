@@ -43,34 +43,53 @@ mixin content(title,text,linktext,link,img,linktext)
         .link-arr-icon
           .icon
             +icon('arr')
+mixin content2(date,title,text,linktext,link,img,linktext)
+  a.block-wrap(href=link)
+    .text.gray #{date}
+    .title.h3 #{title}
+    img.js-image(data-src=img, alt="")
+    .block-text-content
+      .text.primary #{text}
+      .link-arr
+        .link-arr-text
+          .text #{linktext}
+        .link-arr-icon
+          .icon
+            +icon('arr')
 mixin nextl(text, img,url)
   a(href=""+url+"").block.next
     .block-bg
       .block-bg-inner
-       .block-bg-img.js-parallax(data-direction="-1" data-speed="30" style="background-image: url(img/next/"+img+".jpg)", alt="")
+       .block-bg-img.js-image.bg(data-src="img/next/"+img+".jpg")
     .block-link
       .row.align-middle
-        .columns.large-6.medium-6.large-offset-4.medium-offset-4
+        .columns
           .text What's next?
           .block-link-arrow
             .block-link-arrow-text
               .title.h3.white #{text}
             .block-link-arrow-arrow
                +icon('arr')
-mixin project(place,name,text,image)
+mixin project(name,image)
   a(href="/projects-inner.html").project-item
     .project-item-bg
-      .project-item-bg-inner
-        img.js-image(data-src='img/projects/'+image+'.jpg')
+      .project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
     .project-item-content
       .project-item-content-inner
         .project-item-arrow
           .icon
             +icon('arr')
         .project-item-content-head
-          .text #{place}
           .text.primary.white #{name}
-        .project-item-content-text
+mixin project2(name,text,image)
+  a(href="/projects-inner.html").project-item
+    .project-item-bg
+      .project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
+    .project-item-content
+      .project-item-content-inner
+        .project-item-content-head
+          .text.primary.white #{name}
+        .project-item-text
           .text #{text}
 mixin product(img,name,text,type)
   a(href="/products-inner.html").product-item

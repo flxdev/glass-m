@@ -140,7 +140,7 @@ a.title
 			&:last-child
 				transition-delay: .55s
 	&-inner
-		+rem(width,44px)
+		+rem(width,35px)
 		display: inline-block
 		vertical-align: middle
 		position: relative
@@ -149,7 +149,7 @@ a.title
 		&:before,&:after
 			content: ''
 			display: inline-block
-			+rem(width,38px)
+			+rem(width,27px)
 			height: 3px
 			position: absolute
 			background-color: color(black)
@@ -167,7 +167,7 @@ a.title
 			transform: rotate(-45deg) scaleX(0)
 		i
 			display: block
-			+rem(width,44px)
+			+rem(width,35px)
 			height: 4px
 			background-color: color(black)
 			+rem(margin,8px 0)
@@ -204,7 +204,6 @@ a.title
 		&:active
 			span
 				color: color(brand)
-
 	span
 		display: inline-block
 		text-align: center
@@ -319,7 +318,7 @@ a.title
 		.mob-menu-search
 			transition-delay: .1s
 		.mob-menu-nav
-			transition-delay: .25s
+			transition-delay: .2s
 		.mob-menu-footer
 			transition-delay: .4s
 	&-search
@@ -359,7 +358,7 @@ a.title
 		height: 100%
 		text-align: center
 		+rem(padding-top,16px)
-		+tr(opacity .3s)
+		+tr(opacity .25s)
 		transition-delay: 0s
 		opacity: 0
 		overflow-y: auto
@@ -374,12 +373,12 @@ a.title
 			.mob-menu-nav
 				display: inline-block
 				vertical-align: middle
-				transition: transform .5s ease-in-out, opacity .5s
+				transition: transform .4s ease-in-out, opacity .4s
 				opacity: 0
 				transform: translateY(70px)
 
 	&-footer
-		transition: transform .5s ease-in-out, opacity .5s
+		transition: transform .45s ease-in-out, opacity .45s
 		opacity: 0
 		transform: translateY(70px)
 		.nav-sublink
@@ -418,6 +417,8 @@ a.title
 		line-height: 1.667;
 		color: color(black)
 		display: inline-block
+		vertical-align: top
+		
 		width: 50%
 		+rem(padding-right,20px)
 		+rem(margin-top,4px)
@@ -604,7 +605,7 @@ a.title
 					+rem(padding-top,10px)
 
 	.block-contact
-		+rem(padding-top,5px)		
+		+rem(padding-top,5px)
 	.text
 		color: color(footertext)
 		&.gray 
@@ -790,13 +791,11 @@ a.title
 		transition: opacity 1s, transform 1s
 		transform: translate3d(0,50%,0)
 		opacity: 0	
-		.text  
+		.text
 			color: rgba(255, 255, 255, 0.502);
 			line-height: 1.444;
 			+rem(padding-left,5px)
 			+rem(margin-bottom,10px)
-
-
 .margin
 	+rem(margin,30px 0)
 	+rm(600)
@@ -806,40 +805,26 @@ a.title
 		.columns
 			&>div,&>a
 				background-color: color(gray)
-.text-top
-	.block-text
-		+rem(padding-top,20px)
-		.col
-			justify-content: flex-start
-			.title
-				+rem(margin-bottom,35px)
 .block
 	position: relative
 	z-index: 0
 	&.gray
 		background-color: color(gray)
 	&-text
-		+rem(padding-top,80px)
-		+rem(padding-bottom,40px)
-		+padlr(80px)
+		// +rem(padding-top,30px)
 		height: 100%
-		+r(1200)
-			+padlr(30px)
 		.link-arr
-			+rem(margin-top,50px)
-		.title
-			+rem(margin-bottom,50px)
+			+rem(margin-top,20px)
 		ul 
-
 			display: block
-			
 			li 
 				display: block
 				position: relative
-				+rem(font-size,18px)
+				+rem(font-size,16px)
 				line-height: 1.444;
-				+rem(margin,13px 0)
-				+rem(padding-left,43px)
+				+rem(margin,10px 0)
+				+rem(padding-left,25px)
+				color: color(textblk)
 				&:before
 					content: ''
 					display: inline-block
@@ -847,14 +832,13 @@ a.title
 					+rem(width,9px)
 					+rem(height,9px)
 					position: absolute
-					+rem(left,2px)
+					+rem(left,0px)
 					+rem(top,7px)
 	&-wrap 
 		width: 100%
 		border-bottom: 1px solid #e5e5e5
 		+rem(padding-bottom,25px)
 		display: block
-		
 		img 
 			display: block
 			max-width: 100%
@@ -864,17 +848,18 @@ a.title
 				padding-bottom: 56.25%
 		.text.primary
 			+rem(margin-bottom,20px)
+		.text.gray 
+			+rem(margin-bottom,10px)
 .quality
+	.team-slider
+		+rem(margin-left,-8px)
 	&-title
-		width: 31%
-		+rem(padding-left,20px)
 		+rem(padding-bottom,20px)
 	&-text
-		width: 29%
 		+rem(padding-bottom,20px)
 	&-item 
-		+padlr(19px)
-		width: 20%
+		+padlr(8px)
+		// width: 20%
 		+rem(padding-bottom,20px)
 		transition: transform .45s, opacity .5s
 		transform: translateY(100px)
@@ -886,7 +871,6 @@ a.title
 			padding-bottom: 100%
 			width: 100%
 			position: relative
-
 		&-inner
 			+coverdiv
 			+vertical 
@@ -902,10 +886,7 @@ a.title
 		align-items: center
 		+padlr(28px)
 		+rem(padding-left,60px)
-		+r(1200)
-			+padlr(0px)
-			+rem(margin-right,-19px)
-			// +rem(padding-left,10px)	
+
 .anim-cont.active
 	.quality-item
 		transform: none
@@ -950,8 +931,7 @@ a.title
 	display: block
 	position: relative
 	overflow: hidden
-	+rem(height,320px)
-	&:hover
+	&:active
 		.block-bg-inner
 			transform: scale(1.05)
 			&:before
@@ -966,14 +946,15 @@ a.title
 		position: relative
 		width: 100%
 		height: 100%
-		+tr(transform .45s linear)
+		+tr(transform .15s linear)
+
 		&:before
 			content: ''
 			+coverdiv
 			height: 200%
 			background-color: rgb(30, 35, 42);
 			opacity: 0.8;
-			+tr(opacity .4s ease-in-out)
+			+tr(opacity .15s ease-in-out)
 			z-index: 1
 	&-img
 		filter: grayscale(100%)
@@ -984,25 +965,34 @@ a.title
 .block-link
 	height: 100%
 	.row
+		+rem(min-height,170px)
 		height: 100%
+		+padlr(40px)
+		+rem(padding-top,35px)
+		+rem(padding-bottom,35px)
 		.columns
-			padding-left: 0
 			.text 
 				color: #acadae
+				+rem(margin-bottom,30px)
 	&-arrow
 		font-size: 0
 		&>div
 			display: inline-block
-			vertical-align: middle
+			vertical-align: bottom
 			svg 
 				color: color(white)
 		&-text 
-			width: calc(100% - 4rem)
+			width: calc(100% - 2.1875rem)
+			.title.h3
+				font-size: 8vw
 		&-arrow 
-			+rem(width,43px)
-			+tr(transform .3s cubic-bezier(0, 0, 0.1, 0.96))
+			+rem(width,35px)
+			+rem(height,24px)
+			+tr(transform .15s cubic-bezier(0, 0, 0.1, 0.96))
 			svg
 				width: 100%
+				height: 100%
+
 
 
 .slider-nav
@@ -1032,12 +1022,14 @@ a.title
 				
 .team 
 	.title
-		+rem(max-width,400px)
-	.text.primary 
+		+rem(margin-bottom,20px)
 	&-wrap
-		+rem(padding-top,60px)
+		+rem(padding-top,30px)
+		+rem(padding-bottom,30px)
+		border-bottom: 1px solid #e5e5e5
 	&-inner 
 		position: relative
+		+rem(margin-left,-8px)
 	&-slider
 		margin-right: -50%
 	&.active
@@ -1252,9 +1244,9 @@ a.title
 
 .bread
 	&-cont
-		+rem(margin-bottom,22px)
+		+rem(margin-bottom,15px)
 	&-item
-		+rem(font-size,18px)
+		+rem(font-size,16px)
 		color: color(white)
 		+tr(opacity .3s)
 		opacity: .5
@@ -1271,7 +1263,7 @@ a.title
 		&:after
 			content: '/'
 			display: inline-block
-			+padlr(10px)
+			+padlr(8px)
 			+tr(opacity .3s)
 .page-head
 	width: 100%
@@ -1284,7 +1276,7 @@ a.title
 			display: none
 	&.head-big
 		.page-head-inner
-			+rem(padding-top,252px)
+			+rem(padding-top,102px)
 		.page-head-gradient
 			height: 160%
 	&.page-head-gray
@@ -1307,20 +1299,29 @@ a.title
 	&-inner
 		position: relative
 		z-index: 0
-		+padlr(40px)
-		+rem(padding-bottom,60px)
-		+rem(padding-top,75px)
+		+padlr(10px)
+		+rm(600)
+			+padlr(25px)	
+		+rem(padding-bottom,30px)
+		+rem(padding-top,55px)
+		.title 
+			font-size: 8vw
+			+rm(600)
+				font-size: 7vw
 	&-gradient
 		display: block
 		+coverdiv
-		height: 170%
+		height: 100%
 		z-index: 1
-		top: -10%
-		background-image: linear-gradient( 0deg, rgba(23,62,126,0.90196) 0%, rgba(23,62,126,0.2) 100%);
+		background-image: linear-gradient( 0deg, rgba(23,62,126,0.90196) 0%, rgba(23,62,126,0.3) 100%);
 	&-content
 		position: relative
 		z-index: 2
-		
+	.block-bg
+		&-inner 
+			+cover
+	&-block
+		overflow: visible !important
 .prod 
 	&-elem 
 		+rm(1201)
@@ -1373,81 +1374,64 @@ a.title
 		&-inner
 			+coverdiv
 			height: auto
-			margin-top: -5%
+
 		&-outer
 			display: block
 	&-eleminner
-		&.news 
-			.prod-eleminner-content
-				padding-top: 0
-			.prod-eleminner-content-inner
-				max-width: 100%
-				+rem(padding-right,80px)
-				+r(1300)
-					+rem(padding-right,50px)	
-		.columns
-			&:nth-child(2)
-				padding-right: 0!important
 		&-images
+			width: 100%
 			img
 				display: block
-				max-width: 100%
-
+				width: 100%
 				&:not(:last-child)
-					+rem(margin-bottom,45px)
+					+rem(margin-bottom,20px)
 		&-content
-			+rem(padding-bottom,50px)
-			+rem(padding-top,30px)
-			+rem(padding-left,40px)
-			+rem(padding-right,30px)
+			// +rem(padding-bottom,50px)
+			// +rem(padding-top,30px)
+			// +rem(padding-left,40px)
+			// +rem(padding-right,30px)
 			// backface-visibility: hidden
 			// transform: translateX(0)
 			display: block
-			
-			+r(1300)
-				padding-left: 0	
 			&-inner
-				+rem(max-width,392px)
-				+rem(margin-bottom,60px)
+				+rem(margin-bottom,30px)
+		.link-arr
+			+rem(margin-top,25px)
 
 .content 
 	p 
-		+rem(font-size,18px)
+		+rem(font-size,16px)
 		line-height: 1.444;
 		color: color(textblk)
-		+rem(margin,13px 0)
+		+rem(margin,10px 0)
 	.primary
 		+rem(padding-bottom,10px)
 		// border-bottom: 1px solid color(grayl)
 		// +rem(padding-right,45px)
-		+rem(margin-bottom,40px)
+		+rem(margin-bottom,20px)
 	hr 
 		display: block
 		height: 1px
 		border: 1px solid
 		border-color: color(grayl)
 		border-bottom-color: transparent
-		+rem(margin,30px 0 42px)
+		+rem(margin,20px 0 35px)
 	.text.gray 
-		+rem(margin,30px 0 )
-	.link-arr.down
-		+rem(margin-bottom,15px)
+		+rem(margin,20px 0 )
 	.type-wrap
-		+rem(margin-bottom,25px)
+		+rem(margin-bottom,20px)
 		.type-item
-			+rem(width,42px)
-			+rem(height,42px)
+			+rem(width,30px)
+			+rem(height,30px)
 	ul 
-
 		display: block
-		
 		li 
 			display: block
 			position: relative
-			+rem(font-size,18px)
+			+rem(font-size,16px)
 			line-height: 1.444;
-			+rem(margin,13px 0)
-			+rem(padding-left,43px)
+			+rem(margin,10px 0)
+			+rem(padding-left,25px)
 			&:before
 				content: ''
 				display: inline-block
@@ -1457,91 +1441,15 @@ a.title
 				position: absolute
 				+rem(left,2px)
 				+rem(top,7px)
-
-.carousel_layout-container
-	display: block;
-	position: relative;
-	z-index: 1;
-	+rem(margin-left,-105px)
-	+rem(padding-left,100px)
-	+tr(padding-left .35s ease-in)
-	will-change: padding-left
-	.carousel_layout
-		// width: 955px;
-		// height: 675px;
-		+rem(height, 450px);
-		margin: 0 auto;
-		position: relative;
-		width: 100%
-		perspective: 1200px;
-		display: block
-		+r(1370)
-			+rem(height, 420px);
-		+r(1100)
-			+rem(height, 350px);
-		.carousel_layout-item
-			position: absolute;
-			top: 0;
-			left: 0;
-			// width: 1180px;
-			width: 100%
-			height: 100%;
-			overflow: hidden;
-			perspective-origin: 0 0;
-			will-change: transform
-			&:first-of-type
-				z-index: 3;
-			&:nth-of-type(2)
-				z-index: 2
-			&:nth-of-type(3)
-				z-index: 1
-			.carousel_layout-bg
-				width: 100%;
-				height: 100%;
-				position: relative;
-				overflow: hidden;
-				+tr(transform .35s ease-in)
-				img
-					position: absolute;
-					display: block;
-					// top: -10%;
-					width: 100%;
-					user-select: none;
-	.carousel_navi
-		position: absolute;
-		top: 38%;
-		+rem(left,-40px)
-		z-index: 10;
-		+rem(padding,50px 40px 50px 40px)
-		transition: transform .4s, opacity .25s
-		cursor: pointer
-		transition-delay: 0s
-		+nosel
-		&:hover
-			.icon
-				transform: rotate(10deg);
-				transition: transform .3s;	
-		&.spin
-			.carousel_layout-next
-				transform: rotate(360deg);
-				transition: transform .4s;
-		.carousel_layout-next
-			+rem(width, 25px);
-			+rem(height, 25px);
-			.icon
-				display: block;
-				width: 100%;
-				height: 100%;
-				svg
-					+rem(width, 25px);
-					+rem(height, 25px);
-			&:hover
-				cursor: pointer;
-
+.inner-list
+	.row 
+		+rem(margin-bottom,30px)
+		+rm(600)
+			+rem(margin-bottom,45px)	
 .prod-nav
 	position: fixed
 	left: 0
-	+rem(top,80px)
+	+rem(top,50px)
 	z-index: 8
 	width: 100%
 	visibility: hidden
@@ -1554,11 +1462,14 @@ a.title
 		transform: translateY(-120%)
 		visibility: visible
 		will-change: transform
+		+padlr(10px)
+		+rm(600)
+			+padlr(25px)	
 	.columns
 		&:nth-child(1)
 			text-align: left
 			.prod-nav-link-text
-				+rem(padding-left, 70px)
+				+rem(padding-left, 20px)
 			.prod-nav-link
 				&:hover 
 					.prod-nav-link-icon
@@ -1574,10 +1485,9 @@ a.title
 						transform: translateX(-10px)
 				.prod-nav-link-text
 					order: 1
-					+rem(padding-right, 70px)
+					+rem(padding-right, 20px)
 				.prod-nav-link-icon
 					order: 2
-
 	&-link
 		display: inline-block
 		font-size: 0
@@ -1585,10 +1495,10 @@ a.title
 		display: flex
 		flex-flow: row nowrap
 		align-items: center
-		+rem(height,60px)
+		+rem(height,40px)
 		.icon 
 			+rem(width,12px)
-			+rem(height,21px)
+			+rem(height,16px)
 
 			svg 
 				width: 100%
@@ -1604,58 +1514,34 @@ a.title
 
 .brand 
 	background-color: color(brand)
-// .projects
-// 	// +padlr(0px)
-// 	.columns,.columns:first-child,.columns:last-child
-// 		+padlr(5px)
-// 		+rem(padding-top,4.5px)
-// 		+rem(padding-bottom,4.5px)
-// 		&.large-4
-// 			.project-item-arrow
-// 				display: none
-// 			.text.primary
-// 				+rem(font-size,18px)
-// 			.project-item-bg-inner
-// 				&:before
-// 					// background: color(brand)
-// 					transition-delay: .3s
-// 			.project-item-content-text
-// 				.text
-// 					+cut(5)
-// 				+r(1300)
-// 					.text 
-// 						+rem(font-size,14px)
-// 	&-inner
-// 		+rem(margin,20px -5px 55px)
-// 	&-row 
-// 		&.row-blue
-// 			.project-item
-// 				padding-bottom: 44.5%
-// 				+r(1300)
-// 					padding-bottom: 50%
-// 				+r(1040)
-// 					padding-bottom: 55%
-// 				&:hover
-// 					.project-item-bg-inner
-// 						&:after
-// 							opacity: 0
-// 			.project-item-arrow
-// 				display: none
-// 			.project-item-bg-inner
-// 				&:before
-// 					background: color(brand)
-// 			.project-item-content-text .text
-// 				+cut(6)
-// 			.project-item-content-head
-// 				.text.primary
-// 					+r(1200)
-// 						+rem(font-size,23px)
-// 			.project-item-content-text
-// 				+r(1300)
-// 					padding-right: 0
-// 				// +r(1500)
-// 				// 	+rem(font-size,)
+.projects
+	+rem(margin, 10px 0 20px)
+	overflow: hidden
+	
+	&-inner
+		width: 100%
+		// +rem(margin,20px -5px 55px)
+	&-row 
+		overflow: hidden
+		&.row-blue
+			margin-top: 0 !important
+			margin-bottom: 0 !important
+			.project-item-content
+				+rem(padding,20px)
+			.project-item-arrow
+				display: none
 				
+			// .project-item
+			// 	&:hover
+			// 		.project-item-bg-inner
+			// 			&:after
+			// 				opacity: 0
+
+.row 
+	&.projects-row
+		+rem(margin,20px -5px 30px)
+		.columns
+			+rem(padding, 5px)
 .project
 	&-item
 		display: block
@@ -1665,36 +1551,16 @@ a.title
 		z-index: 0
 		.text 
 			color: color(white) !important
-		&:hover
-			.project-item-content-head
-				bottom: 100%
-				transform: translateY(100%)
-				transition-delay: .3s
-			.project-item-content-text
-				opacity: 1
-				transform: none
-				transition-delay: .4s
+		&:active
 			.project-item-arrow
 				opacity: 1
-				transition-delay: .4s
-				.icon 
-					transform: none
-					opacity: 1
-					transition-delay: .4s
+				transition-delay: .1s
 			.project-item-bg-inner
 				transform: scale(1.098)
 				&:after
 					opacity: 0
 				&:before
 					opacity: 1
-			.project-item-bg-image
-				
-				zoom: 110%
-				transition-delay: .2s
-			.project-item-bg-inner
-
-
-					// transition-delay: .2s
 		&-bg 
 			+coverdiv
 			z-index: -1
@@ -1702,25 +1568,17 @@ a.title
 			background-color: color(gray)
 			font-size: 0
 			contain: paint
-			img
-				width: auto
-				height: 100%
-				display: block
-				margin: 0 auto
-				z-index: -1
-				backface-visibility: hidden
-				-webkit-font-smoothing: subpixel-antialiased;
+			+cover
 			&-inner
 				width: 100%
 				height: 100%
 				position: relative
-
-				+tr(transform 1s)
+				+cover
 				&:after
 					content: ''
 					+coverdiv
 					z-index: 1
-					+tr(opacity .5s)
+					+tr(opacity .15s)
 					opacity: 1
 					background-image: linear-gradient( 0deg, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.2) 15%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 100%);
 				&:before
@@ -1728,7 +1586,7 @@ a.title
 					display: block
 					+coverdiv
 					width: 100%
-					+tr(opacity .5s)
+					+tr(opacity .15s)
 					opacity: 0
 					height: 100%
 					background-image: linear-gradient( 0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.5) 61%, rgba(0,0,0,0.45) 100%);
@@ -1737,21 +1595,11 @@ a.title
 			color: color(white)
 			margin-left: auto
 			transform: translateY(-13px)
-			+tr(opacity .2s)
 			transition-delay: 0s
-			opacity: 0
-			+r(1300)
-				transform: none
 			.icon,svg
 				width: 100%
 			svg 
-				+rem(height,28px)
-			.icon 
-				transition: transform .2s, opacity .2s
-				transition-timing-function: cubic-bezier(0, 0, 0.1, 0.96)
-				transform: translateX(-40px)
-				opacity: 0
-				transition-delay: .4s
+				+rem(height,24px)
 		&-content
 			+coverdiv
 			z-index: 0
@@ -1804,17 +1652,19 @@ a.title
 	position: absolute
 	z-index: 25
 	// max-height: 0
-	+rem(left,-30px)
-	+rem(min-width,290px)
+	+rem(left,-5px)
+	+rem(min-width,180px)
 	+rem(padding-top,10px)
 	opacity: 0
 	transform: translateY(-5%)
 	transition: opacity .25s, transform .25s, visibility .25s
 	visibility: hidden
 	+clr
+	+rm(600)
+		+rem(min-width,210px)
 	.dropdown-inner
 		width: 100%
-		+rem(padding,20px 30px)
+		+rem(padding,10px 15px)
 		background: color(white)
 		box-shadow: 0px 20px 38px 0px rgba(0, 0, 0, 0.2);
 
@@ -1824,11 +1674,11 @@ a.title
 	position: relative
 	display: block
 	z-index: 25
-	
-	&:hover,&.active
+	&:active,&.active
 		.sort-select-title
 			.text:not(.gray)
 				border-color: color(brandh)
+		z-index: 30
 	&-title
 		display: inline-block
 		cursor: pointer
@@ -1836,12 +1686,11 @@ a.title
 		z-index: 7
 		.text 
 			&.gray
-				+rem(margin-bottom,10px)
+				+rem(margin-bottom,5px)
 			&:not(.gray)
 				color: color(brand)
-
 	&-item
-		&:hover
+		&:active
 			a 
 				background-color: color(gray)
 		&.active
@@ -1854,50 +1703,45 @@ a.title
 			position: relative
 			transition: background-color .3s,color .3s
 			display: block
-			+rem(margin,0 -30px)
-			+rem(padding,10px 30px)
+			+rem(margin,0 -15px)
+			+rem(padding,10px 15px)
+
 			&:hover
 				color: color(brandh)
 			.text 
 				+tr(color .3s)
+				+rem(font-size,15px)
 		
 .filter
 	&-wrapper
+		width: 100%
 	&-selects
 		font-size: 0
-		text-align: right
-		+rem(padding-right,30px)
+		text-align: left
+		+rem(margin-top,15px)
 		.sort_wrapper
-			min-width: 30%
+			width: 50%
 			display: inline-block
-			vertical-align: middle
-			+rem(padding-right,20px)
+			vertical-align: top
 			text-align: left
 	&-tabs 
 		font-size: 0
-		text-align: right
-		+rem(padding-right,20px)
+		text-align: left
+		+rem(margin-left,-5px)
+		width: 100%
+		overflow-x: auto
 		white-space: nowrap
-		+r(1300)
-			padding-right: 0
-		+r(1100)
-			text-align: left
-			+rem(padding-left,50px)
 		&-item 
 			display: inline-block
 			vertical-align: bottom
-			+padlr(13px)
+			+padlr(5px)
 			text-align: center
-			+r(1300)
-				+padlr(8px)
-
 			&-inner
 				+tr(color .3s)
 				position: relative
-				+rem(padding-top,35px)
-				+rem(padding-bottom,15px)
-				+r(1100)
-					+rem(font-size,15px)
+				+rem(padding-top,15px)
+				+rem(padding-bottom,5px)
+				+rem(font-size,15px)
 				&:before
 					content: ''
 					display: inline-block
@@ -1906,11 +1750,11 @@ a.title
 					right: 0
 					background-color: color(brand)
 					position: absolute
-					+rem(bottom,-8px)
+					+rem(bottom,0px)
 					transform-origin: left center
 					+tr(transform .4s ease-in)
 					transform: scaleX(0)
-			&:hover
+			&:active
 				.filter-tabs-item-inner	
 					&:before
 						transform: scaleX(.2)
@@ -1923,27 +1767,37 @@ a.title
 						transform: scaleX(1)
 			
 .more-slider
+	+rem(margin-top,30px)
+	width: 100%
 	&-head 
-		display: flex
-		flex-flow: row nowrap
-		justify-content: space-between
-		+rem(margin-bottom,40px)
+		+rem(margin-bottom,10px)
+		.slider-nav,.title
+			display: block
+			width: 100%
+			+rem(margin-bottom,15px)
+			
 	&-slider
-		+rem(margin, 0 -5px)
-		.columns
-			+padlr(5px)
-			.slick-track
-				backface-visibility: hidden
-			.text.primary.white
-				+rem(font-size,18px)
+		&.w3
+			padding-bottom: 65%
+			position: relative
+			display: block
+			.slick-list
+				+coverdiv
+				.slick-track,.columns,.project-item
+					height: 100%
+
 		.product
 			&-item 
 				padding-top: 0
 				padding-bottom: 0
+		.project-item
+			padding-top: 0
+		&:not(.w3)
+			margin-bottom: 0
 .product
 	&-item 
-		+rem(padding-top,25px)
-		+rem(padding-bottom,25px)
+		+rem(padding-top,20px)
+		+rem(padding-bottom,20px)
 		display: block
 		&.product-item-v2
 			.product-item-content
@@ -1955,7 +1809,7 @@ a.title
 					margin-top: 0
 				.descr
 					+cut(3)
-		&:hover
+		&:active
 			.text.primary
 				color: color(brand)
 			img
@@ -1964,36 +1818,36 @@ a.title
 			font-size: 0
 			&>div 
 				display: inline-block
-				vertical-align: middle
+				vertical-align: top
 		&-image
-			width: 39%
+			width: 30%
 			overflow: hidden
-			
+			+rem(margin-top,5px)
 			&-outer
 				position: relative
-				padding-bottom: 67%
+				padding-bottom: 70%
 			&-inner
 				+coverdiv
 				background-color: color(gray)
 				img 
 					display: block
 					height: 100%
-					transition: opacity .3s, transform .3s ease-in
+					transition: opacity .15s, transform .15s ease-in
 					margin: 0 auto
 		&-type
 			position: absolute
-			+rem(left,20px)
-			+rem(top,20px)
-
+			+rem(left,10px)
+			+rem(top,10px)
+			.type-item
+				+rem(width,25px)
+				+rem(height,25px)
 		&-content
-			width: 61%
-			+rem(max-width,335px)
-			padding-left: 8%
-			.text.gray
-				white-space: nowrap
+			width: 70%
+			// +rem(max-width,335px)
+			padding-left: 5%
 			.text.primary
-				+tr(color .3s)
-				+rem(margin,5px 0 30px)
+				+tr(color .15s)
+				+rem(margin,5px 0 10px)
 				+cut(2)
 			.text.descr
 				+cut(2)
@@ -2007,24 +1861,17 @@ a.title
 	+rem(margin-bottom,5px)
 .contact
 	&-cont
-		img 
-			transform: none !important
-		.block-text
-			+rem(padding-top,45px)
-			+rem(padding-right,25px)
 	&-text 
 		font-size: 0
 		.link-arr
 			+rem(margin-top,60px)
-		.text.primary
-
-			+rem(margin-bottom,50px)
 		.block-contact
-			display: inline-block
-			vertical-align: top
-			width: 50%
 			+rem(padding-right,10px)
-			backface-visibility: hidden
+			+rem(margin-top,25px)
+			+rm(700)
+				display: inline-block
+				vertical-align: top
+				width: 50%
 			a
 				font-weight: 600
 				transition: color .3s, opacity .3s
@@ -2039,8 +1886,10 @@ a.title
 .map 
 	&-container
 		position: relative
-		padding-bottom: 39%
+		padding-bottom: 100%
 		background-color: color(gray)
+		+rm(700)
+			padding-bottom: 70%
 		&-inner
 			+coverdiv
 .newscont
@@ -2063,36 +1912,18 @@ a.title
 		display: block
 		height: 100%
 .half-title
-	+padlr(40px)
-	+r(1200)
-		+padlr(25px)
-	+r(1040)
-		+padlr(0)
 	.title 
-		+rem(padding-right,40px)
-	.text.primary
-		+rem(margin-top,-13px)
 		+rem(margin-bottom,25px)
-	.col
-		position: relative
-		.btn-cont
-			+rem(padding-bottom,30px)
-		.title
-			& + img
-				position: absolute
-				left: 0 
-				+rem(bottom, -50px)
-				transform: scale(.6)
-				transform-origin: bottom left 
-				max-width: 100%
-				+rm(1500)
-					transform: scale(.5)	
-
-.graywrap
-	background-color: color(gray)
-	+rem(padding-top,80px)
-	+rem(padding-bottom,50px)
-
+		font-size: 7vw
+	.text.primary
+		+rem(margin-bottom,25px)
+	.btn-cont
+		+rem(padding-bottom,30px)
+.gray
+	.half-title	
+		+rem(padding-top,30px)
+		+rem(padding-bottom,30px)
+		+padlr(10px)
 .partners-wrap
 	width: 100%
 	display: flex
@@ -2130,38 +1961,30 @@ a.title
 	&-wrap
 		display: flex
 		flex-flow: row wrap 
-		+rem(margin,65px -20px 0)
+		+rem(margin,20px -5px 0)
 	&-container 
-		+padlr(80px)
-		+rem(margin-top,20px)
+		// +padlr(10px)
+		// +rm(600)
+		// 	+padlr(25px)	
 		.quality-item
-			+rem(padding-bottom,40px)
+			// +rem(padding-bottom,40px)
+			width: 50%
 			&-outer 
 				padding-bottom: 85%
 
 .describe
-	+padlr(40px)
-	+rem(padding-top,80px)
+	+padlr(10px)
+	+rem(padding-top,30px)
 	+rem(padding-bottom,30px)
-	// +rem(margin-right,-10px)
-	.row 
-		// background-color: red
-		// +rem(margin-right,-40px)
-		margin-right: -2.4rem !important
-	.columns
-		&:not(:last-child)
-			+rem(padding-right,45px)
-		&:last-child
-			// +rem(padding-left,20px)
-	
 	.title 
 		+rem(max-width,580px)
 		+rem(padding-right,40px)
 		+rem(margin-bottom,40px)
 	&-cont
-		+rem(max-width,420px)
+		+rem(margin-top,35px)
 		.text.primary
-			+rem(margin-bottom,20px)
+			+rem(margin-bottom,0px)
+			padding-bottom: 0
 .feat 
 	&-wrap
 		// +padlr(40px)
@@ -2177,19 +2000,17 @@ a.title
 	&-item 
 		text-align: center
 		width: 100%
-		+rem(margin-bottom,60px)
+		+rem(margin-bottom,35px)
 		.title 
 			display: inline-block
-		
 			+rem(max-width,430px)	
-			+rem(margin-bottom,30px)
+			+rem(margin-bottom,20px)
+			+rem(font-size,35px)
 		.text 
 			+rem(max-width,350px)	
 			display: block
 			margin: 0 auto
 .feedback
-
-
 
 	&-inner
 		position: relative
@@ -2203,7 +2024,7 @@ a.title
 			display: flex
 			flex-flow: row nowrap
 			justify-content: space-between
-			+rem(top,250px)
+			+rem(top,220px)
 			z-index: 4
 			visibility: hidden
 			.slick-arrow
@@ -2273,13 +2094,13 @@ a.title
 			+rem(max-width,700px)
 			+padlr(40px)
 			margin: 0 auto
-			+rem(padding-bottom,44px)
+			+rem(padding-bottom,30px)
 		&-img 
 			display: inline-block
 			+rem(width,128px)
 			+rem(height,128px)
 			border-radius: 50%
-			+rem(margin-bottom,29px)
+			+rem(margin-bottom,15px)
 			transition: transform .5s, opacity .5s
 			opacity: 0
 			transition-delay: .5s
@@ -2293,7 +2114,7 @@ a.title
 			transition: opacity .3s
 			opacity: 0
 		&-name 
-			+rem(margin-bottom,30px)
+			+rem(margin-bottom,15px)
 			transition: opacity .3s ease-in,transform .6s ease-out
 			transform: translateY(50px)
 			opacity: 0	
@@ -2303,8 +2124,6 @@ a.title
 			transform: translateY(50px)
 			opacity: 0
 			transition-delay: .6s
-
-
 .review
 	+rem(margin,16px -3px 43px -3px)
 	.columns
@@ -2316,20 +2135,20 @@ a.title
 		display: flex 
 		height: 100%
 		+padlr(23px)
-		+rem(padding-top,35px)
-		+rem(padding-bottom,30px)
+		+rem(padding-top,25px)
+		+rem(padding-bottom,20px)
 		&-img 
-			+rem(height,125px)
-			+rem(padding-bottom,50px)
+			+rem(height,100px)
+			+rem(padding-bottom,30px)
 			img
 				+rem(max-width,216px)
 		&-inner
 			position: relative
-			+rem(padding-bottom,95px)
+			+rem(padding-bottom,75px)
 			&.cutted
 				.review-item-content
 					.text:not(.primary)
-						+rem(max-height,123px)
+						+rem(max-height,111px)
 					.review-trigger
 						display: inherit
 		&-who
@@ -2342,7 +2161,7 @@ a.title
 				color: #7c7c7b
 		&-content 
 			.primary 
-				+rem(margin-bottom,15px)
+				+rem(margin-bottom,10px)
 			.text:not(.primary)
 				// +cut(5)
 				overflow: hidden
@@ -2397,6 +2216,7 @@ a.title
 	contain: paint 
 	overflow-y: auto
 	transition-delay: .5s
+	+rem(padding,10px)
 	&.active
 		visibility: visible
 		opacity: 1
@@ -2409,7 +2229,7 @@ a.title
 		display: inline-block
 		vertical-align: middle 
 		+rem(min-width,320px)
-		+rem(max-width,741px)
+		+rem(max-width,600px)
 		width: 100%
 		background: color(white)
 		position: relative
@@ -2418,7 +2238,7 @@ a.title
 		opacity: 0
 		// overflow: hidden
 		transition-delay: 0.3s
-		+rem(padding,50px 60px)
+		+rem(padding,25px 30px)
 		+rem(margin,25px 0)
 		.review-item-inner
 			text-align: left
@@ -2443,7 +2263,6 @@ a.title
 	&-wrapper 
 		display: block
 		+rem(max-width,680px)
-		+rem(margin-left,80px)
 		+rem(margin-bottom,40px)
 	&-inp 
 		position: relative
@@ -2452,11 +2271,11 @@ a.title
 			border: 1px solid color(brand)
 			display: block
 			width: 100%
-			+rem(font-size,18px)
+			+rem(font-size,15px)
 			color: rgb(0, 0, 0);
-			+padlr(30px)
-			+rem(padding-top,25px)
-			+rem(padding-bottom,25px)
+			+padlr(15px)
+			+rem(padding-top,15px)
+			+rem(padding-bottom,15px)
 			font-family: "Roboto"
 		&-button
 			background: color(white)
@@ -2464,7 +2283,7 @@ a.title
 			right: 1px
 			top: 1px
 			bottom: 1px
-			+rem(width,80px)
+			+rem(width,50px)
 			&:hover
 				svg
 					color: color(brand)
@@ -2480,22 +2299,21 @@ a.title
 					+rem(width,22px)
 					+rem(height,22px)
 	&-result
-		+rem(margin-top,100px)
+		+rem(margin-top,30px)
 		&>.text.primary
 			&+ a
-				+rem(margin-top,40px)
+				+rem(margin-top,20px)
 		&-item
 			display: block
 			border-bottom: 1px solid #cecece
-			+rem(padding-top,40px)
-			+rem(padding-bottom,40px)
+			+rem(padding-top,25px)
+			+rem(padding-bottom,25px)
 			font-size: 0
 			&-num,&-content
 				display: inline-block
 				vertical-align: top
 			&-num 
 				+rem(width,40px)
-				+rem(padding-top,10px)
 			&-content
 				width: calc(100% - 2.5rem)
 				b 
@@ -2504,15 +2322,17 @@ a.title
 					+rem(margin-bottom,5px)
 	&-pagi 
 		font-size: 0
-		+rem(margin-top,60px)
+		+rem(margin-top,40px)
 		+rem(margin-left,-3px)
+		text-align: center
+		
 		&-item 
 			display: inline-block
 			vertical-align: middle
-			+rem(width,45px)
-			+rem(height,45px)
+			+rem(width,32px)
+			+rem(height,32px)
 			border: 1px solid #cecece
-			+rem(margin, 0 3px)
+			+rem(margin, 0 2px)
 			+vertical
 			+tr(border-color .3s)
 			&.disabled
@@ -2532,7 +2352,7 @@ a.title
 				display: inline-block
 				vertical-align: middle
 				color: #7c7c7b
-				+rem(font-size,16px)
+				+rem(font-size,14px)
 				svg 
 					color: color(brand)
 					+rem(width,15px)

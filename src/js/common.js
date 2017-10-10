@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	scrollAnimations();
 	scrollToEl();
+
 });
 // $(window).on('resize',debounce(footerH))
 var conf = {
@@ -444,7 +445,23 @@ function teamslider(){
 		})
 	});
 }
-
+function qualitySlider(){
+	$(".js-quality-slider").each(function() {
+		var _this = $(this),
+				parent = _this.parent();
+		_this.slick({
+			accessibility: false,
+			arrows: false,
+			dots: false,
+			fade: false,
+			touchMove: false,
+			dragable: false,
+			infinite: true,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+		})
+	});
+}
 function moreslider(){
 	$(".js-moreslider").each(function() {
 		var _this = $(this),
@@ -457,7 +474,7 @@ function moreslider(){
 			touchMove: false,
 			dragable: false,
 			infinite: false,
-			slidesToShow: _this.hasClass('w3') ? 3: 2,
+			slidesToShow: 1,
 			slidesToScroll: 1,
 			appendArrows: parent.find('.slider-nav'),
 			prevArrow: conf.arnprevcontent,
@@ -628,124 +645,6 @@ review.prototype = {
 		window.__prevScrollTop = null;
 	}
 }
-
-function slided(elem){
-	this.wrap = $(elem);
-
-	this.opts = {
-		act: 'active',
-		slide: '.carousel_layout-item',
-		vsisibliSlides: ':nth-child(-n+3)',
-		layout: '.carousel_layout',
-		btn: '.carousel_navi',
-		btnspin: 'spin',
-	};
-
-	this.findElems();
-}
-
-slided.prototype = {
-	findElems: function(){
-		var self = this;
-
-		this.wrap.each(function(){
-			var _ = $(this);
-				_.slides = _.find(self.opts.slide);
-				_.btn = 	_.find(self.opts.btn);
-				if(_.slides.length === 1) _.btn.hide();
-			self.initialize(_,_.slides,_.btn)
-		});
-	},
-	initialize: function(wrap,slides,button){
-
-		TweenLite.set(slides.not(this.opts.vsisibliSlides), {
-			autoAlpha: 0
-		});
-		var active = slides.filter('.active');
-		var tl = new TimelineLite();
-			tl
-				.set(active, {x: '0', transformOrigin:"left 50%"})
-				.set(active.next(), {x: '-3%', scaleX:0.92, scaleY:0.92, transformOrigin:"left 50%"})
-				.set(active.next().next(), {x: '-5%', scaleX:0.85, scaleY:0.85, transformOrigin:"left 50%"})
-				.set(active.next().next().next(), {x: '-5%', scaleX:0.85, scaleY:0.85,  transformOrigin:"left 50%"})
-		this.initclick(wrap,button);
-	},
-	initclick: function(wrap,button){
-		var self = this;
-		button.on('click',function(e){
-			e.preventDefault();
-			var _ = $(this);
-			if(_.hasClass('animate')) return false;
-			_.addClass('animate');
-			_.addClass('spin');
-			setTimeout(function(){
-				 _.removeClass('spin');
-			}, 500);
-			var active = wrap.find('.active'),
-				slides = wrap.find(self.opts.slide),
-				next = active.next(),
-				next2 = next.next(),
-				next3 = next2.next();
-			self.refreshSlide(wrap,button,active, next, next2, next3);
-		});
-		var blk = wrap.closest('.prod-elem');
-		blk.on('mouseenter',checkHover);
-		function checkHover(){
-			var _ = $(this);
-			_.addClass('hovered');
-			_.on('mouseleave',function(){
-				_.removeClass('hovered');
-			});
-		};
-	},
-	refreshSlide: function(wrap,button,active, next, next2, next3){
-		var self = this;
-		var tl = new TimelineLite({
-			onComplete: function(){
-				var act = wrap.find('.active');
-				self.circleSlide(wrap,act,button, next, next2, next3);
-				}
-			});
-		tl
-			.set(active, {x: '0', autoAlpha: 1, scaleX: 1, scaleY: 1, className: '-=active', zIndex: 3})
-			.set(next, {x: '-3%', scaleX: 0.92, scaleY: 0.92, className: '+=active', zIndex: 2})
-			.set(next2, {x: '-5%', scaleX: 0.85, scaleY: 0.85, zIndex: 1})
-			.set(next3, {autoAlpha: 0, x: '-5%', scaleX:0.85, scaleY:0.85, transformOrigin:"left 50%", zIndex: 0})
-
-			.to(active, 1, {x: '0', autoAlpha: 0, scaleX: 1.1, scaleY: 1.1, ease:Power3.easeInOut}, 0)
-			.to(next, 1, {x: '+=3%', scaleX: 1, scaleY: 1, ease:Power3.easeInOut}, 0)
-			.to(next2, 1, {x: '+=2%', scaleX: 0.92, scaleY: 0.92, ease:Power3.easeInOut}, 0)
-			.to(next3, 1, {autoAlpha: 1, ease:Power3.easeInOut}, 0)		
-	},
-	circleSlide: function(wrap,active,button, next, next2, next3){
-		var self = this;
-		var slides = wrap.find(self.opts.slide);
-		var act = active,
-			buff,
-			parent = act.parent(),
-			tl = new TimelineLite();
-		act.prev().detach().appendTo(parent);
-		if( slides.length === 2 ) {
-			tl
-				.set(slides, {x: '0', transformOrigin:"left 50%",zIndex: 3})
-				.set(slides.next(), {x: '-3%', scaleX:0.92, scaleY:0.92, transformOrigin:"left 50%", zIndex: 1})
-				.to(slides.next(), 0.2, {autoAlpha: 1, ease:Power3.easeInOut}, 0)
-
-		} else if( slides.length === 3 ) {
-			tl
-				.set(slides, {x: '0', transformOrigin:"left 50%", zIndex: 3})
-				.set(slides.next(), {x: '-3%', scaleX:0.92, scaleY:0.92, transformOrigin:"left 50%", zIndex: 2})
-				.set(slides.next().next(), {x: '-5%', scaleX: 0.85, scaleY: 0.85, zIndex: 1})
-				.to(slides.next(), 0.2, {autoAlpha: 1, ease:Power3.easeInOut}, 0)
-		} else {
-			tl
-				.set(slides.last(), {x: '-5%', scaleX:0.85, scaleY:0.85, transformOrigin:"left 50%", zIndex: 0})
-		}
-		button.removeClass('animate');
-	},
-};
-
-
 
 function ProdinnerHead(){
 
@@ -1165,13 +1064,13 @@ var BarbaWitget = {
 			$(this.oldContainer).hide();
 			$el.addClass('moveUp');
 			TweenMax.set($el, {
-				force3D:true,
                 y: 200,
             });
+
             $(window).scrollTop(0,0)
+             // _this.done();
             TweenMax.to($el, .5, {
                 y: 0,
-                force3D:true,
                 autoAlpha: 1,
                 onComplete: function () {
                     TweenMax.set($el, {clearProps: 'all'});
@@ -1191,6 +1090,7 @@ var IndexPage = Barba.BaseView.extend({
 	},
 	onEnterCompleted: function(){
 		teamslider();
+		// qualitySlider();
 	},
 	onLeaveComplete: function(){
 	}
@@ -1199,11 +1099,10 @@ var IndexPage = Barba.BaseView.extend({
 var Production = Barba.BaseView.extend({
 	namespace: "Production",
 	onEnter: function(){
-		var sliders = document.querySelectorAll('.carousel_layout-container');
-		sliders = new slided(sliders);
 	},
 	onEnterCompleted: function(){
 		console.log("onEnterCompleted");
+
 	},
 	onLeaveComplete: function(){
 		console.log("onLeaveComplete");

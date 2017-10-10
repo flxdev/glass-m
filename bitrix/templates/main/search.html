@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>searching</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" media="all" href="css/screen.min.css">
+  </head>
+  <body>
+    <script type="text/javascript">!function(e){function t(o){if(n[o])return n[o].exports;var c=n[o]={exports:{},id:o,loaded:!1};return e[o].call(c.exports,c,c.exports,t),c.loaded=!0,c.exports}var n={};return t.m=e,t.c=n,t.p="/assets/",t(0)}({0:function(e,t,n){n(18),n(19)},18:function(e,t){!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(c))o(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",c,!0),e.onreadystatechange=function(){4===e.readyState&&(o(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=c)},e.send()}else{var n=document.createElement("link");n.href=c,n.rel="stylesheet",n.type="text/css",document.getElementsByTagName("head")[0].appendChild(n),document.cookie="font_css_cache"}}function o(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t),window.onFontLoad&&window.onFontLoad()}var c=window.fonts_href||"../css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}()},19:function(e,t){}});</script>
+    <div class="svg-defs-container" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="arr" viewBox="0 0 53.9 36.8"><path d="M53.7 17.9l-1.6-1.6-16-16c-.3-.3-.9-.3-1.2 0l-.9.8c-.3.3-.3.9 0 1.2l14.5 14.5H.7c-.4 0-.7.3-.7.7v1.6c0 .4.3.7.7.7h47.8L34 34.4c-.3.3-.3.9 0 1.2l.9.9c.3.3.9.3 1.2 0l17.6-17.6c.3-.3.3-.7 0-1z" fill="currentcolor"/></symbol><symbol id="circarr" viewBox="0 0 47.7 47.7"><style>.starrowc0{fill:#183c83}</style><path d="M46.5 22.6c-.7 0-1.2.6-1.2 1.3 0 5.9-2.4 11.2-6.3 15.1-3.9 3.9-9.2 6.3-15.1 6.3S12.7 42.9 8.8 39c-3.9-3.9-6.3-9.2-6.3-15.1S4.9 12.7 8.8 8.8c3.9-3.9 9.2-6.3 15.1-6.3 7.6 0 14.3 4 18.1 10h-9.7c-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3h12.5c.3 0 .6-.1.9-.4.2-.2.4-.6.4-.9V1.3C46 .6 45.4 0 44.7 0s-1.2.6-1.2 1.3v9C39.1 4.1 32 0 23.9 0 10.7 0 0 10.7 0 23.9 0 37 10.7 47.7 23.9 47.7 37 47.7 47.7 37 47.7 23.9c0-.7-.6-1.3-1.2-1.3z" class="starrowc0"/></symbol><symbol id="download" viewBox="0 0 42 41.9"><path d="M40 24.9v14c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1v-14H0v14c0 1.7 1.3 3 3 3h36c1.7 0 3-1.3 3-3v-14h-2z" fill="currentcolor"/><path d="M30.9 20.3L22 29.2V0h-2v29.2l-8.9-8.9-1.4 1.4L21 33l11.3-11.3z" fill="currentcolor"/></symbol><symbol id="icon-close" viewBox="0 0 60 60"><path d="M58.084.132l-28 28.1-28.1-28.1-1.9 1.9 28 28.1-28 28.1 1.9 1.9 28.1-28.1 28 28.1 2-1.9-28.1-28.1 28.1-28.1z"/></symbol><symbol id="search" viewBox="0 0 42.1 42.1"><path d="M41.9 40.1L30.3 28.5c2.6-3 4.2-7 4.2-11.3C34.5 7.7 26.8 0 17.3 0 7.7 0 0 7.7 0 17.3c0 9.5 7.7 17.2 17.3 17.2 4.3 0 8.2-1.6 11.3-4.2l11.6 11.6c.3.3.7.3 1 0l.8-.8c.1-.3.1-.7-.1-1zM6.8 27.7C4.1 25 2.5 21.3 2.5 17.3c0-4.1 1.6-7.8 4.3-10.4 2.7-2.7 6.4-4.3 10.4-4.3 4.1 0 7.8 1.6 10.4 4.3 2.7 2.7 4.3 6.4 4.3 10.4 0 4.1-1.6 7.8-4.3 10.4C25 30.4 21.3 32 17.3 32c-4.1 0-7.8-1.6-10.5-4.3z" fill="currentcolor"/></symbol><symbol id="slidearr" viewBox="0 0 19.5 40.1"><path d="M4.6 20.4c-.1-.1-.1-.2-.1-.3 0-.1 0-.2.1-.3L19.3 2.6l-.2-.2.2.2c.2-.2.2-.4.2-.6 0-.3-.1-.6-.3-.7L18 .3c-.2-.2-.4-.3-.6-.3-.3 0-.6.1-.7.3L.2 19.4c-.1.2-.2.4-.2.7 0 .2.1.5.2.6l16.4 19.1c.2.2.5.3.7.3.2 0 .5-.1.6-.2l1.2-1c.2-.2.3-.5.3-.7 0-.2-.1-.5-.2-.6L4.6 20.4z" fill="currentcolor"/></symbol></svg></div>
+    <!--BEGIN out-->
+    <div class="root">
+      <div class="site__loader"></div>
+      <div class="root__wrapper">
+        <div class="site__overlay"></div>
+        <div class="root__frame">
+          <div class="header">
+            <div class="row align-stretch">
+              <div class="columns"><a class="logo js-nav" href="/"></a></div>
+              <div class="columns">
+                <div class="row align-right align-middle">
+                  <div class="menu-burger js-menu">
+                    <div class="menu-burger-inner"><i></i><i></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mob-menu">
+              <div class="mob-menu-inner">
+                <div class="mob-menu-content">
+                  <div class="mob-menu-content-inner">
+                    <div class="mob-menu-search">
+                      <div class="search-form">
+                        <form>
+                          <div class="field-row">
+                            <div class="field field-slide">
+                              <input class="search-input js-input" type="text" data-placeholder="Search" value="" required="required">
+                              <button class="search-submit" type="button"><i>
+                                  <svg class="icon icon-search">
+                                    <use xlink:href="#search" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                  </svg></i></button>
+                              <button class="search-reset" type="reset"><i>
+                                  <svg class="icon icon-close">
+                                    <use xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                  </svg></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="mob-menu-nav">
+                      <div class="nav-item" onclick=""><a class="nav-link js-nav" href="/">
+                          <div class="title h2">Home</div></a></div>
+                      <div class="nav-item" onclick=""><a class="nav-link js-nav" href="/company.html">
+                          <div class="title h2">Compan</div></a>
+                        <div class="nav-item-sublinks"><a class="nav-sublink js-nav" href="#">About us </a><a class="nav-sublink js-nav" href="/production.html">Production</a><a class="nav-sublink js-nav" href="/rd.html">R&D</a><a class="nav-sublink js-nav" href="/accreditations.html">Accreditations</a></div>
+                      </div>
+                      <div class="nav-item" onclick=""><a class="nav-link js-nav" href="/projects.html">
+                          <div class="title h2">Projects</div></a>
+                        <div class="nav-item-sublinks"><a class="nav-sublink js-nav" href="#">Brand products </a><a class="nav-sublink js-nav" href="#">Laminated glass</a><a class="nav-sublink js-nav" href="#">Insulated glass </a><a class="nav-sublink js-nav" href="#">Bonding</a></div>
+                      </div>
+                      <div class="nav-item" onclick=""><a class="nav-link js-nav" href="/products.html">
+                          <div class="title h2">Products</div></a>
+                        <div class="nav-item-sublinks"><a class="nav-sublink js-nav" href="#">Brand products </a><a class="nav-sublink js-nav" href="#">Laminated glass</a><a class="nav-sublink js-nav" href="#">Insulated glass </a><a class="nav-sublink js-nav" href="#">Bonding</a></div>
+                      </div>
+                    </div>
+                    <div class="mob-menu-footer">
+                      <div class="mob-menu-footer-nav"><a class="nav-sublink js-nav" href="/services.html">Service </a><a class="nav-sublink js-nav" href="/news.html">News</a><a class="nav-sublink js-nav" href="/contacts.html">Contacts</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prod-nav block js-prod-head">
+            <div class="prod-nav-inner brand">
+              <div class="row">
+                <div class="columns"><a class="prod-nav-link" href="/production-inner-test2.html">
+                    <div class="prod-nav-link-icon">
+                      <div class="icon">
+                        <svg class="icon-slidearr">
+                          <use xlink:href="#slidearr"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="prod-nav-link-text">previous</div></a></div>
+                <div class="columns"><a class="prod-nav-link" href="/production-inner-test.html">
+                    <div class="prod-nav-link-icon">
+                      <div class="icon">
+                        <svg class="icon-slidearr">
+                          <use xlink:href="#slidearr"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="prod-nav-link-text">next</div></a></div>
+              </div>
+            </div>
+          </div>
+          <div id="barba-wrapper">
+            <div class="barba-container" data-namespace="Content">
+              <div class="wrapper-frame">
+                <div class="block page-head-block">
+                  <div class="row">
+                    <div class="columns margin-out">
+                      <div class="page-head">
+                        <div class="block-bg">
+                          <div class="block-bg-inner">
+                            <div class="block-bg-inner" style="background-image: url(img/head/h9.jpg);"></div>
+                          </div>
+                        </div>
+                        <div class="page-head-inner">
+                          <div class="page-head-gradient js-parallax" data-speed="25"></div>
+                          <div class="page-head-content js-parallax" data-direction="-1">
+                            <div class="bread-cont"><a class="bread-item" href="/">Home</a></div>
+                            <div class="title h2 white">searching results</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block margin">
+                  <div class="row">
+                    <div class="columns">
+                      <div class="search-wrapper">
+                        <div class="search-head">
+                          <form class="search-inp">
+                            <input class="search-inp-inp" type="text">
+                            <button class="search-inp-button" type="submit"><i>
+                                <svg class="icon icon-search">
+                                  <use xlink:href="#search" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg></i></button>
+                          </form>
+                        </div>
+                        <div class="search-result">
+                          <div class="text primary">Please, check your request</div><a class="link-arr" href="#">
+                            <div class="link-arr-text">
+                              <div class="text">Go to homepage</div>
+                            </div>
+                            <div class="link-arr-icon">
+                              <div class="icon">
+                                <svg class="icon-arr">
+                                  <use xlink:href="#arr"></use>
+                                </svg>
+                              </div>
+                            </div></a>
+                        </div>
+                        <div class="search-result"><a class="search-result-item" href="#">
+                                                      <div class="search-result-item-inner">
+                                                        <div class="search-result-item-num">
+                                                          <div class="text gray">1.</div>
+                                                        </div>
+                                                        <div class="search-result-item-content">
+                                                          <div class="text primary">Please, <b>check </b>your request</div>
+                                                          <div class="text gray"> Lorem <b>ipsum </b>dolor sit amet, consectetur adipisicing elit. Ut maxime iste, vero hic quae. Est omnis quod similique. Repellat molestiae nemo ex, porro sint at praesentium! Enim sapiente iure, hic.</div>
+                                                        </div>
+                                                      </div></a><a class="search-result-item" href="#">
+                                                      <div class="search-result-item-inner">
+                                                        <div class="search-result-item-num">
+                                                          <div class="text gray">1.</div>
+                                                        </div>
+                                                        <div class="search-result-item-content">
+                                                          <div class="text primary">Please, <b>check </b>your request</div>
+                                                          <div class="text gray"> Lorem <b>ipsum </b>dolor sit amet, consectetur adipisicing elit. Ut maxime iste, vero hic quae. Est omnis quod similique. Repellat molestiae nemo ex, porro sint at praesentium! Enim sapiente iure, hic.</div>
+                                                        </div>
+                                                      </div></a><a class="search-result-item" href="#">
+                                                      <div class="search-result-item-inner">
+                                                        <div class="search-result-item-num">
+                                                          <div class="text gray">1.</div>
+                                                        </div>
+                                                        <div class="search-result-item-content">
+                                                          <div class="text primary">Please, <b>check </b>your request</div>
+                                                          <div class="text gray"> Lorem <b>ipsum </b>dolor sit amet, consectetur adipisicing elit. Ut maxime iste, vero hic quae. Est omnis quod similique. Repellat molestiae nemo ex, porro sint at praesentium! Enim sapiente iure, hic.</div>
+                                                        </div>
+                                                      </div></a><a class="search-result-item" href="#">
+                                                      <div class="search-result-item-inner">
+                                                        <div class="search-result-item-num">
+                                                          <div class="text gray">1.</div>
+                                                        </div>
+                                                        <div class="search-result-item-content">
+                                                          <div class="text primary">Please, <b>check </b>your request</div>
+                                                          <div class="text gray"> Lorem <b>ipsum </b>dolor sit amet, consectetur adipisicing elit. Ut maxime iste, vero hic quae. Est omnis quod similique. Repellat molestiae nemo ex, porro sint at praesentium! Enim sapiente iure, hic.</div>
+                                                        </div>
+                                                      </div></a><a class="search-result-item" href="#">
+                                                      <div class="search-result-item-inner">
+                                                        <div class="search-result-item-num">
+                                                          <div class="text gray">1.</div>
+                                                        </div>
+                                                        <div class="search-result-item-content">
+                                                          <div class="text primary">Please, <b>check </b>your request</div>
+                                                          <div class="text gray"> Lorem <b>ipsum </b>dolor sit amet, consectetur adipisicing elit. Ut maxime iste, vero hic quae. Est omnis quod similique. Repellat molestiae nemo ex, porro sint at praesentium! Enim sapiente iure, hic.</div>
+                                                        </div>
+                                                      </div></a>
+                        </div>
+                        <div class="search-pagi"><a class="search-pagi-item nav-left disabled" href="#">
+                            <div class="search-pagi-item-inner">
+                              <svg class="icon icon-search">
+                                <use xlink:href="#slidearr" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                              </svg>
+                            </div></a><a class="search-pagi-item active" href="#">
+                            <div class="search-pagi-item-inner">1</div></a><a class="search-pagi-item" href="#">
+                            <div class="search-pagi-item-inner">2</div></a><a class="search-pagi-item" href="#">
+                            <div class="search-pagi-item-inner">3</div></a><a class="search-pagi-item" href="#">
+                            <div class="search-pagi-item-inner">4</div></a>
+                          <div class="search-pagi-item dot">
+                            <div class="search-pagi-item-inner">...</div>
+                          </div><a class="search-pagi-item" href="#">
+                            <div class="search-pagi-item-inner">50</div></a><a class="search-pagi-item nav-right" href="#">
+                            <div class="search-pagi-item-inner">
+                              <svg class="icon icon-search">
+                                <use xlink:href="#slidearr" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                              </svg>
+                            </div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <div class="row">
+                  <div class="columns">
+                    <div class="footer-nav">
+                      <ul>
+                        <li><a class="footer-nav-link text js-nav" href="/">Home</a></li>
+                        <li><a class="footer-nav-link text js-nav" href="/company.html">Company</a></li>
+                        <li><a class="footer-nav-link text js-nav" href="/products.html">Products</a></li>
+                        <li><a class="footer-nav-link text js-nav" href="/projects.html">Projects</a></li>
+                        <li><a class="footer-nav-link text js-nav" href="/services.html">Service</a></li>
+                        <li><a class="footer-nav-link text js-nav" href="/news.html">News</a></li>
+                        <li><a class="footer-nav-link text js-nav" href="/contacts.html">Contacts</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="columns">
+                    <div class="block-contact">
+                      <div class="text gray">Office</div>
+                      <div class="text">11, Pramones str., lt-94102 Klaipeda, Lithuania</div>
+                      <div class="text"> <a href="tel:+37046416380">+370 (46) 416 380 </a></div>
+                      <div class="text"><a href="mailto:solutions@glassbel.com">solutions@glassbel.com</a></div>
+                    </div>
+                  </div>
+                  <div class="columns">
+                    <div class="soc-wrapper">
+                      <div class="soc-wrapper-inner"><a class="soc-item fb" href="#"></a><a class="soc-item you" href="#"></a><a class="soc-item in" href="#"></a><a class="soc-item tw" href="#"></a></div>
+                    </div>
+                    <div class="text gray copywrap"><span class="copy">© </span><span class="copytext">UAB «GLASSBEL BALTIC» <br>2001–2017</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modals">
+        <div class="modal-layout js-popup-container" data-modal="review">
+          <div class="modal-container">
+            <div class="modal-container-inner">
+              <div class="modal-container-header"><i class="small-link pop-close closePopup"></i></div>
+              <div class="modal-container-content js-review-target"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END out-->
+    <script src="js/bundle.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

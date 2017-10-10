@@ -1,0 +1,42 @@
+extends _layout
+
+block title
+	title news
+	- var _name = "news"
+	- var currentPage = "news"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Production")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h6.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+												.title.h2.white news
+						.block.margin.anim-cont.inner-list
+							.row
+								+content2('September 2017','Facades Plus Conference in New York','Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry.','Company','/news-inner.html','img/prodinner/1.jpg','Show more')
+							.row
+								+content2('September 2017','Facades Plus Conference in New York','Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry.','Company','/news-inner.html','img/prodinner/2.jpg','Show more')
+							.row
+								+content2('September 2017','Facades Plus Conference in New York','Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry.','Company','/news-inner.html','img/prodinner/2.jpg','Show more')
+							.row
+								+content2('September 2017','Facades Plus Conference in New York','Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry.','Company','/news-inner.html','img/prodinner/2.jpg','Show more')
+							.row
+								+content2('September 2017','Facades Plus Conference in New York','Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry.','Company','/news-inner.html','img/prodinner/2.jpg','Show more')
+					include includes/_footer
+
+					
