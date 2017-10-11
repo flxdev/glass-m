@@ -81,15 +81,6 @@ mixin project(name,image)
             +icon('arr')
         .project-item-content-head
           .text.primary.white #{name}
-mixin project2(name,text,image)
-  a(href="/projects-inner.html").project-item
-    .project-item-bg
-      .project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
-    .project-item-content
-      .project-item-content-inner
-        .project-item-content-head
-          .text.primary.white #{name}
-        .project-item-text
           .text #{text}
 mixin product(img,name,text,type)
   a(href="/products-inner.html").product-item
@@ -141,6 +132,16 @@ html
       title Jade Layout Template
     meta(name="viewport" content="width=device-width,initial-scale=1,user-scalable=no")
     meta(content="IE=Edge" http-equiv="X-UA-Compatible")
+    link(rel="apple-touch-icon", sizes="180x180", href="/img/fav/apple-touch-icon.png")
+    link(rel="icon", type="image/png", sizes="32x32", href="/img/fav/favicon-32x32.png")
+    link(rel="icon", type="image/png", sizes="16x16", href="/img/fav/favicon-16x16.png")
+    link(rel="manifest", href="/img/fav/manifest.json")
+    link(rel="mask-icon", href="/img/fav/safari-pinned-tab.svg", color="#0e3b85")
+    link(rel="shortcut icon", href="/img/fav/favicon.ico")
+    meta(name="apple-mobile-web-app-title", content="GLASSBEL")
+    meta(name="application-name", content="GLASSBEL")
+    meta(name="msapplication-config", content="/img/fav/browserconfig.xml")
+    meta(name="theme-color", content="#0e3b85")
     link(rel="stylesheet" media="all" href="css/screen.min.css")
   body
     script(type="text/javascript").
@@ -149,6 +150,11 @@ html
     //BEGIN out
     .root
       block content
+      .cap
+        .cap-inner
+          .image
+          .text.primary.white Please open the desktop version.
+          +nextw('Go')
       .modals
         .modal-layout(data-modal='review').js-popup-container
           .modal-container

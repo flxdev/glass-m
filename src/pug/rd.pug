@@ -1,0 +1,63 @@
+extends _layout
+
+block title
+	title R&D
+	- var _name = "R&D"
+	- var currentPage = "R&D"
+block content
+	.site__loader
+	.root__wrapper
+		.site__overlay
+		.root__frame
+			include includes/_header	
+			#barba-wrapper
+				.barba-container(data-namespace="Content")
+					.wrapper-frame
+						.block.page-head-block
+							.row
+								.columns.margin-out
+									.page-head
+										.block-bg
+											.block-bg-inner
+												.block-bg-inner.js-image.bg(data-src='img/head/h7.jpg')
+										.page-head-inner
+											.page-head-gradient
+											.page-head-content
+												.bread-cont
+													a(href="/").bread-item Home
+													a(href="#").bread-item Company
+												.title.h2.white R&D
+						.block.margin.anim-cont
+							.row
+								.columns
+									.half-title
+										.title.h3 R&D PRODUCTS
+										.text.primary Our r&d team is ongoing working on improvement of existing products and development of new ones. here you could find our newest and the most interesting solutions in architectural flat glass.
+						.block.anim-cont
+							.row
+								.columns
+									.projects-inner
+										// .projects-row-v2 и карточки тоэж с модификатором
+										.row.projects-row.projects-row-v2
+											.columns.small-12.medium-6
+												+product2('1','BIPV','Panels installed on glassbel office’s façade')
+											.columns.small-12.medium-6
+												+product2('2','Heatable glass','new solution for heatable glass')
+											.columns.small-12.medium-6
+												+product2('3','Expended mesh inside igu','ew unique product which combines advantages and eliminates ')
+											.columns.small-12.medium-6
+												+product2('4','Sefar','make your building look like metal')
+						.block.margin.anim-cont
+							.row
+								.columns
+									.graywrap
+										.half-title
+											.title.h3 RESEARCH PROJECTS
+											.text.primary We are actively involved in many international research projects focusing on the development of innovative technologies in architectural glass.
+											.partners-wrap.margin-out
+												+partner2('6','Smartflex')
+												+partner2('7','Verslo klasteris lt')
+												+partner2('7','Inoklasteris')
+					include includes/_footer
+
+					

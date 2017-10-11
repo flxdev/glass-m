@@ -486,7 +486,6 @@ function ProjectsSlider(){
 	$(".js-project-slider").each(function() {
 		var _this = $(this),
 				parent = _this.closest('.projects-wrap');
-				console.log(parent.find('.dots-wrap').length)
 		_this.slick({
 			accessibility: false,
 			arrows: false,
@@ -1021,7 +1020,6 @@ var BarbaWitget = {
 		// }); 
 		Barba.Dispatcher.on('newPageReady', function (currentStatus) {
 			var link = currentStatus.url.split(window.location.origin)[1].substring(0);
-			console.log(link)
 			var navigationLinks = document.querySelectorAll('.js-nav');
 			var navigationLinkIsActive = document.querySelectorAll('[href="' + link + '"]');
 
