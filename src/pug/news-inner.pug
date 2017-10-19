@@ -15,41 +15,35 @@ block content
 					.wrapper-frame
 						.block.page-head-block
 							.row
-								.columns
+								.columns.margin-out
 									// модификатор head-big
 									.page-head
 										.block-bg
 											.block-bg-inner
 												img.js-parallax(src="img/head/h4.jpg")
 										.page-head-inner
-											.page-head-gradient.js-parallax(data-speed="25")
-											.page-head-content.js-parallax(data-direction="-1")
+											.page-head-gradient
+											.page-head-content
 												.bread-cont
 													a(href="/").bread-item Home
 													a(href="/news.html").bread-item News
 												.title.h2.white FAcADES PLUS CONFERENCE IN NEW YORK
 						.block.margin
 							.row
-								.columns
-									// тут модификатор .news и изменены классы колонок
-									.prod-eleminner.news
-										.row
-											.columns.large-7
-												.col(data-sticky-parent).js-stick-parent
-													.prod-eleminner-content.content.js-stick
-														.prod-eleminner-content-inner
-															.text.gray September 2017
-															.text.primary Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry. 
+								// тут модификатор .news и изменены классы колонок
+								.prod-eleminner.news
+										.prod-eleminner-content.content.js-stick
+											.prod-eleminner-content-inner
+												.text.gray September 2017
+												.text.primary Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry. 
 
-															p Glassbel is entering a US market with its experience and high portfolio of projects completed all over the world. Glassbel introduced itself and met with façade consultants, business developers, and potential clients.
-															p Facades Plus speakers included the biggest names facade design and fabrication, like Gordon Gill, Antoine Predock, and James Timberlake.
-															p During workshop process at symposium, the thoughts translate into actions. The participants can exchange experience, which is gained through years of work in glass and facades industry.
-														+nextb('Back to News','/news.html')
+												p Glassbel is entering a US market with its experience and high portfolio of projects completed all over the world. Glassbel introduced itself and met with façade consultants, business developers, and potential clients.
+												p Facades Plus speakers included the biggest names facade design and fabrication, like Gordon Gill, Antoine Predock, and James Timberlake.
+												p During workshop process at symposium, the thoughts translate into actions. The participants can exchange experience, which is gained through years of work in glass and facades industry.
 
-											.columns.large-5
-												.prod-eleminner-images
-													img(src="img/news/1.jpg", alt="")
-
+											.prod-eleminner-images
+												img(src="img/news/1.jpg", alt="")
+											+nextb('Back to News','/news.html')
 
 					include includes/_footer
 					

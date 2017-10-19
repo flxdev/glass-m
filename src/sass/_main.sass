@@ -397,13 +397,14 @@ a.title
 			+rem(letter-spacing,.3px)
 			opacity: 1
 			transform: none
-			width: 50%
+			// width: 50%
 			
 			+rm(600)
 				font-size: 5vw
 
 .nav
 	&-item
+		+rem(margin-bottom,20px)
 		&-sublinks
 			+rem(max-width,521.6px)
 			backface-visibility: hidden
@@ -417,22 +418,22 @@ a.title
 		.title
 			line-height: 0.835;
 			+rem(letter-spacing,.2px)
-
+			+rem(margin-bottom,2px)
 		&.active
 			pointer-events: none
 			.title
 				color: #dcdcdd !important
 	&-sublink
 		+rem(font-size,18px)
-		line-height: 1.667;
+		line-height: 1.267;
 		color: color(black)
 		display: inline-block
 		vertical-align: top
 		
-		width: 50%
+		// width: 50%
 		+rem(padding-right,20px)
 		+rem(margin-top,4px)
-		+rem(margin-bottom,7px)
+		+rem(margin-bottom,4px)
 		&:active
 			color: color(brand)
 		&.active 
@@ -724,7 +725,9 @@ a.title
 			bottom: 0
 			opacity: 0
 			z-index: 2
-			&.slick-prev
+			display: none
+			
+			&.slick-prevprojects
 				left: 0
 				cursor: url(/img/slidearrw2.svg), auto
 				display: none
@@ -748,7 +751,7 @@ a.title
 					transition-delay: .8s
 	&-item
 		height: 100%
-		pointer-events: none
+		// pointer-events: none
 		width: 100%
 		+nosel
 		&:not(.slick-current)
@@ -1129,6 +1132,7 @@ a.title
 		position: relative
 		+rem(padding-top,30px)
 		+tr(background-color .3s)
+
 	&-outer
 		+rem(margin-top,-30px)
 		+rm(600)
@@ -1139,7 +1143,6 @@ a.title
 		+rem(margin-top,40px)
 		width: 100%
 		display: block
-		
 		.dots-wrap
 			position: absolute
 			+rem(right,10px)
@@ -1152,6 +1155,7 @@ a.title
 		z-index: -1
 		background-color: color(brand)
 		overflow: hidden
+		pointer-events: all
 		*
 			height: 100%
 		&:before
@@ -1160,6 +1164,7 @@ a.title
 			z-index: 2
 			opacity: .5
 			background-image: linear-gradient( 90deg, rgb(0,0,0) 0%, rgb(0,0,0) 100%);
+			pointer-events: none
 		&-inner
 			width: 100%
 			height: 100%
@@ -1174,6 +1179,7 @@ a.title
 			+cover
 	&-content
 		+padlr(10px)
+		// pointer-events: none
 		+rm(600)
 			+padlr(25px)	
 		.title
@@ -2237,7 +2243,7 @@ a.title
 	.modal-container
 		display: inline-block
 		vertical-align: middle 
-		+rem(min-width,320px)
+		+rem(min-width,300px)
 		+rem(max-width,600px)
 		width: 100%
 		background: color(white)
@@ -2385,7 +2391,8 @@ a.title
 	z-index: 1001
 	display: none
 	.cap-inner
-		+rem(width, 280px)
+		+rem(max-width, 280px)
+		width: 100%
 		position: absolute
 		top: 50%
 		left: 50%
@@ -2394,7 +2401,7 @@ a.title
 		.image
 			background-image: url(../img/desktop.png)
 			+rem(width, 120px)
-			+rem(height, 100px)
+			+rem(height, 99px)
 			display: inline-block
 			background-size: cover
 			+rem(margin-bottom, 30px)

@@ -1201,19 +1201,19 @@ a.title:hover {
       opacity: 1;
       -webkit-transform: none;
       -ms-transform: none;
-      transform: none;
-      width: 50%; }
+      transform: none; }
 
-.nav-item-sublinks {
-  max-width: 32.6rem;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition-duration: .4s;
-  transition-duration: .4s; }
-
-.nav-item:active .title {
-  color: #0a2d66;
-  color: var(--color-brandh); }
+.nav-item {
+  margin-bottom: 1.25rem; }
+  .nav-item-sublinks {
+    max-width: 32.6rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s; }
+  .nav-item:active .title {
+    color: #0a2d66;
+    color: var(--color-brandh); }
 
 .nav-link {
   display: block;
@@ -1224,7 +1224,8 @@ a.title:hover {
   user-select: none; }
   .nav-link .title {
     line-height: 0.835;
-    letter-spacing: 0.0125rem; }
+    letter-spacing: 0.0125rem;
+    margin-bottom: 0.125rem; }
   .nav-link.active {
     pointer-events: none; }
     .nav-link.active .title {
@@ -1232,15 +1233,14 @@ a.title:hover {
 
 .nav-sublink {
   font-size: 1.125rem;
-  line-height: 1.667;
+  line-height: 1.267;
   color: #000000;
   color: var(--color-black);
   display: inline-block;
   vertical-align: top;
-  width: 50%;
   padding-right: 1.25rem;
   margin-top: 0.25rem;
-  margin-bottom: 0.4375rem; }
+  margin-bottom: 0.25rem; }
   .nav-sublink:active {
     color: #0e3b85;
     color: var(--color-brand); }
@@ -1579,8 +1579,9 @@ a.title:hover {
       top: 0;
       bottom: 0;
       opacity: 0;
-      z-index: 2; }
-      .promo-slider-inner .slick-arrow.slick-prev {
+      z-index: 2;
+      display: none; }
+      .promo-slider-inner .slick-arrow.slick-prevprojects {
         left: 0;
         cursor: url(/img/slidearrw2.svg), auto;
         display: none; }
@@ -1606,7 +1607,6 @@ a.title:hover {
         transition-delay: .8s; }
   .promo-slider-item {
     height: 100%;
-    pointer-events: none;
     width: 100%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -2135,7 +2135,8 @@ a.title:hover {
   z-index: -1;
   background-color: #0e3b85;
   background-color: var(--color-brand);
-  overflow: hidden; }
+  overflow: hidden;
+  pointer-events: all; }
   .projects-bgwrap * {
     height: 100%; }
   .projects-bgwrap:before {
@@ -2149,7 +2150,8 @@ a.title:hover {
     opacity: .5;
     background-image: -webkit-gradient(linear, left top, right top, from(black), to(black));
     background-image: -webkit-linear-gradient(left, black 0%, black 100%);
-    background-image: linear-gradient(90deg, black 0%, black 100%); }
+    background-image: linear-gradient(90deg, black 0%, black 100%);
+    pointer-events: none; }
   .projects-bgwrap-inner {
     width: 100%;
     height: 100%;
@@ -3444,7 +3446,7 @@ a.title:hover {
   .modal-layout .modal-container {
     display: inline-block;
     vertical-align: middle;
-    min-width: 20rem;
+    min-width: 18.75rem;
     max-width: 37.5rem;
     width: 100%;
     background: #fff;
@@ -3635,7 +3637,8 @@ a.title:hover {
   z-index: 1001;
   display: none; }
   .cap .cap-inner {
-    width: 17.5rem;
+    max-width: 17.5rem;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -3646,7 +3649,7 @@ a.title:hover {
     .cap .cap-inner .image {
       background-image: url(../img/desktop.png);
       width: 7.5rem;
-      height: 6.25rem;
+      height: 6.1875rem;
       display: inline-block;
       background-size: cover;
       margin-bottom: 1.875rem; }

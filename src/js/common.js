@@ -657,15 +657,6 @@ function ProdinnerHead(){
 	targetNext.attr('href',nextL);
 	targetPrev.attr('href',prevL);
 	target.addClass('active');
-	// function Chechscroll(){
-	// 	var sTop = $(window).scrollTop();
-	// 	if(sTop > vh){
-
-	// 	}else{
-	// 		target.removeClass('active');
-	// 	}
-	// }
-	// $(window).on('scroll',debounce(Chechscroll))
 }
 var debounce = function(t, e, n) {
 	var o;
@@ -1040,15 +1031,17 @@ var BarbaWitget = {
 	},
 	MovePage: Barba.BaseTransition.extend({
 		start: function(){
-			conf.body.removeClass('menu-open');
-			$('.js-menu').add('.mob-menu').removeClass('active');
-
 			Promise
 				.all([this.newContainerLoading, this.fadeOut()])
 				.then(this.fadeIn.bind(this));
 		},
 		fadeOut: function(){
 			var deferred = Barba.Utils.deferred();
+
+			$('.js-menu').add('.mob-menu').removeClass('active');
+			conf.body.removeClass('menu-open');
+			window.__prevScrollTop && (window.scroll(0, window.__prevScrollTop));
+			window.__prevScrollTop = null;
 
 			return $(this.oldContainer).animate({
 				opacity: 0,
@@ -1062,20 +1055,22 @@ var BarbaWitget = {
 			$(this.oldContainer).hide();
 			$el.addClass('moveUp');
 			TweenMax.set($el, {
-                y: 200,
-            });
-
-            $(window).scrollTop(0,0)
-             // _this.done();
-            TweenMax.to($el, .5, {
-                y: 0,
-                autoAlpha: 1,
-                onComplete: function () {
-                    TweenMax.set($el, {clearProps: 'all'});
-                    $el.removeClass('moveUp');
-                    _this.done();
-                }
-            });
+				force3D:true,
+				y: 200,
+				onComplete: function () {
+					$(window).scrollTop(0,0);
+					TweenMax.to($el, .5, {
+						y: 0,
+						force3D:true,
+						autoAlpha: 1,
+						onComplete: function () {
+							TweenMax.set($el, {clearProps: 'all'});
+							$el.removeClass('moveUp');
+							_this.done();
+						}
+					});
+				}
+			});
 		}
 	})
 };
