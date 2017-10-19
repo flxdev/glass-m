@@ -37,8 +37,14 @@ body
 	left: 0
 	z-index: 50
 	width: 100%
+
 	.row
 		height: 50px
+		.columns
+			&:first-child
+				position: relative
+				z-index: 0
+			
 .root__frame
 	+rem(padding-top,50px)
 #barba-wrapper
@@ -63,10 +69,17 @@ body
 	max-width: 316px
 	width: 100%
 	height: 100%
-	background-image: url(../img/icons/logo.jpg)
-	background-size: contain
-	background-repeat: no-repeat
-	background-position: left center
+	position: absolute
+	left: 0
+	top: 0
+	background: url(../img/icons/logo.jpg) left center / 100% auto no-repeat
+	// background-color: red
+	// background-size: 100% auto 
+	// background-repeat: no-repeat
+	// background-position: 
+	// position: relative
+	+rem(max-width,260px)
+	z-index: 1
 	+r(1140)
 		+rem(max-width,260px)
 	&.active 

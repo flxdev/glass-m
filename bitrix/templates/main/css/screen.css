@@ -673,6 +673,9 @@ body {
   width: 100%; }
   .header .row {
     height: 50px; }
+    .header .row .columns:first-child {
+      position: relative;
+      z-index: 0; }
 
 .root__frame {
   padding-top: 3.125rem; }
@@ -702,10 +705,12 @@ body {
   max-width: 316px;
   width: 100%;
   height: 100%;
-  background-image: url(../img/icons/logo.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center; }
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../img/icons/logo.jpg) left center/100% auto no-repeat;
+  max-width: 16.25rem;
+  z-index: 1; }
   .logo.active {
     pointer-events: none; }
 
