@@ -698,7 +698,7 @@ var sortItem = function(){
 				},300);
 			});
 		})
-		$(document).on('mouseup', function (e){
+		$(document).on('click touchmove', function (e){
 			if (!trigger.is(e.target)
 				&& trigger.has(e.target).length === 0) {
 				trigger.removeClass('active');
@@ -725,10 +725,11 @@ function initMap() {
 				fullscreenControl: true,
 				scrollwheel: false,
 				mapTypeControl: false,
+
 				scaleControl: false,
 				// center: centercords,
 				streetViewControl: false,
-				gestureHandling: "greedy",
+				gestureHandling: 'cooperative',
 				zoomControlOptions: {
 						position: google.maps.ControlPosition.RIGHT_CENTER
 				},
@@ -996,7 +997,27 @@ function loadState(){
 				return navigationLink.classList.add('active');
 	});
 }
+function tapProject(){
+	var parent = $('.row-blue');
+	if(parent.length){
+		var targets = parent.find('.project-item');
+		targets.each(function(){
+			var _ = $(this);
+			_.off('click').on('click',function(){
+				if(!_.hasClass('showed')){
+						_.addClass('showed').parent().siblings().find('.project-item').removeClass('showed');
+				}
+				$(document).on('click',function(e){
+					if (!parent.is(e.target) 
+						&& parent.has(e.target).length === 0) {
+							targets.removeClass('showed')
+					}
+				})
+			});
 
+		});
+	}
+}
 var BarbaWitget = {
 	init: function(){
 		var scope = this;
@@ -1133,6 +1154,7 @@ var contacts = Barba.BaseView.extend({
 	},
 	onEnterCompleted: function(){
 		 googleMaps();
+
 	},
 	onLeaveComplete: function(){
 	}
@@ -1140,6 +1162,7 @@ var contacts = Barba.BaseView.extend({
 var content = Barba.BaseView.extend({
 	namespace: "Content",
 	onEnter: function(){
+		tapProject()
 		var revItems = document.querySelectorAll('.review-item');
 		if(revItems.length){
 			revfunc = new review(revItems);
@@ -1153,12 +1176,34 @@ var content = Barba.BaseView.extend({
 	onLeaveComplete: function(){
 	}
 });
+var NewsInner = Barba.BaseView.extend({
+	namespace: "news-inner",
+	onEnter: function(){
+
+	},
+	onLeave: function(){
+		var stickEl = $('.js-stick');
+		var stickPos = stickEl.css('top');
+		if(stickPos != 'auto'){
+			returnStickPos(stickEl,stickPos)
+		}else{
+		}
+	},
+	onEnterCompleted: function(){
+
+		stickinit();
+		moreslider();
+	},
+	onLeaveComplete: function(){
+	}
+});
 IndexPage.init();
 Production.init();
 ProductionInner.init();
 PojectsPage.init();
 contacts.init();
 content.init();
+NewsInner.init();
 BarbaWitget.init();
 
 

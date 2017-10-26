@@ -2,8 +2,8 @@ extends _layout
 
 block title
 	title Production
-	- var _name = "Production"
-	- var currentPage = "Production"
+	- var _name = "news"
+	- var currentPage = "news"
 block content
 	.site__loader
 	.root__wrapper
@@ -11,7 +11,7 @@ block content
 		.root__frame
 			include includes/_header	
 			#barba-wrapper
-				.barba-container(data-namespace="Production-inner")
+				.barba-container(data-namespace="news-inner")
 					.wrapper-frame
 						.block.page-head-block
 							.row
@@ -27,7 +27,7 @@ block content
 												.bread-cont
 													a(href="/").bread-item Home
 													a(href="/news.html").bread-item News
-												.title.h2.white FAcADES PLUS CONFERENCE IN NEW YORK
+												.title.h2.white news
 						.block.margin
 							.row
 								// тут модификатор .news и изменены классы колонок
@@ -35,9 +35,12 @@ block content
 										.prod-eleminner-content.content.js-stick
 											.prod-eleminner-content-inner
 												.text.gray September 2017
-												.text.primary Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry. 
+												h1 FAcADES PLUS CONFERENCE IN NEW YORK
 
+												.text.primary Facades+ is a premier conference on high-performance building enclosures. It offers an outstanding opportunity to interact with the movers and shakers of the AEC (Architecture, Engineering, and Construction) industry. 
+												h2 FAcADES PLUS CONFERENCE IN NEW YORK
 												p Glassbel is entering a US market with its experience and high portfolio of projects completed all over the world. Glassbel introduced itself and met with façade consultants, business developers, and potential clients.
+												h3 FAcADES PLUS CONFERENCE IN NEW YORK
 												p Facades Plus speakers included the biggest names facade design and fabrication, like Gordon Gill, Antoine Predock, and James Timberlake.
 												p During workshop process at symposium, the thoughts translate into actions. The participants can exchange experience, which is gained through years of work in glass and facades industry.
 

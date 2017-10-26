@@ -630,10 +630,15 @@ a.title
 
 	.block-contact
 		+rem(padding-top,5px)
+		.text
+			&>a[href^="tel:"]
+				&:only-child
+					+rem(margin-top,10px)
+					display: block
 	.text
 		color: color(footertext)
 		&.gray 
-			opacity: .3
+			opacity: .4
 		a
 			transition: color .3s, opacity .3s
 			&[href^="tel:"]
@@ -973,7 +978,8 @@ a.title
 		width: 100%
 		height: 100%
 		+tr(transform .15s linear)
-
+		img
+			width: 100%
 		&:before
 			content: ''
 			+coverdiv
@@ -1010,7 +1016,9 @@ a.title
 		&-text 
 			width: calc(100% - 2.1875rem)
 			.title.h3
-				font-size: 8vw
+				font-size: 6vw
+				// word-wrap: break-word
+				
 		&-arrow 
 			+rem(width,35px)
 			+rem(height,24px)
@@ -1426,8 +1434,37 @@ a.title
 				+rem(margin-bottom,30px)
 		.link-arr
 			+rem(margin-top,25px)
+			display: block
+			width: 100%
+			text-align: center
+			+rem(padding-top,10px)
+			+rem(padding-bottom,10px)
 
 .content 
+	h1,h2,h3
+		text-transform: uppercase;
+		line-height: 0.857;
+		font-family: $t
+		color: color(brand)
+		+tr(color .3s)
+		font-weight: 900
+	h1
+		+rem(font-size,32px)
+		+rem(margin,30px 0 15px)
+		+r(600)
+			+rem(font-size,25px)	
+	h2
+		+rem(font-size,26px)
+		+rem(margin,25px 0 10px)
+		+r(600)
+			+rem(font-size,22px)
+	h3
+		+rem(font-size,22px)
+		font-weight: 700
+		+rem(margin,20px 0 5px)
+		+r(600)
+			+rem(font-size,18px)
+
 	p 
 		+rem(font-size,16px)
 		line-height: 1.444;
@@ -1559,12 +1596,40 @@ a.title
 				+rem(padding,20px)
 			.project-item-arrow
 				display: none
-				
-			// .project-item
-			// 	&:hover
-			// 		.project-item-bg-inner
-			// 			&:after
-			// 				opacity: 0
+			.project-item
+				padding-bottom: 0
+				height: 100%
+				&.showed
+					.project-item-bg-inner
+						&:after
+							opacity: 0
+						&:before
+							opacity: 1
+					.project-item-content-head
+						bottom: 100%
+						transform: translateY(100%)
+						transition-delay: .3s
+					.project-item-content-text
+						opacity: 1
+						transform: none
+						transition-delay: .4s
+			.project-item-content
+				position: static
+			.project-item-bg-inner
+				&:before
+					background: color(brand)
+			.project-item-content-text
+				position: static
+				+rem(padding-top,70px)
+				height: 100%
+				display: flex
+				flex-flow: column nowrap
+				justify-content: flex-end
+				+rem(min-height,170px)
+				// align-items: flex-start
+				.text
+					display: inherit
+					+cut(20)
 
 .row 
 	&.projects-row
@@ -1588,7 +1653,6 @@ a.title
 				opacity: 1
 				transition-delay: .1s
 			.project-item-bg-inner
-				transform: scale(1.098)
 				&:after
 					opacity: 0
 				&:before
@@ -1901,6 +1965,12 @@ a.title
 				display: inline-block
 				vertical-align: top
 				width: 50%
+			&:nth-child(2)
+				.text
+					&>a[href^="tel:"]
+						&:only-child
+							+rem(margin-top,10px)
+							display: block
 			a
 				font-weight: 600
 				transition: color .3s, opacity .3s
@@ -2034,6 +2104,8 @@ a.title
 			+rem(max-width,430px)	
 			+rem(margin-bottom,20px)
 			+rem(font-size,35px)
+			+rm(600)
+				+rem(font-size,30px)	
 		.text 
 			+rem(max-width,350px)	
 			display: block

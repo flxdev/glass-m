@@ -82,6 +82,16 @@ mixin project(name,image)
         .project-item-content-head
           .text.primary.white #{name}
           .text #{text}
+mixin project2(name,image,text)
+  .project-item(onclick='')
+    .project-item-bg
+      .project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
+    .project-item-content
+      .project-item-content-inner
+        .project-item-content-head
+          .text.primary.white #{name}
+        .project-item-content-text
+          .text #{text}
 mixin product(img,name,text,type)
   a(href="/products-inner.html").product-item
     .product-item-inner
