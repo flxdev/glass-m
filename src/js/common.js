@@ -698,7 +698,7 @@ var sortItem = function(){
 				},300);
 			});
 		})
-		$(document).on('click touchmove', function (e){
+		$(document).on('click touchstart', function (e){
 			if (!trigger.is(e.target)
 				&& trigger.has(e.target).length === 0) {
 				trigger.removeClass('active');
@@ -706,15 +706,6 @@ var sortItem = function(){
 		});
 	});
 };
-function returnStickPos(stickEl,stickpos){
-	var ws = $(window).scrollTop();
-	var stickPosVal = parseInt(stickpos);
-	var wh = stickEl.height();
-	if(stickEl.css('position') == 'fixed'){
-		stickEl.css('top',ws + stickPosVal - 80)
-	}
-
-}
 
 var opts;
 function initMap() {
@@ -1182,12 +1173,6 @@ var NewsInner = Barba.BaseView.extend({
 
 	},
 	onLeave: function(){
-		var stickEl = $('.js-stick');
-		var stickPos = stickEl.css('top');
-		if(stickPos != 'auto'){
-			returnStickPos(stickEl,stickPos)
-		}else{
-		}
 	},
 	onEnterCompleted: function(){
 

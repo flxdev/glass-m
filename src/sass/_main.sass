@@ -744,8 +744,8 @@ a.title
 			opacity: 0
 			z-index: 2
 			display: none
-			
-			&.slick-prevprojects
+			font-size: 0
+			&.slick-prev
 				left: 0
 				cursor: url(/img/slidearrw2.svg), auto
 				display: none
@@ -1435,10 +1435,7 @@ a.title
 		.link-arr
 			+rem(margin-top,25px)
 			display: block
-			width: 100%
-			text-align: center
 			+rem(padding-top,10px)
-			+rem(padding-bottom,10px)
 
 .content 
 	h1,h2,h3
@@ -1515,11 +1512,12 @@ a.title
 .prod-nav
 	position: fixed
 	left: 0
-	+rem(top,50px)
+	+rem(top,45px)
 	z-index: 8
 	width: 100%
 	visibility: hidden
-
+	+r(600)
+		+rem(top,50px)	
 	&.active 
 		.prod-nav-inner 
 			transform: none
@@ -2562,3 +2560,10 @@ a.title
 				&-container 
 					&:before
 						background-color: color(textblk)	
+.video
+	+rem(margin, 25px 0)
+	width: 100%
+	padding-bottom: 56.25%
+	position: relative
+	iframe
+		+coverdiv
