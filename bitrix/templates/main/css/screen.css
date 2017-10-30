@@ -672,7 +672,7 @@ body {
   z-index: 50;
   width: 100%; }
   .header .row {
-    height: 50px; }
+    height: 3.125rem; }
     .header .row .columns:first-child {
       position: relative;
       z-index: 0; }
@@ -2521,7 +2521,7 @@ a.title:hover {
 .prod-nav {
   position: fixed;
   left: 0;
-  top: 2.5rem;
+  top: 3.125rem;
   z-index: 8;
   width: 100%;
   visibility: hidden; }
@@ -3869,82 +3869,135 @@ a.title:hover {
       background-color: #303234;
       background-color: var(--color-textblk); }
 
-.video {
+.youtube-slide {
   margin: 1.5625rem 0;
   width: 100%;
   padding-bottom: 56.25%;
   position: relative; }
-  .video iframe {
+  .youtube-slide iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+.youtube-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.youtube-slide iframe, .youtube-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.youtube-slide .play-button, .youtube-slide .play-button:before, .youtube-slide iframe, .youtube-slide img {
+  position: absolute; }
+
+.youtube-slide img {
+  object-fit: cover;
+  cursor: pointer; }
+
+.youtube-slide .play-button {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAA+CAMAAACY5ixBAAAAgVBMVEVHcEz/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzPWGLOKAAAAKnRSTlMADfe4Be/V4fvxwKfc6ncgAq0qywFQLztGWYPEnGr0j4gZZuVvXxM0tH8ftkDpAAABj0lEQVR4AbXX2W6jQBSE4QK6oc0OtsEsxjtO6v0fcJwZNEmUSAa5z3eNfnFVR40v8rJJe28dJ1pzAa2TeO31702Z4xfj3lvxRStvf8J3VWFohSkqfFIH2mNahYnT0SpvKquQlhUbfHindXs8nFxalzgAWlLml30KCIGMEsyIhiJ2OFJEiogSTI+QIt7gU8QaAUXEWFFEMiPsptXO40KrGeEGD3W4NPz8kxx/7daWwwEmm63P2cyCMJA3MedaFAbUOZAJA+qayIQBJ9UyYWBsB5kwMB5cmTCQ+UJh1FJhJRUuhcKOJxLObwEFwtMc2Q1PAyoQrkORrajeRNatLET2OOsNZ4P7/JD/czoYy1f6jofxOCy80hc+E9fTti9xgc/nBsOlfHQUESKiiAhHimhxo4gbKoq4I9cU4CqgoAAPwJYCzgDUReRh+rCndT0+KJ+WDdk03wPtumKyNbQp2uB/WdvsKnzKQlripht8s+togYky/FC2neErXO96wu+c+nwouljrRXdTB34YHc93hS/+AJXBD+od0exhAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  width: 5.625rem;
+  height: 3.75rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  -webkit-transition: -webkit-filter .3s;
+  transition: -webkit-filter .3s;
+  transition: filter .3s;
+  transition: filter .3s, -webkit-filter .3s; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
-  @media print, screen and (min-width: 64em) and (min-width: 64em) {
+
+@media print, screen and (min-width: 64em) and (min-width: 64em) {
 
   .large-expand {
     -ms-flex: 1 1 0px;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0px;
     flex: 1 1 0px; } }
-  @media print, screen and (min-width: 40em) and (min-width: 40em) {
+
+@media print, screen and (min-width: 40em) and (min-width: 40em) {
 
   .medium-expand {
     -ms-flex: 1 1 0px;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 0px;
     flex: 1 1 0px; } }
-  @media only screen and (max-width: 1600px) {
+
+@media only screen and (max-width: 1600px) {
 
   .feat-wrap {
     margin: 0 -2.5rem; } }
-  @media not all and (-moz-touch-enabled: 1), not all and (pointer: coarse), not all and (-ms-high-contrast: none) and (max-width: 600px) {
+
+@media not all and (-moz-touch-enabled: 1), not all and (pointer: coarse), not all and (-ms-high-contrast: none) and (max-width: 600px) {
 
   .bread-item:hover {
     opacity: 1; }
 
   .bread-item:hover:after {
     opacity: .5; } }
-  @media only screen and (max-width: 1450px) {
+
+@media only screen and (max-width: 1450px) {
 
   .prod-elem .link-arr {
     margin-bottom: 3.125rem; } }
-  @media only screen and (max-width: 1300px) {
+
+@media only screen and (max-width: 1300px) {
 
   .project-item-content {
     padding: 1.875rem 1.9375rem 1.375rem; }
 
   .feat-wrap {
     margin: 0 -0.625rem; } }
-  @media only screen and (min-width: 1201px) {
+
+@media only screen and (min-width: 1201px) {
 
   .prod-elem {
     padding-left: 2.5rem; } }
-  @media only screen and (max-width: 1140px) {
+
+@media only screen and (max-width: 1140px) {
 
   .logo {
     max-width: 16.25rem; } }
-  @media screen and (min-width: 1025px) and (orientation: portrait) {
+
+@media screen and (min-width: 1025px) and (orientation: portrait) {
 
   .cap {
     display: block; } }
-  @media screen and (min-width: 1024px) and (orientation: landscape) {
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
 
   .cap {
     display: block; } }
-  @media only screen and (min-width: 800px) {
+
+@media only screen and (min-width: 800px) {
 
   html {
     font-size: 20px; } }
-  @media only screen and (max-width: 799px) {
+
+@media only screen and (max-width: 799px) {
 
   html {
     font-size: 18px; } }
-  @media only screen and (min-width: 700px) {
+
+@media only screen and (min-width: 700px) {
 
   .contact-text .block-contact {
     display: inline-block;
@@ -3953,7 +4006,8 @@ a.title:hover {
 
   .map-container {
     padding-bottom: 70%; } }
-  @media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
 
   html {
     font-size: 16px; }
@@ -3965,11 +4019,9 @@ a.title:hover {
     font-size: 1.375rem; }
 
   .content h3 {
-    font-size: 1.125rem; }
+    font-size: 1.125rem; } }
 
-  .prod-nav {
-    top: 3.125rem; } }
-  @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
 
   .title.h2 {
     font-size: 11vw; }
@@ -4035,7 +4087,8 @@ a.title:hover {
 
   .feat-item .title {
     font-size: 1.875rem; } }
-  @media print, screen and (min-width: 64em) {
+
+@media print, screen and (min-width: 64em) {
 
   .row .row {
     margin-right: 0;
@@ -4352,7 +4405,8 @@ a.title:hover {
     -webkit-box-direction: reverse;
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse; } }
-  @media print, screen and (min-width: 40em) {
+
+@media print, screen and (min-width: 40em) {
 
   .row .row {
     margin-right: 0;

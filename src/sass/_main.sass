@@ -39,7 +39,7 @@ body
 	width: 100%
 
 	.row
-		height: 50px
+		+rem(height,50px)
 		.columns
 			&:first-child
 				position: relative
@@ -1512,12 +1512,10 @@ a.title
 .prod-nav
 	position: fixed
 	left: 0
-	+rem(top,40px)
+	+rem(top,50px)
 	z-index: 8
 	width: 100%
 	visibility: hidden
-	+r(600)
-		+rem(top,50px)	
 	&.active 
 		.prod-nav-inner 
 			transform: none
@@ -2576,10 +2574,47 @@ a.title
 				&-container 
 					&:before
 						background-color: color(textblk)	
-.video
+.youtube-slide
 	+rem(margin, 25px 0)
 	width: 100%
 	padding-bottom: 56.25%
 	position: relative
 	iframe
 		+coverdiv
+.youtube-slide
+	position: relative;
+	width: 100%
+	height: 100%
+	overflow: hidden
+	
+	// z-index: 50;
+	// contain: paint
+	// z-index: 1
+.youtube-slide iframe,.youtube-slide img
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+.youtube-slide iframe
+	// opacity: .99
+
+.youtube-slide .play-button,.youtube-slide .play-button:before,.youtube-slide iframe,.youtube-slide img 
+	position: absolute
+
+.youtube-slide img 
+	object-fit: cover;
+	cursor: pointer
+.youtube-slide .play-button
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAA+CAMAAACY5ixBAAAAgVBMVEVHcEz/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzP/MzPWGLOKAAAAKnRSTlMADfe4Be/V4fvxwKfc6ncgAq0qywFQLztGWYPEnGr0j4gZZuVvXxM0tH8ftkDpAAABj0lEQVR4AbXX2W6jQBSE4QK6oc0OtsEsxjtO6v0fcJwZNEmUSAa5z3eNfnFVR40v8rJJe28dJ1pzAa2TeO31702Z4xfj3lvxRStvf8J3VWFohSkqfFIH2mNahYnT0SpvKquQlhUbfHindXs8nFxalzgAWlLml30KCIGMEsyIhiJ2OFJEiogSTI+QIt7gU8QaAUXEWFFEMiPsptXO40KrGeEGD3W4NPz8kxx/7daWwwEmm63P2cyCMJA3MedaFAbUOZAJA+qayIQBJ9UyYWBsB5kwMB5cmTCQ+UJh1FJhJRUuhcKOJxLObwEFwtMc2Q1PAyoQrkORrajeRNatLET2OOsNZ4P7/JD/czoYy1f6jofxOCy80hc+E9fTti9xgc/nBsOlfHQUESKiiAhHimhxo4gbKoq4I9cU4CqgoAAPwJYCzgDUReRh+rCndT0+KJ+WDdk03wPtumKyNbQp2uB/WdvsKnzKQlripht8s+togYky/FC2neErXO96wu+c+nwouljrRXdTB34YHc93hS/+AJXBD+od0exhAAAAAElFTkSuQmCC);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
+	width: 5.625rem;
+	height: 3.75rem;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 1;
+	cursor: pointer;
+	transition: filter .3s;

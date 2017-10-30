@@ -427,7 +427,35 @@ function lazyImage(){
 	if ( typeof NodeList.prototype.forEach === "function" ) return false;
 	NodeList.prototype.forEach = Array.prototype.forEach;
 })();
+function Ytube() {
+	var youtube = document.querySelectorAll( ".youtube-slide" );
+	
+	for (var i = 0; i < youtube.length; i++) {
+		
+		var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/mqdefault.jpg";
+		var parent = $(youtube[i]).parent();
+		var image = new Image();
+				image.src = source;
+				image.addEventListener( "load", function() {
+					youtube[ i ].appendChild( image );
+				}( i ) );
+		
+				youtube[i].addEventListener( "click", function() {
 
+					var iframe = document.createElement( "iframe" );
+
+							iframe.setAttribute( "frameborder", "0" );
+							iframe.setAttribute( "allowfullscreen", "" );
+							// iframe.setAttribute( "wmode", "Opaque" );
+							parent.hasClass('prod-eleminner-images') ? iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?wmode=opaque&rel=0&showinfo=0&autoplay=1" ) : iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0" );;
+							
+
+							this.innerHTML = "";
+							this.appendChild( iframe );
+				} );	
+	};
+	
+}
 function teamslider(){
 	$(".js-team-slider").each(function() {
 		var _this = $(this),
@@ -1116,7 +1144,7 @@ var Production = Barba.BaseView.extend({
 var ProductionInner = Barba.BaseView.extend({
 	namespace: "Production-inner",
 	onEnter: function(){
-
+		Ytube();
 	},
 	onLeave: function(){
 		$('.js-prod-head').removeClass('active');
