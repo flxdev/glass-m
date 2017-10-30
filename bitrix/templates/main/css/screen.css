@@ -2521,7 +2521,7 @@ a.title:hover {
 .prod-nav {
   position: fixed;
   left: 0;
-  top: 2.8125rem;
+  top: 2.5rem;
   z-index: 8;
   width: 100%;
   visibility: hidden; }
@@ -2626,12 +2626,45 @@ a.title:hover {
       margin-top: 0 !important;
       margin-bottom: 0 !important; }
       .projects-row.row-blue .project-item-content {
-        padding: 1.25rem; }
+        padding: 1.25rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        -webkit-box-align: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        height: auto; }
+        .projects-row.row-blue .project-item-content-inner {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-self: stretch;
+          -ms-flex-item-align: stretch;
+          align-self: stretch;
+          height: auto; }
       .projects-row.row-blue .project-item-arrow {
         display: none; }
+      .projects-row.row-blue .columns {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
       .projects-row.row-blue .project-item {
         padding-bottom: 0;
-        height: 100%; }
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch; }
         .projects-row.row-blue .project-item.showed .project-item-bg-inner:after {
           opacity: 0; }
         .projects-row.row-blue .project-item.showed .project-item-bg-inner:before {
@@ -2680,6 +2713,8 @@ a.title:hover {
           -webkit-box-orient: vertical;
           display: -webkit-box;
           overflow: hidden; }
+      .projects-row.row-blue .project-item-bg-inner img {
+        height: 100%; }
 
 .row.projects-row {
   margin: 1.25rem -0.3125rem 1.875rem; }
@@ -3441,7 +3476,15 @@ a.title:hover {
 .review {
   margin: 1rem -0.1875rem 2.6875rem -0.1875rem; }
   .review .columns {
-    padding: 0.1875rem; }
+    padding: 0.1875rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
     .review .columns:first-child, .review .columns:last-child {
       padding: 0.1875rem; }
   .review-item {
@@ -3450,7 +3493,6 @@ a.title:hover {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    height: 100%;
     padding-left: 1.4375rem;
     padding-right: 1.4375rem;
     padding-top: 1.5625rem;
@@ -3484,7 +3526,7 @@ a.title:hover {
     .review-item-content .review-trigger {
       position: absolute;
       right: 0;
-      bottom: -0.125rem;
+      bottom: 0;
       cursor: pointer;
       background-color: #FFF;
       display: none;
@@ -3497,7 +3539,8 @@ a.title:hover {
         color: var(--color-brand);
         -webkit-transition: color 0.3s;
         transition: color 0.3s;
-        position: relative; }
+        position: relative;
+        line-height: 1; }
         .review-item-content .review-trigger span:before {
           content: '';
           display: inline-block;
@@ -3881,10 +3924,6 @@ a.title:hover {
 
   .prod-elem {
     padding-left: 2.5rem; } }
-  @media only screen and (max-width: 1200px) {
-
-  .review-item-content .review-trigger {
-    bottom: -0.3125rem; } }
   @media only screen and (max-width: 1140px) {
 
   .logo {

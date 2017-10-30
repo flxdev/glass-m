@@ -1512,7 +1512,7 @@ a.title
 .prod-nav
 	position: fixed
 	left: 0
-	+rem(top,45px)
+	+rem(top,40px)
 	z-index: 8
 	width: 100%
 	visibility: hidden
@@ -1592,11 +1592,23 @@ a.title
 			margin-bottom: 0 !important
 			.project-item-content
 				+rem(padding,20px)
+				display: flex 
+				align-self: stretch
+				align-items: stretch
+				height: auto
+				&-inner 
+					display: flex 
+					align-self: stretch
+					height: auto
 			.project-item-arrow
 				display: none
+			.columns
+				display: flex
 			.project-item
 				padding-bottom: 0
-				height: 100%
+				height: auto
+				display: flex
+				align-self: stretch
 				&.showed
 					.project-item-bg-inner
 						&:after
@@ -1628,6 +1640,8 @@ a.title
 				.text
 					display: inherit
 					+cut(20)
+			.project-item-bg-inner img 
+				height: 100%
 
 .row 
 	&.projects-row
@@ -2226,12 +2240,15 @@ a.title
 	+rem(margin,16px -3px 43px -3px)
 	.columns
 		+rem(padding,3px)
+		display: flex 
+		align-items: stretch
 		&:first-child,&:last-child
 			+rem(padding,3px)
 	&-item 
 		border: 1px solid #c9c9c9
 		display: flex 
-		height: 100%
+		// height: 100%
+		// background-color: red
 		+padlr(23px)
 		+rem(padding-top,25px)
 		+rem(padding-bottom,20px)
@@ -2271,13 +2288,11 @@ a.title
 			.review-trigger
 				position: absolute
 				right: 0
-				+rem(bottom,-2px)
+				+rem(bottom,0px)
 				cursor: pointer
 				background-color: #FFF
 				display: none
 				z-index: 1
-				+r(1200)
-					+rem(bottom,-5px)
 				&:hover
 					span 
 						color: color(brandh)
@@ -2285,6 +2300,7 @@ a.title
 					color: color(brand)
 					+tr(color .3s)
 					position: relative
+					line-height: 1
 					&:before
 						content: ''
 						display: inline-block
