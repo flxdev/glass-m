@@ -72,7 +72,7 @@ body
 	position: absolute
 	left: 0
 	top: 0
-	background: url(../img/icons/logo.jpg) left center / 100% auto no-repeat
+	background: url(../img/icons/logo.svg) left center / 100% auto no-repeat
 	// background-color: red
 	// background-size: 100% auto 
 	// background-repeat: no-repeat
@@ -1173,10 +1173,10 @@ a.title
 			width: 100%
 	&-bgwrap
 		+coverdiv
-		z-index: -1
+		z-index: 0
 		background-color: color(brand)
 		overflow: hidden
-		pointer-events: all
+		// pointer-events: all
 		*
 			height: 100%
 		&:before
@@ -1200,7 +1200,11 @@ a.title
 			+cover
 	&-content
 		+padlr(10px)
-		// pointer-events: none
+		pointer-events: none
+		position: relative
+		z-index: 1
+		.dots-wrap
+			pointer-events: all
 		+rm(600)
 			+padlr(25px)	
 		.title
@@ -1711,6 +1715,7 @@ a.title
 			z-index: 0
 			+rem(padding,44px 39px 30px)
 			overflow: hidden
+
 			+r(1300)
 				+rem(padding,30px 31px 22px)	
 			&-inner
@@ -2500,7 +2505,7 @@ a.title
 			+rem(width, 120px)
 			+rem(height, 99px)
 			display: inline-block
-			background-size: cover
+			+contain
 			+rem(margin-bottom, 30px)
 		.link-arr
 			+rem(margin-top, 40px)

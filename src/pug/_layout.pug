@@ -1,183 +1,183 @@
 mixin icon(name)
-  svg(class="icon-" + name)
-    use(xlink:href="#"+ name)
+	svg(class="icon-" + name)
+		use(xlink:href="#"+ name)
 mixin next(text)
-  a(href="#").link-arr
-    .link-arr-text
-      .text #{text}
-    .link-arr-icon
-      .icon
-        +icon('arr')
+	a(href="#").link-arr
+		.link-arr-text
+			.text #{text}
+		.link-arr-icon
+			.icon
+				+icon('arr')
 mixin nextw(text)
-  a(href="#").link-arr.white
-    .link-arr-text
-      .text #{text}
-    .link-arr-icon
-      .icon
-        +icon('arr')
+	a(href="#").link-arr.white
+		.link-arr-text
+			.text #{text}
+		.link-arr-icon
+			.icon
+				+icon('arr')
 mixin nextb(text,link)
-  a(href=link).link-arr.right
-    .link-arr-icon
-      .icon
-        +icon('arr')
-    .link-arr-text
-      .text #{text}
+	a(href=link).link-arr.right
+		.link-arr-icon
+			.icon
+				+icon('arr')
+		.link-arr-text
+			.text #{text}
 mixin down(text,val)
-  a(href='#').link-arr.down
-    .link-arr-icon
-      svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 42 41.9')
-        path(d='M40 24.9v14c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1v-14H0v14c0 1.7 1.3 3 3 3h36c1.7 0 3-1.3 3-3v-14h-2z', fill='currentcolor')
-        path.down-arr(d='M30.9 20.3L22 29.2V0h-2v29.2l-8.9-8.9-1.4 1.4L21 33l11.3-11.3z', fill='currentcolor')
-    .link-arr-text
-      .text #{text}
-        span  (#{val})
+	a(href='#').link-arr.down
+		.link-arr-icon
+			svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 42 41.9')
+				path(d='M40 24.9v14c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1v-14H0v14c0 1.7 1.3 3 3 3h36c1.7 0 3-1.3 3-3v-14h-2z', fill='currentcolor')
+				path.down-arr(d='M30.9 20.3L22 29.2V0h-2v29.2l-8.9-8.9-1.4 1.4L21 33l11.3-11.3z', fill='currentcolor')
+		.link-arr-text
+			.text #{text}
+				span  (#{val})
 mixin content(title,text,linktext,link,img,linktext)
-  a.block-wrap(href=link)
-    .title.h3 #{title}
-    img.js-image(data-src=img, alt="")
-    .block-text-content
-      .text.primary #{text}
-      .link-arr
-        .link-arr-text
-          .text #{linktext}
-        .link-arr-icon
-          .icon
-            +icon('arr')
+	a.block-wrap(href=link)
+		.title.h3 #{title}
+		img.js-image(data-src=img, alt="")
+		.block-text-content
+			.text.primary #{text}
+			.link-arr
+				.link-arr-text
+					.text #{linktext}
+				.link-arr-icon
+					.icon
+						+icon('arr')
 mixin content2(date,title,text,linktext,link,img,linktext)
-  a.block-wrap(href=link)
-    .text.gray #{date}
-    .title.h3 #{title}
-    img.js-image(data-src=img, alt="")
-    .block-text-content
-      .text.primary #{text}
-      .link-arr
-        .link-arr-text
-          .text #{linktext}
-        .link-arr-icon
-          .icon
-            +icon('arr')
+	a.block-wrap(href=link)
+		.text.gray #{date}
+		.title.h3 #{title}
+		img.js-image(data-src=img, alt="")
+		.block-text-content
+			.text.primary #{text}
+			.link-arr
+				.link-arr-text
+					.text #{linktext}
+				.link-arr-icon
+					.icon
+						+icon('arr')
 mixin nextl(text, img,url)
-  a(href=""+url+"").block.next
-    .block-bg
-      .block-bg-inner
-       .block-bg-img.js-image.bg(data-src="img/next/"+img+".jpg")
-    .block-link
-      .row.align-middle
-        .columns
-          .text What's next?
-          .block-link-arrow
-            .block-link-arrow-text
-              .title.h3.white #{text}
-            .block-link-arrow-arrow
-               +icon('arr')
+	a(href=""+url+"").block.next
+		.block-bg
+			.block-bg-inner
+				.block-bg-img.js-image.bg(data-src="img/next/"+img+".jpg")
+		.block-link
+			.row.align-middle
+				.columns
+					.text What's next?
+					.block-link-arrow
+						.block-link-arrow-text
+							.title.h3.white #{text}
+						.block-link-arrow-arrow
+							+icon('arr')
 mixin project(name,image)
-  a(href="/projects-inner.html").project-item
-    .project-item-bg
-      .project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
-    .project-item-content
-      .project-item-content-inner
-        .project-item-arrow
-          .icon
-            +icon('arr')
-        .project-item-content-head
-          .text.primary.white #{name}
-          .text #{text}
+	a(href="/projects-inner.html").project-item
+		.project-item-bg
+			.project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
+		.project-item-content
+			.project-item-content-inner
+				.project-item-arrow
+					.icon
+						+icon('arr')
+				.project-item-content-head
+					.text.primary.white #{name}
+					.text #{text}
 mixin project2(name,image,text)
-  .project-item(onclick='')
-    .project-item-bg
-      .project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
-    .project-item-content
-      .project-item-content-inner
-        .project-item-content-head
-          .text.primary.white #{name}
-        .project-item-content-text
-          .text #{text}
+	.project-item(onclick='')
+		.project-item-bg
+			.project-item-bg-inner.js-image.bg(data-src='img/projects/'+image+'.jpg')
+		.project-item-content
+			.project-item-content-inner
+				.project-item-content-head
+					.text.primary.white #{name}
+				.project-item-content-text
+					.text #{text}
 mixin product(img,name,text,type)
-  a(href="/products-inner.html").product-item
-    .product-item-inner
-      .product-item-image
-        .product-item-image-outer
-          .product-item-image-inner
-            img.js-image(data-src='img/products/'+img+'.jpg')
-          .product-item-type
-            .type-item(style='background-image:url(img/icons/icon-bullet.png);')
-      .product-item-content
-        .text.gray Laminated, Insulated Glass
-        .text.primary #{name}
-        .text.descr #{text}
+	a(href="/products-inner.html").product-item
+		.product-item-inner
+			.product-item-image
+				.product-item-image-outer
+					.product-item-image-inner
+						img.js-image(data-src='img/products/'+img+'.jpg')
+					.product-item-type
+						.type-item(style='background-image:url(img/icons/icon-bullet.png);')
+			.product-item-content
+				.text.gray Laminated, Insulated Glass
+				.text.primary #{name}
+				.text.descr #{text}
 mixin product2(img,name,text,type)
-  a(href="/products-inner.html").product-item.product-item-v2
-    .product-item-inner
-      .product-item-image
-        .product-item-image-outer
-          .product-item-image-inner
-            img.js-image(data-src='img/products/'+img+'.jpg')
-      .product-item-content
-        .text.primary #{name}
-        .text.descr #{text}
+	a(href="/products-inner.html").product-item.product-item-v2
+		.product-item-inner
+			.product-item-image
+				.product-item-image-outer
+					.product-item-image-inner
+						img.js-image(data-src='img/products/'+img+'.jpg')
+			.product-item-content
+				.text.primary #{name}
+				.text.descr #{text}
 mixin newscontent(date, title, text)
-  .newscont
-    a(href="news-inner.html").newscont-inner
-      .text.gray #{date}
-      .text.primary #{title}
-      .text #{text}
-    +next('Show more')
+	.newscont
+		a(href="news-inner.html").newscont-inner
+			.text.gray #{date}
+			.text.primary #{title}
+			.text #{text}
+		+next('Show more')
 mixin partner(icon)
-  .quality-item
-    .quality-item-outer
-      .quality-item-inner
-        img.js-image(data-src="img/partners/"+icon+".png", alt="")
+	.quality-item
+		.quality-item-outer
+			.quality-item-inner
+				img.js-image(data-src="img/partners/"+icon+".png", alt="")
 mixin partner2(icon,name)
-  .quality-item
-    .quality-item-outer
-      .quality-item-inner
-        img.js-image(data-src="img/partners/"+icon+".png", alt="")
-        .text 
-          .text-inner #{name}
+	.quality-item
+		.quality-item-outer
+			.quality-item-inner
+				img.js-image(data-src="img/partners/"+icon+".png", alt="")
+				.text 
+					.text-inner #{name}
 doctype html
 html
-  head
-    meta(charset="utf-8")
-    block title
-      title Jade Layout Template
-    meta(name="viewport" content="width=device-width,initial-scale=1,user-scalable=no")
-    meta(content="IE=Edge" http-equiv="X-UA-Compatible")
-    link(rel="apple-touch-icon", sizes="180x180", href="/img/fav/apple-touch-icon.png")
-    link(rel="icon", type="image/png", sizes="32x32", href="/img/fav/favicon-32x32.png")
-    link(rel="icon", type="image/png", sizes="16x16", href="/img/fav/favicon-16x16.png")
-    link(rel="manifest", href="/img/fav/manifest.json")
-    link(rel="mask-icon", href="/img/fav/safari-pinned-tab.svg", color="#0e3b85")
-    link(rel="shortcut icon", href="/img/fav/favicon.ico")
-    meta(name="apple-mobile-web-app-title", content="GLASSBEL")
-    meta(name="application-name", content="GLASSBEL")
-    meta(name="msapplication-config", content="/img/fav/browserconfig.xml")
-    meta(name="theme-color", content="#0e3b85")
-    link(rel="stylesheet" media="all" href="css/screen.min.css")
-  body
-    script(type="text/javascript").
-      !function(e){function t(o){if(n[o])return n[o].exports;var c=n[o]={exports:{},id:o,loaded:!1};return e[o].call(c.exports,c,c.exports,t),c.loaded=!0,c.exports}var n={};return t.m=e,t.c=n,t.p="/assets/",t(0)}({0:function(e,t,n){n(18),n(19)},18:function(e,t){!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(c))o(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",c,!0),e.onreadystatechange=function(){4===e.readyState&&(o(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=c)},e.send()}else{var n=document.createElement("link");n.href=c,n.rel="stylesheet",n.type="text/css",document.getElementsByTagName("head")[0].appendChild(n),document.cookie="font_css_cache"}}function o(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t),window.onFontLoad&&window.onFontLoad()}var c=window.fonts_href||"../css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}()},19:function(e,t){}});
-    include includes/_svg-template
-    //BEGIN out
-    .root
-      block content
-      .cap
-        .cap-inner
-          .image
-          .text.primary.white Please open the desktop version.
-          a(href="http://glassbel.flxmru.vh86.hosterby.com/").link-arr.white
-            .link-arr-text
-              .text Go
-            .link-arr-icon
-              .icon
-                +icon('arr')
-      .modals
-        .modal-layout(data-modal='review').js-popup-container
-          .modal-container
-            .modal-container-inner
-              .modal-container-header
-                i.small-link.pop-close.closePopup
-              .modal-container-content.js-review-target
+	head
+		meta(charset="utf-8")
+		block title
+			title Jade Layout Template
+		meta(name="viewport" content="width=device-width,initial-scale=1,user-scalable=no")
+		meta(content="IE=Edge" http-equiv="X-UA-Compatible")
+		link(rel="apple-touch-icon", sizes="180x180", href="/img/fav/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href="/img/fav/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href="/img/fav/favicon-16x16.png")
+		link(rel="manifest", href="/img/fav/manifest.json")
+		link(rel="mask-icon", href="/img/fav/safari-pinned-tab.svg", color="#0e3b85")
+		link(rel="shortcut icon", href="/img/fav/favicon.ico")
+		meta(name="apple-mobile-web-app-title", content="GLASSBEL")
+		meta(name="application-name", content="GLASSBEL")
+		meta(name="msapplication-config", content="/img/fav/browserconfig.xml")
+		meta(name="theme-color", content="#0e3b85")
+		link(rel="stylesheet" media="all" href="css/screen.min.css")
+	body
+		script(type="text/javascript").
+			!function(e){function t(o){if(n[o])return n[o].exports;var c=n[o]={exports:{},id:o,loaded:!1};return e[o].call(c.exports,c,c.exports,t),c.loaded=!0,c.exports}var n={};return t.m=e,t.c=n,t.p="/assets/",t(0)}({0:function(e,t,n){n(18),n(19)},18:function(e,t){!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(c))o(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",c,!0),e.onreadystatechange=function(){4===e.readyState&&(o(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=c)},e.send()}else{var n=document.createElement("link");n.href=c,n.rel="stylesheet",n.type="text/css",document.getElementsByTagName("head")[0].appendChild(n),document.cookie="font_css_cache"}}function o(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t),window.onFontLoad&&window.onFontLoad()}var c=window.fonts_href||"../css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}()},19:function(e,t){}});
+		include includes/_svg-template
+		//BEGIN out
+		.root
+			block content
+			.cap
+				.cap-inner
+					.image
+					.text.primary.white Please open the desktop version.
+					a(href="http://glassbel.flxmru.vh86.hosterby.com/").link-arr.white
+						.link-arr-text
+							.text Go
+						.link-arr-icon
+							.icon
+								+icon('arr')
+			.modals
+				.modal-layout(data-modal='review').js-popup-container
+					.modal-container
+						.modal-container-inner
+							.modal-container-header
+								i.small-link.pop-close.closePopup
+							.modal-container-content.js-review-target
 
-    //END out
-    script(src="js/bundle.js")
-    script(src="js/common.js")
+		//END out
+		script(src="js/bundle.js")
+		script(src="js/common.js")
