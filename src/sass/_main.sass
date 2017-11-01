@@ -2296,6 +2296,8 @@ a.title
 				background-color: #FFF
 				display: none
 				z-index: 1
+				+r(600)
+					+rem(bottom,-4px)	
 				&:hover
 					span 
 						color: color(brandh)
@@ -2342,6 +2344,12 @@ a.title
 			transform: translateY(0)
 			opacity: 1
 			transition-delay: .2s
+	&:not(.active)
+		.menu-burger-inner
+			&:before
+				transform: rotate(45deg) scaleX(0);	
+			&:after
+				transform: rotate(-45deg) scaleX(0);
 	.modal-container
 		display: inline-block
 		vertical-align: middle 
@@ -2368,14 +2376,24 @@ a.title
 		+rem(width,70px)
 		+rem(height,70px)
 		+vertical
-		&:after
-			content: ''
-			+rem(width,22px)
-			+rem(height,22px)
-			+contain
-			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAoCAMAAABU4iNhAAAAIVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAt9G3DAAAACnRSTlMAAZcDpYhQkdpguYhB+AAAAJ1JREFUeNqF1DkOxDAMBEFShw/9/8FrLWx0RLQiclTRBIyIPMLekbFhW1PgXC3/cK0pcG3ax3remaXLc4PR46UtK9g+CFUIVQhVCFUIVQhVCFUIVQhVCFUINQjtQKEXUChQqEF6pCyDUIWXUQofQikcKjCEZuOXxSCrQgKBFSXVkEwoiVB2oWxCmYUyGe0DWFFuMrCg302+gQW9H/gDB90NjUrkGHEAAAAASUVORK5CYII=);
+		z-index: 1
+		.menu-burger
 			display: inline-block
 			vertical-align: middle
+			+rem(width,25px)
+			+rem(height,25px)
+			pointer-events: none
+			&-inner 
+				width: 100%	
+				height: 100%
+				&:before,&:after
+					+rem(width,26px)
+					top: 0
+					height: 2px	
+				&:before
+					+rem(left,3px)
+				&:after
+					+rem(right,3px)	
 .search
 	&-wrapper 
 		display: block

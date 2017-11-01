@@ -3596,6 +3596,14 @@ a.title:hover {
       opacity: 1;
       -webkit-transition-delay: .2s;
       transition-delay: .2s; }
+  .modal-layout:not(.active) .menu-burger-inner:before {
+    -webkit-transform: rotate(45deg) scaleX(0);
+    -ms-transform: rotate(45deg) scaleX(0);
+    transform: rotate(45deg) scaleX(0); }
+  .modal-layout:not(.active) .menu-burger-inner:after {
+    -webkit-transform: rotate(-45deg) scaleX(0);
+    -ms-transform: rotate(-45deg) scaleX(0);
+    transform: rotate(-45deg) scaleX(0); }
   .modal-layout .modal-container {
     display: inline-block;
     vertical-align: middle;
@@ -3628,23 +3636,31 @@ a.title:hover {
     width: 4.375rem;
     height: 4.375rem;
     text-align: center;
-    font-size: 0; }
+    font-size: 0;
+    z-index: 1; }
     .modal-layout .small-link:before {
       content: "";
       display: inline-block;
       vertical-align: middle;
       width: 0;
       height: 100%; }
-    .modal-layout .small-link:after {
-      content: '';
-      width: 1.375rem;
-      height: 1.375rem;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: 50% 50%;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAoCAMAAABU4iNhAAAAIVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAt9G3DAAAACnRSTlMAAZcDpYhQkdpguYhB+AAAAJ1JREFUeNqF1DkOxDAMBEFShw/9/8FrLWx0RLQiclTRBIyIPMLekbFhW1PgXC3/cK0pcG3ax3remaXLc4PR46UtK9g+CFUIVQhVCFUIVQhVCFUIVQhVCFUINQjtQKEXUChQqEF6pCyDUIWXUQofQikcKjCEZuOXxSCrQgKBFSXVkEwoiVB2oWxCmYUyGe0DWFFuMrCg302+gQW9H/gDB90NjUrkGHEAAAAASUVORK5CYII=);
+    .modal-layout .small-link .menu-burger {
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      width: 1.5625rem;
+      height: 1.5625rem;
+      pointer-events: none; }
+      .modal-layout .small-link .menu-burger-inner {
+        width: 100%;
+        height: 100%; }
+        .modal-layout .small-link .menu-burger-inner:before, .modal-layout .small-link .menu-burger-inner:after {
+          width: 1.625rem;
+          top: 0;
+          height: 2px; }
+        .modal-layout .small-link .menu-burger-inner:before {
+          left: 0.1875rem; }
+        .modal-layout .small-link .menu-burger-inner:after {
+          right: 0.1875rem; }
 
 .search-wrapper {
   display: block;
@@ -4025,7 +4041,10 @@ a.title:hover {
     font-size: 1.375rem; }
 
   .content h3 {
-    font-size: 1.125rem; } }
+    font-size: 1.125rem; }
+
+  .review-item-content .review-trigger {
+    bottom: -0.25rem; } }
 
 @media only screen and (min-width: 600px) {
 
