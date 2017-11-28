@@ -728,10 +728,10 @@ body {
   font-weight: 900; }
   .title.h1 {
     line-height: 0.73;
-    font-size: 14vw;
+    font-size: 12vw;
     letter-spacing: -0.21875rem; }
   .title.h2 {
-    font-size: 12vw;
+    font-size: 11vw;
     letter-spacing: -0.09375rem; }
   .title.h3 {
     font-size: 10vw;
@@ -1449,7 +1449,7 @@ a.title:hover {
           padding-top: 0.625rem; }
   .footer .block-contact {
     padding-top: 0.3125rem; }
-    .footer .block-contact .text > a[href^="tel:"]:only-child {
+    .footer .block-contact .text > a[href^="tel:"] {
       margin-top: 0.625rem;
       display: block; }
   .footer .text {
@@ -3139,7 +3139,7 @@ a.title:hover {
   .contact-text .block-contact {
     padding-right: 0.625rem;
     margin-top: 1.5625rem; }
-    .contact-text .block-contact:nth-child(2) .text > a[href^="tel:"]:only-child {
+    .contact-text .block-contact .text > a[href^="tel:"] {
       margin-top: 0.625rem;
       display: block; }
     .contact-text .block-contact a {
@@ -4049,7 +4049,7 @@ a.title:hover {
 @media only screen and (min-width: 600px) {
 
   .title.h2 {
-    font-size: 11vw; }
+    font-size: 10vw; }
 
   .title.h3 {
     font-size: 8vw; }

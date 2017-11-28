@@ -96,13 +96,13 @@ body
 	font-weight: 900
 	&.h1 
 		line-height: 0.73;
-		font-size: 14vw
+		font-size: 12vw
 		+rem(letter-spacing,-3.5px)
 	&.h2 
-		font-size: 12vw
+		font-size: 11vw
 		+rem(letter-spacing,-1.5px)
 		+rm(600)
-			font-size: 11vw
+			font-size: 10vw
 
 	&.h3 
 		font-size: 10vw
@@ -632,9 +632,8 @@ a.title
 		+rem(padding-top,5px)
 		.text
 			&>a[href^="tel:"]
-				&:only-child
-					+rem(margin-top,10px)
-					display: block
+				+rem(margin-top,10px)
+				display: block
 	.text
 		color: color(footertext)
 		&.gray 
@@ -1980,12 +1979,10 @@ a.title
 				display: inline-block
 				vertical-align: top
 				width: 50%
-			&:nth-child(2)
-				.text
-					&>a[href^="tel:"]
-						&:only-child
-							+rem(margin-top,10px)
-							display: block
+			.text
+				&>a[href^="tel:"]
+					+rem(margin-top,10px)
+					display: block
 			a
 				font-weight: 600
 				transition: color .3s, opacity .3s
