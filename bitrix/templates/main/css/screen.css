@@ -752,6 +752,8 @@ a.title:hover {
     line-height: 1.429;
     color: #000000;
     color: var(--color-black); }
+    .text.primary.tilt {
+      font-size: 1.4375rem; }
     .text.primary.white {
       color: #fff;
       color: var(--color-white); }
@@ -1451,6 +1453,7 @@ a.title:hover {
     padding-top: 0.3125rem; }
     .footer .block-contact .text > a[href^="tel:"] {
       margin-top: 0.625rem;
+      margin-bottom: 0.4375rem;
       display: block; }
   .footer .text {
     color: #a9aaab;
@@ -3141,6 +3144,7 @@ a.title:hover {
     margin-top: 1.5625rem; }
     .contact-text .block-contact .text > a[href^="tel:"] {
       margin-top: 0.625rem;
+      margin-bottom: 0.4375rem;
       display: block; }
     .contact-text .block-contact a {
       font-weight: 600;

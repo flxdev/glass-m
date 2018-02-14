@@ -121,6 +121,8 @@ a.title
 		color: rgb(0, 0, 0);
 		line-height: 1.429;
 		color: color(black)
+		&.tilt 
+			+rem(font-size,23px)
 		&.white
 			color: color(white)
 		a 
@@ -633,6 +635,7 @@ a.title
 		.text
 			&>a[href^="tel:"]
 				+rem(margin-top,10px)
+				+rem(margin-bottom,7px)
 				display: block
 	.text
 		color: color(footertext)
@@ -1982,6 +1985,7 @@ a.title
 			.text
 				&>a[href^="tel:"]
 					+rem(margin-top,10px)
+					+rem(margin-bottom,7px)
 					display: block
 			a
 				font-weight: 600

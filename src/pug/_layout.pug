@@ -46,7 +46,7 @@ mixin content(title,text,linktext,link,img,linktext)
 mixin content2(date,title,text,linktext,link,img,linktext)
 	a.block-wrap(href=link)
 		.text.gray #{date}
-		.title.h3 #{title}
+		.text.primary.tilt #{title}
 		img.js-image(data-src=img, alt="")
 		.block-text-content
 			.text.primary #{text}
