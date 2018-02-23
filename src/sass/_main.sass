@@ -387,6 +387,8 @@ a.title
 		transition-delay: 0s
 		opacity: 0
 		overflow-y: auto
+		&::-webkit-scrollbar
+			display: none
 		&-inner
 			display: inline-block
 			+vertical
@@ -825,7 +827,7 @@ a.title
 		transform: translate3d(0,50%,0)
 		opacity: 0	
 		.text
-			color: rgba(255, 255, 255, 0.502);
+			color: rgba(255, 255, 255, 0.8);
 			line-height: 1.444;
 			+rem(padding-left,5px)
 			+rem(margin-bottom,10px)
@@ -1442,15 +1444,38 @@ a.title
 			+rem(margin-top,25px)
 			display: block
 			+rem(padding-top,10px)
-
+.prod-eleminner
+	width: 100%
+.type-card
+	display: flex 
+	flex-flow: row wrap
+	+rem(margin-bottom,26px)
+	.text.gray
+		width: 100%
+		margin-top: 0
+		margin-bottom: 10px !important
+	// 	color: #c7c7c7
+	.type-text
+		+rem(padding-top,4px)
+		+rem(padding-left,10px)
+		width: calc(100% - 1.875rem - .3125rem)
+		&:nth-child(2)
+			padding-left: 0
+		.text.primary
+			margin-bottom: 0
+			padding-bottom: 0
+	.type-wrap
+		margin-bottom: 0 !important
 .content 
-	h1,h2,h3
+	h1,h2,h3,.h1,.h2,.h3
 		text-transform: uppercase;
 		line-height: 0.857;
 		font-family: $t
 		color: color(brand)
 		+tr(color .3s)
-		font-weight: 900
+		font-weight: 700
+		&:first-child
+			margin-top: 0
 	h1
 		+rem(font-size,32px)
 		+rem(margin,30px 0 15px)
@@ -1469,12 +1494,14 @@ a.title
 			+rem(font-size,18px)
 
 	p 
-		+rem(font-size,16px)
+		// +rem(font-size,16px)
+		+rem(font-size,18px)
 		line-height: 1.444;
 		color: color(textblk)
 		+rem(margin,10px 0)
 	.primary
 		+rem(padding-bottom,10px)
+		+rem(font-size,18px)
 		// border-bottom: 1px solid color(grayl)
 		// +rem(padding-right,45px)
 		+rem(margin-bottom,20px)
@@ -1487,17 +1514,20 @@ a.title
 		+rem(margin,20px 0 35px)
 	.text.gray 
 		+rem(margin,20px 0 )
+		&:first-child
+			margin-top: 0
 	.type-wrap
 		+rem(margin-bottom,20px)
 		.type-item
 			+rem(width,30px)
 			+rem(height,30px)
-	ul 
+	ul,ol 
 		display: block
 		li 
 			display: block
 			position: relative
-			+rem(font-size,16px)
+			// +rem(font-size,16px)
+			+rem(font-size,18px)
 			line-height: 1.444;
 			+rem(margin,10px 0)
 			+rem(padding-left,25px)
@@ -1510,6 +1540,20 @@ a.title
 				position: absolute
 				+rem(left,2px)
 				+rem(top,7px)
+	ol 
+		counter-reset: ol 
+		li 
+			counter-increment: ol 
+			&:before 
+				background: 0 0
+				width: auto
+				height: auto
+				content: counter(ol)'.'
+				// +rem(font-size,18px)
+				// +rem(font-size,24px)
+				line-height: 1.444;
+				top: 0
+				color: color(brand)
 .inner-list
 	.row 
 		+rem(margin-bottom,30px)
@@ -1844,6 +1888,10 @@ a.title
 		width: 100%
 		overflow-x: auto
 		white-space: nowrap
+		&::-webkit-scrollbar
+			display: none
+			// opacity: 0
+			
 		&-item 
 			display: inline-block
 			vertical-align: bottom
@@ -2337,6 +2385,8 @@ a.title
 	overflow-y: auto
 	transition-delay: .5s
 	+rem(padding,10px)
+	&::-webkit-scrollbar
+		display: none
 	&.active
 		visibility: visible
 		opacity: 1
