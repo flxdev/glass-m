@@ -708,13 +708,13 @@ function ProdinnerHead(){
 	var prevText = getCookie('BITRIX_SM_'+pathType+'_PREV_TEXT');
 
 	if(nextL !== null){
-		targetNext.attr('href',nextL);
+		targetNext.attr('href',urldecode(nextL));
 	
 	}else{
 		targetNext.attr('href','#');
 	}
 	if(prevL !== null){
-		targetPrev.attr('href',prevL);
+		targetPrev.attr('href',urldecode(prevL));
 	}else{
 		targetPrev.attr('href','#');
 	}
