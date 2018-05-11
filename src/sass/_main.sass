@@ -1608,6 +1608,9 @@ a.title
 		flex-flow: row nowrap
 		align-items: center
 		+rem(height,40px)
+		&[href^="#"]
+			opacity: 0
+			pointer-events: none
 		.icon 
 			+rem(width,12px)
 			+rem(height,16px)

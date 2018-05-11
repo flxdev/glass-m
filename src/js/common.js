@@ -673,17 +673,51 @@ review.prototype = {
 	}
 }
 
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function urldecode(url) {
+  return decodeURIComponent(url.replace(/\+/g, ' '));
+}
+function getString(string) {
+  return decodeURIComponent(string.replace(/\+/g, ' '));
+}
+
 function ProdinnerHead(){
 
 	var target = $('.js-prod-head');
-	var targetNext = target.find('.columns:first-child').find('.prod-nav-link');
-	var targetPrev = target.find('.columns:last-child').find('.prod-nav-link');
+	var targetNext = target.find('.columns:last-child').find('.prod-nav-link');
+	var targetNextText = targetNext.find('.prod-nav-link-text');
+	var targetPrev = target.find('.columns:first-child').find('.prod-nav-link');
+	var targetPrevText = targetPrev.find('.prod-nav-link-text');
 	var vh = $('.page-head').height();
 	var cont = $('.barba-container').last();
-	var nextL = cont.data('next-link');
-	var prevL = cont.data('prev-link');
-	targetNext.attr('href',nextL);
-	targetPrev.attr('href',prevL);
+
+	var pathType = getCookie('BITRIX_SM_MAIN_CUR_DIR') !== null ? getCookie('BITRIX_SM_MAIN_CUR_DIR').toUpperCase() : false;
+	var nextL = getCookie('BITRIX_SM_'+pathType+'_NEXT_LINK');
+	var nextText = getCookie('BITRIX_SM_'+pathType+'_NEXT_TEXT');
+	var prevL = getCookie('BITRIX_SM_'+pathType+'_PREV_LINK');
+	var prevText = getCookie('BITRIX_SM_'+pathType+'_PREV_TEXT');
+
+	if(nextL !== null){
+		targetNext.attr('href',nextL);
+	
+	}else{
+		targetNext.attr('href','#');
+	}
+	if(prevL !== null){
+		targetPrev.attr('href',prevL);
+	}else{
+		targetPrev.attr('href','#');
+	}
 	target.addClass('active');
 }
 var debounce = function(t, e, n) {
@@ -1042,7 +1076,8 @@ var BarbaWitget = {
 		var scope = this;
 
 		Barba.Pjax.start();
-		Barba.Prefetch.init();
+		// Barba.Prefetch.init();
+		Barba.Pjax.cacheEnabled = false;
 		Barba.Pjax.getTransition = function(){
 			return scope.MovePage;
 		};

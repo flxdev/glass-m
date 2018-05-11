@@ -2693,6 +2693,9 @@ a.title:hover {
     -ms-flex-align: center;
     align-items: center;
     height: 2.5rem; }
+    .prod-nav-link[href^="#"] {
+      opacity: 0;
+      pointer-events: none; }
     .prod-nav-link .icon {
       width: 0.75rem;
       height: 1rem; }
